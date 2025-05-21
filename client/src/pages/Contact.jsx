@@ -123,11 +123,14 @@ const Contact = () => {
         <img
           src={heroWave}
           alt="wave pattern"
-          className="absolute bottom-0 left-0 w-full h-auto"
+          className="absolute bottom-0 left-0 w-full h-30 sm:h-20 md:h-24 object-cover animate-pulse"
+					style={{ zIndex: 1 }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
-          <p className="text-lg text-yellow max-w-2xl mx-auto">
+        <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold text-snow drop-shadow-lg animate-fade-in-up mb-2 sm:mb-4 text-center">
+            Get in Touch
+          </h1>
+          <p className="text-base xs:text-lg md:text-xl text-yellow font-medium animate-fade-in-up delay-200 text-center px-2">
             We're here to make things easier—contact us anytime!
           </p>
         </div>
