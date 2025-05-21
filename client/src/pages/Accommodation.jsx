@@ -48,7 +48,7 @@ const Accommodation = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FFFBFC] to-[#88DADA]/20 overflow-hidden">
       {/* Hero Section */}
-      <div className="relative w-full h-[50vh] sm:h-[60vh] flex items-center justify-center overflow-hidden mb-8 sm:mb-12">
+      <div className="relative w-full h-[32vh] sm:h-[38vh] flex items-center justify-center overflow-hidden mb-8 sm:mb-12">
         <motion.img
           src={heroBg}
           alt="Guest House Hero"
@@ -65,7 +65,7 @@ const Accommodation = () => {
           variants={heroVariants}
         >
           <motion.h1
-            className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#DDA853] via-[#FFFBFC] to-[#88DADA] drop-shadow-lg"
+            className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#DDA853] via-[#FFFBFC] to-[#88DADA] drop-shadow-lg"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 1 }}
@@ -73,7 +73,7 @@ const Accommodation = () => {
             Welcome to NIT Guest Houses
           </motion.h1>
           <motion.p
-            className="mt-4 sm:mt-6 text-base xs:text-lg sm:text-xl md:text-2xl text-[#FFFBFC] max-w-md sm:max-w-2xl font-medium drop-shadow"
+            className="mt-3 sm:mt-4 text-sm xs:text-base sm:text-lg md:text-xl text-[#FFFBFC] max-w-md sm:max-w-2xl font-medium drop-shadow"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
@@ -82,13 +82,6 @@ const Accommodation = () => {
             <br className="hidden xs:block" />
             Discover your perfect stay at our Old &amp; New Guest Houses.
           </motion.p>
-          <motion.div
-            className="mt-6 sm:mt-10 flex flex-col xs:flex-row gap-4 sm:gap-6 justify-center"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 1 }}
-          >
-          </motion.div>
         </motion.div>
         {/* Animated floating shapes */}
         <motion.div
@@ -281,30 +274,45 @@ const Accommodation = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.9, ease: [0.39, 0.575, 0.565, 1] }}
-        className="py-12 sm:py-20 px-2 xs:px-4 sm:px-6 lg:px-8"
+        className="py-10 sm:py-16 px-2 xs:px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-6 sm:mb-8">Book Your Stay</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-4 sm:mb-6">Book Your Stay</h2>
           <p className="text-base sm:text-lg text-dark/80 mb-6 sm:mb-8">
-            For reservations and inquiries, please contact us:
+            For reservations and inquiries, reach out to us directly:
           </p>
-          <div className="flex flex-col xs:flex-row items-center justify-center gap-4 xs:gap-6">
-            <motion.button
-              whileHover={{ scale: 1.07 }}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <motion.a
+              href="tel:+911234567890"
+              whileHover={{
+                scale: 1.08,
+                boxShadow: "0 8px 32px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
+                y: -6,
+              }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 300, damping: 18 }}
-              className="bg-teal text-snow px-6 py-2 sm:px-8 sm:py-3 rounded-lg font-medium hover:bg-teal/90 transition-colors w-full xs:w-auto"
+              className="flex items-center gap-3 bg-gradient-to-r from-[#0D9488] to-[#88DADA] text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:from-[#0D9488]/90 hover:to-[#88DADA]/90 transition-all duration-300 text-lg sm:text-xl border-2 border-transparent hover:border-[#0D9488]"
+              style={{ textDecoration: "none", perspective: "600px", transformStyle: "preserve-3d" }}
             >
-              Call Now
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.07 }}
+              <span className="text-2xl drop-shadow">📞</span> Call Now
+            </motion.a>
+            <motion.a
+              href="mailto:guesthouse@nit.edu.in"
+              whileHover={{
+                scale: 1.08,
+                boxShadow: "0 8px 32px 0 rgba(31,38,71,0.18), 0 1.5px 8px 0 rgba(13,148,136,0.10)",
+                y: -6,
+              }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 300, damping: 18 }}
-              className="bg-dark text-snow px-6 py-2 sm:px-8 sm:py-3 rounded-lg font-medium hover:bg-dark/90 transition-colors w-full xs:w-auto"
+              className="flex items-center gap-3 bg-gradient-to-r from-[#1F2647] to-[#0D9488] text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:from-[#1F2647]/90 hover:to-[#0D9488]/90 transition-all duration-300 text-lg sm:text-xl border-2 border-transparent hover:border-[#1F2647]"
+              style={{ textDecoration: "none", perspective: "600px", transformStyle: "preserve-3d" }}
             >
-              Email Us
-            </motion.button>
+              <span className="text-2xl drop-shadow">✉️</span> Email Us
+            </motion.a>
+          </div>
+          <div className="mt-5 text-xs text-dark/60">
+            <span>Phone: +91 12345 67890</span> &nbsp;|&nbsp; <span>Email: guesthouse@nit.edu.in</span>
           </div>
         </div>
       </motion.section>
