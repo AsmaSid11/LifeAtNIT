@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import heroWave from "../assets/hero-wave.svg"; // Make sure this SVG exists
 
 const amenitiesData = [
 	{
@@ -73,6 +74,18 @@ const amenitiesData = [
 		details:
 			"Campus buses and shuttles connect all major locations. Easy access to public transport ensures smooth connectivity to the city.",
 	},
+	{
+		name: "Counselling Cell",
+		image: "/Amenities/counselling.jpg",
+		photos: [
+			"/Amenities/counselling.jpg",
+			"/Amenities/counselling2.jpg",
+			"/Amenities/counselling3.jpg",
+		],
+		brief: "Support for mental health, stress, and personal counseling.",
+		details:
+			"The Counselling Cell offers confidential support for students facing stress, anxiety, homesickness, or any personal issues. Professional counselors are available for one-on-one sessions, workshops, and group discussions to promote mental well-being.",
+	},
 ];
 
 const Amenities = () => {
@@ -114,12 +127,28 @@ const Amenities = () => {
 	}, [expanded]);
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-lightblue/10 to-teal/10 py-12">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h1 className="text-4xl font-extrabold text-dark mb-12 text-center tracking-tight drop-shadow-lg">
-					Campus Amenities
-				</h1>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+		<div className="min-h-screen bg-gradient-to-br from-lightblue/10 to-teal/10 py-6 sm:py-10">
+			{/* Animated Hero Section */}
+			<div className="relative overflow-hidden bg-gradient-to-br from-yellow-100/60 via-lightblue/30 to-snow/80 py-10 sm:py-14 md:py-16 mb-6 sm:mb-10">
+				{/* Animated wave SVG */}
+				<img
+					src={heroWave}
+					alt="wave"
+					className="absolute bottom-0 left-0 w-full h-16 sm:h-20 md:h-24 object-cover animate-pulse"
+					style={{ zIndex: 1 }}
+				/>
+				<div className="relative z-10 flex flex-col items-center justify-center px-2">
+					<h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold text-dark drop-shadow-lg animate-fade-in-up mb-2 sm:mb-4 text-center">
+						Campus Amenities
+					</h1>
+					<p className="text-base xs:text-lg md:text-xl text-teal font-medium animate-fade-in-up delay-200 text-center px-2">
+						Explore the best facilities and support at NIT Srinagar
+					</p>
+				</div>
+			</div>
+			{/* Main Content */}
+			<div className="max-w-7xl mx-auto px-2 xs:px-4 sm:px-6 lg:px-8">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
 					{amenitiesData.map((amenity, idx) => (
 						<div
 							key={amenity.name}
@@ -127,11 +156,11 @@ const Amenities = () => {
 							onClick={() => handleExpand(idx)}
 							className={`relative cursor-pointer group transition-all duration-500 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl rounded-3xl overflow-hidden bg-snow shadow-lg ${
 								expanded === idx
-									? "col-span-1 md:col-span-2 lg:col-span-3 z-20 scale-105 ring-4 ring-lightblue"
+									? "col-span-1 sm:col-span-2 lg:col-span-3 z-20 scale-105 ring-4 ring-lightblue"
 									: ""
 							}`}
 							style={{
-								minHeight: expanded === idx ? 400 : 280,
+								minHeight: expanded === idx ? 400 : 220,
 								boxShadow:
 									expanded === idx
 										? "0 10px 40px 0 rgba(13, 148, 136, 0.15)"
@@ -141,50 +170,63 @@ const Amenities = () => {
 							{/* Expanded: Carousel left, details right */}
 							{expanded === idx ? (
 								<div
-									className="flex flex-col md:flex-row w-full h-80 transition-all duration-500"
+									className="flex flex-col md:flex-row w-full h-auto md:h-80 transition-all duration-500"
 									style={{
 										perspective: "1200px",
 									}}
 								>
-									{/* Left: Carousel with 3D effect, no border */}
+									{/* Carousel */}
 									<div
-										className="flex-1 flex items-center justify-center relative h-80 bg-gradient-to-br from-lightblue/30 to-snow/80 rounded-3xl overflow-hidden p-4 shadow-2xl"
+										className="flex items-center justify-center relative bg-gradient-to-br from-lightblue/30 to-snow/80 rounded-3xl overflow-hidden p-2 xs:p-4 shadow-2xl"
 										style={{
+											width: "100%",
+											maxWidth: "350px", // fixed max width for mobile
+											minWidth: "220px",
+											height: "220px",    // fixed height for mobile
+											minHeight: "220px",
+											maxHeight: "320px",
+											margin: "0 auto",
 											transform: "rotateY(-10deg) scale(1.04)",
 											boxShadow: "0 16px 48px 0 rgba(13, 148, 136, 0.18), 0 2px 8px 0 rgba(0,0,0,0.10)",
 											perspective: "1200px",
 										}}
 									>
 										<button
-											className="absolute left-4 top-1/2 -translate-y-1/2 bg-snow/90 rounded-full p-2 shadow-lg hover:bg-lightblue transition"
+											className="absolute left-2 xs:left-4 top-1/2 -translate-y-1/2 bg-snow/90 rounded-full p-1 xs:p-2 shadow-lg hover:bg-lightblue transition"
 											onClick={(e) => {
 												e.stopPropagation();
 												handlePrev(amenity.photos);
 											}}
 											style={{ zIndex: 2 }}
 										>
-											<span className="text-2xl text-dark">&#8592;</span>
+											<span className="text-xl xs:text-2xl text-dark">&#8592;</span>
 										</button>
 										<img
 											src={amenity.photos[carouselIdx]}
 											alt={amenity.name}
-											className="object-cover w-full h-full rounded-3xl transition-all duration-500 shadow-xl"
+											className="w-full h-full object-cover rounded-3xl transition-all duration-500 shadow-xl"
 											style={{
+												objectFit: "cover",
+												width: "100%",
+												height: "100%",
+												minWidth: "0",
+												minHeight: "0",
 												transform: "rotateY(8deg) scale(1.01)",
+												display: "block",
 											}}
 										/>
 										<button
-											className="absolute right-4 top-1/2 -translate-y-1/2 bg-snow/90 rounded-full p-2 shadow-lg hover:bg-lightblue transition"
+											className="absolute right-2 xs:right-4 top-1/2 -translate-y-1/2 bg-snow/90 rounded-full p-1 xs:p-2 shadow-lg hover:bg-lightblue transition"
 											onClick={(e) => {
 												e.stopPropagation();
 												handleNext(amenity.photos);
 											}}
 											style={{ zIndex: 2 }}
 										>
-											<span className="text-2xl text-dark">&#8594;</span>
+											<span className="text-xl xs:text-2xl text-dark">&#8594;</span>
 										</button>
 										{/* Dots */}
-										<div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+										<div className="absolute bottom-2 xs:bottom-3 left-1/2 -translate-x-1/2 flex gap-1 xs:gap-2">
 											{amenity.photos.map((_, i) => (
 												<span
 													key={i}
@@ -195,21 +237,21 @@ const Amenities = () => {
 									</div>
 									{/* Right: Details with 3D pop, no border */}
 									<div
-										className="flex-1 p-8 flex flex-col justify-center bg-snow/90 rounded-2xl shadow-xl ml-0 md:ml-8 transition-all duration-500"
+										className="flex-1 p-3 xs:p-6 md:p-8 flex flex-col justify-center bg-snow/90 rounded-2xl shadow-xl ml-0 md:ml-8 mt-4 md:mt-0 transition-all duration-500"
 										style={{
 											transform: "rotateY(6deg) scale(1.01)",
 											boxShadow: "0 8px 32px 0 rgba(13, 148, 136, 0.13)",
 										}}
 									>
-										<h2 className="text-3xl font-bold text-dark mb-2">{amenity.name}</h2>
-										<p className="text-dark/70 text-base mb-4">{amenity.brief}</p>
-										<p className="text-dark/80 text-base">{amenity.details}</p>
+										<h2 className="text-xl xs:text-2xl md:text-3xl font-bold text-dark mb-2">{amenity.name}</h2>
+										<p className="text-dark/70 text-sm xs:text-base mb-2 xs:mb-4">{amenity.brief}</p>
+										<p className="text-dark/80 text-sm xs:text-base">{amenity.details}</p>
 									</div>
 								</div>
 							) : (
 								// Collapsed: Single image
 								<>
-									<div className="w-full h-48 overflow-hidden">
+									<div className="w-full h-32 xs:h-40 md:h-48 overflow-hidden">
 										<img
 											src={amenity.image}
 											alt={amenity.name}
@@ -221,8 +263,8 @@ const Amenities = () => {
 											}}
 										/>
 									</div>
-									<div className="p-6">
-										<h2 className="text-2xl font-bold text-dark mb-2 flex items-center gap-2">
+									<div className="p-4 xs:p-6">
+										<h2 className="text-lg xs:text-2xl font-bold text-dark mb-2 flex items-center gap-2">
 											{amenity.name}
 											<span
 												className={`ml-auto transition-transform duration-300 text-teal ${
@@ -232,7 +274,7 @@ const Amenities = () => {
 												▼
 											</span>
 										</h2>
-										<p className="text-dark/70 text-base">
+										<p className="text-dark/70 text-sm xs:text-base">
 											{amenity.brief}
 										</p>
 									</div>
