@@ -6,7 +6,7 @@ import Clubs from './pages/Clubs';
 import Fests from './pages/Fests';
 import Amenities from './pages/Amenities';
 import Contact from './pages/Contact';
-
+import Footer from './components/Footer';
 function App() {
   return (
     <Router>
@@ -23,6 +23,7 @@ function App() {
           </Routes>
         </main>
       </div>
+      <Footer/>
     </Router>
   );
 }
