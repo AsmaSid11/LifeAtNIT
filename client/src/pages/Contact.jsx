@@ -153,7 +153,11 @@ const Contact = () => {
           {teamMembers.map((member, idx) => (
             <div
               key={idx}
-              className="bg-snow rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border-2 border-yellow/30 hover:border-yellow/60 hover:bg-lightblue/5"
+              className="bg-snow rounded-xl shadow-2xl p-8 border border-yellow/40 hover:border-yellow/80
+                 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105
+                 hover:shadow-[0_10px_30px_rgba(0,0,0,0.25),0_1.5px_6px_rgba(255,215,0,0.15)] 
+                 relative before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-br before:from-yellow/10 before:to-lightblue/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300"
+              style={{ perspective: "800px" }}
             >
               <div className="flex items-center space-x-6">
                 <div className="relative">
