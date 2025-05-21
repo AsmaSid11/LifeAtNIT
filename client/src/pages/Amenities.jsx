@@ -127,7 +127,7 @@ const Amenities = () => {
 	}, [expanded]);
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-lightblue/10 to-teal/10 py-6 sm:py-10">
+		<div className="min-h-screen bg-gradient-to-br from-lightblue/10 to-teal/10">
 			{/* Animated Hero Section */}
 			<div className="relative overflow-hidden bg-gradient-to-br from-yellow-100/60 via-lightblue/30 to-snow/80 py-10 sm:py-14 md:py-16 mb-6 sm:mb-10">
 				{/* Animated wave SVG */}
