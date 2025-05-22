@@ -8,6 +8,7 @@ import Fests from './pages/Fests';
 import Amenities from './pages/Amenities';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             </Routes>
           </main>
         </div>
+        <ScrollToTopButton />
         <Footer />
       </Router>
     </ParallaxProvider>
