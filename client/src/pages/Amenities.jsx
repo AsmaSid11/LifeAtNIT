@@ -86,6 +86,18 @@ const amenitiesData = [
 		details:
 			"The Counselling Cell offers confidential support for students facing stress, anxiety, homesickness, or any personal issues. Professional counselors are available for one-on-one sessions, workshops, and group discussions to promote mental well-being.",
 	},
+	{
+		name: "Banking",
+		image: "/Amenities/banking.jpg",
+		photos: [
+			"/Amenities/banking.jpg",
+			"/Amenities/banking2.jpg",
+			"/Amenities/banking3.jpg",
+		],
+		brief: "Information about banking facilities and ATMs on campus.",
+		details:
+			"A branch of a nationalized bank and multiple ATMs are available on campus for students' convenience. Banking services include account opening, deposits, withdrawals, and other financial services.",
+	},
 ];
 
 const Amenities = () => {

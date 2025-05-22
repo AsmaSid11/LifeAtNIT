@@ -95,7 +95,7 @@ const Footer = () => {
       {/* Bottom Legal Bar */}
       <div className="border-t border-lightblue/20 py-6 text-center">
         <p className="text-sm text-snow/80">
-          &copy; {new Date().getFullYear()} Life @ NIT Srinagar. All rights reserved. Built by Gaash Web Team
+          &copy; {new Date().getFullYear()} Life @ NIT Srinagar. All rights reserved. Built by Gaash Web Team  
         </p>
       </div>
     </footer>
