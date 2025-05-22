@@ -101,20 +101,20 @@ const Contact = () => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Handle form submission logic here
+  //   console.log("Form submitted:", formData);
+  //   // Reset form
+  //   setFormData({ name: "", email: "", subject: "", message: "" });
+  // };
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  // const handleChange = (e) => {
+  //   setFormData({
+  //     ...formData,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-lightblue/10 to-teal/10">
