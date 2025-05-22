@@ -44,7 +44,7 @@ const ScrollToTopButton = () => {
           aria-label="Scroll to top"
           className={
             "fixed bottom-10 right-10 z-50 w-14 h-14 rounded-full shadow-xl flex items-center justify-center text-3xl font-bold transition-all duration-300 " +
-            "bg-gradient-to-tr from-yellow to-teal text-snow hover:scale-110 hover:shadow-2xl " +
+            "bg-dark border-4 border-yellow text-yellow hover:scale-110 hover:shadow-yellow/40 " +
             (isVisible
               ? "opacity-100 pointer-events-auto animate-bounce-custom"
               : "opacity-0 pointer-events-none")
