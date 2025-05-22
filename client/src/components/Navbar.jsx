@@ -13,7 +13,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-dark shadow-lg border-b border-lightblue/20 backdrop-blur-sm bg-opacity-95 sticky top-0 z-50">
+    <nav className="bg-dark shadow-lg border-b border-lightblue/20 backdrop-blur-sm bg-opacity-97 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -25,7 +25,7 @@ const Navbar = () => {
             >
               <img src="/images/logo-white.png" alt="NIT Srinagar Logo" className="h-6 w-6 sm:h-8 sm:w-8 mr-2 group-hover:scale-110 transition-all duration-300" />
               <div className="flex flex-col relative">
-                <span className="hidden md:block text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-snow to-snow/80 bg-clip-text text-transparent group-hover:from-yellow group-hover:to-lightblue transition-all duration-300 whitespace-nowrap">
+                <span className="hidden md:block text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-snow to-snow/80 bg-clip-text text-transparent group-hover:from-yellow group-hover:to-lightblue transition-all duration-300 whitespace-nowrap font-sans tracking-wide">
                   National Institute of Technology
                 </span>
                 <div className="flex items-center gap-2">
