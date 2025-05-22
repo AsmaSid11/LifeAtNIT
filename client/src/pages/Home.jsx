@@ -1,24 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
     title: "Vibrant Student Life",
     desc: "Join a diverse range of clubs, fests, and activities that make every day exciting.",
     img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+    link: "/clubs",
   },
   {
     title: "World-Class Amenities",
     desc: "Enjoy modern hostels, sports complexes, libraries, and more for a holistic experience.",
     img: "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=600&q=80",
+    link: "/amenities",
   },
   {
     title: "Unforgettable Fests",
     desc: "Experience the thrill of our cultural and technical fests, where talent meets celebration.",
     img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+    link: "/fests",
   },
 ];
 
 export default function Home() {
+  const [visible, setVisible] = useState(false);
+
   // Animate sections on scroll
   useEffect(() => {
     const reveal = () => {
@@ -29,10 +35,18 @@ export default function Home() {
         }
       });
     };
-    window.addEventListener("scroll", reveal);
+    const handleScroll = () => {
+      reveal();
+      setVisible(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll);
     reveal();
-    return () => window.removeEventListener("scroll", reveal);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="bg-snow min-h-screen">
@@ -62,7 +76,8 @@ export default function Home() {
         </h2>
         <div className="grid md:grid-cols-3 gap-10">
           {features.map((f, i) => (
-            <div
+            <Link
+              to={f.link}
               key={f.title}
               className="reveal opacity-0 transform transition duration-700"
               style={{ transitionDelay: `${i * 0.15 + 0.2}s` }}
@@ -81,7 +96,7 @@ export default function Home() {
                   <p className="text-dark/80">{f.desc}</p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -94,13 +109,37 @@ export default function Home() {
         <p className="text-lg text-dark/70 mb-8 animate-fade-in-up">
           Explore our clubs, amenities, and fests to make the most of your NIT experience!
         </p>
-        <a
-          href="/clubs"
-          className="inline-block px-8 py-4 rounded-full bg-gradient-to-tr from-yellow to-teal text-snow text-xl font-bold shadow-lg hover:scale-110 hover:shadow-2xl transition-all duration-300 animate-fade-in"
+        <Link
+          to="/clubs"
+          className="inline-block px-8 py-4 rounded-full bg-dark border-2 border-yellow text-yellow text-xl font-bold shadow-lg hover:bg-yellow hover:text-dark hover:scale-110 hover:shadow-yellow/40 transition-all duration-300 animate-fade-in"
         >
           Explore Clubs
-        </a>
+        </Link>
       </div>
+
+      {/* Scroll to Top Button */}
+      <button
+        type="button"
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+        className={
+          "fixed bottom-10 right-10 z-50 w-14 h-14 rounded-full shadow-xl flex items-center justify-center text-3xl font-bold transition-all duration-300 " +
+          "bg-dark border-4 border-yellow text-yellow hover:scale-110 hover:shadow-yellow/40 " +
+          (visible
+            ? "opacity-100 pointer-events-auto animate-bounce-custom"
+            : "opacity-0 pointer-events-none")
+        }
+      >
+        <svg
+          className="w-7 h-7"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={3}
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+      </button>
     </div>
   );
 }
