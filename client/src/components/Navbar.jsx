@@ -29,7 +29,7 @@ const Navbar = () => {
                   National Institute of Technology
                 </span>
                 <div className="flex items-center gap-2">
-                  <span className="text-sm sm:text-base font-bold bg-gradient-to-r from-yellow to-lightblue bg-clip-text text-transparent md:bg-none md:text-snow md:group-hover:text-yellow md:transition-colors md:duration-300 md:text-lightblue/90 md:font-medium">
+                  <span className="text-sm sm:text-base font-bold bg-gradient-to-r from-yellow to-lightblue bg-clip-text text-transparent md:bg-none md:text-lightblue md:group-hover:text-yellow md:transition-colors md:duration-300 md:font-medium">
                     Life @ NIT Srinagar
                   </span>
                 </div>
