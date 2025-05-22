@@ -166,17 +166,20 @@ const Amenities = () => {
 							key={amenity.name}
 							ref={(el) => (cardRefs.current[idx] = el)}
 							onClick={() => handleExpand(idx)}
-							className={`relative cursor-pointer group transition-all duration-500 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl rounded-3xl overflow-hidden bg-snow shadow-lg ${
-								expanded === idx
+							className={
+								"group cursor-pointer bg-white rounded-3xl shadow-2xl transition-all duration-500 " +
+								"hover:shadow-yellow/60 hover:scale-105 perspective-800 " +
+								(expanded === idx
 									? "col-span-1 sm:col-span-2 lg:col-span-3 z-20 scale-105 ring-4 ring-lightblue"
-									: ""
-							}`}
+									: "")
+							}
 							style={{
 								minHeight: expanded === idx ? 400 : 220,
 								boxShadow:
 									expanded === idx
 										? "0 10px 40px 0 rgba(13, 148, 136, 0.15)"
 										: "0 4px 20px 0 rgba(13, 148, 136, 0.08)",
+								perspective: "800px",
 							}}
 						>
 							{/* Expanded: Carousel left, details right */}
@@ -261,22 +264,18 @@ const Amenities = () => {
 									</div>
 								</div>
 							) : (
-								// Collapsed: Single image
+								// Collapsed: Home-style card
 								<>
-									<div className="w-full h-32 xs:h-40 md:h-48 overflow-hidden">
+									<div className="relative overflow-hidden rounded-2xl group-hover:rotate-[-3deg] group-hover:scale-110 transition-all duration-500">
 										<img
 											src={amenity.image}
 											alt={amenity.name}
-											className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
-											style={{
-												filter:
-													expanded === idx ? "brightness(0.7)" : "brightness(0.9)",
-												transform: `scale(${expanded === idx ? 1.1 : 1})`,
-											}}
+											className="w-full h-40 md:h-48 object-cover"
 										/>
+										<div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent opacity-80 group-hover:opacity-60 transition-all duration-500" />
 									</div>
-									<div className="p-4 xs:p-6">
-										<h2 className="text-lg xs:text-2xl font-bold text-dark mb-2 flex items-center gap-2">
+									<div className="p-6">
+										<h2 className="text-2xl font-bold text-yellow mb-2 drop-shadow flex items-center gap-2">
 											{amenity.name}
 											<span
 												className={`ml-auto transition-transform duration-300 text-teal ${
@@ -286,7 +285,7 @@ const Amenities = () => {
 												▼
 											</span>
 										</h2>
-										<p className="text-dark/70 text-sm xs:text-base">
+										<p className="text-dark/80 text-base">
 											{amenity.brief}
 										</p>
 									</div>
