@@ -6,12 +6,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+
+      fontFamily: {
+        serif: ['Merriweather', 'Georgia', 'serif'],
+      },
+
       colors: {
         dark: '#1F2647',     // Space Cadet - navy blue
         lightblue: '#88DADA', // Tiffany Blue - light blue
         teal: '#0D9488',      // Dark Cyan - teal
         yellow: '#DDA853',    // Earth Yellow - mustard
         snow: '#FFFBFC',  // Snow - white
+        space-cadet: '#1F2647',
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.7s cubic-bezier(.39,.575,.565,1) both',
