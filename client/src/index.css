@@ -1,3 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-snow text-dark;
+  }
+}
+
+/*
+@layer components {
+  .bg-alt {
+    @apply bg-dark text-snow;
+  }
+
+  .bg-main {
+    @apply bg-snow text-dark;
+  }
+
+  .btn-primary {
+    @apply bg-lightblue text-dark px-4 py-2 rounded-md hover:bg-opacity-90 transition-all;
+  }
+  
+  .btn-secondary {
+    @apply bg-teal text-snow px-4 py-2 rounded-md hover:bg-opacity-90 transition-all;
+  }
+  
+  .btn-accent {
+    @apply bg-yellow text-dark px-4 py-2 rounded-md hover:bg-opacity-90 transition-all;
+  }
+
+  .card {
+    @apply bg-snow rounded-lg shadow-md p-6 border border-lightblue/20;
+  }
+
+  .card-alt {
+    @apply bg-dark text-snow rounded-lg shadow-md p-6 border border-lightblue/20;
+  }
+
+  .card-highlight {
+    @apply bg-lightblue/10 rounded-lg shadow-md p-6 border border-lightblue/30;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-dark mb-4;
+  }
+
+  .section-title-alt {
+    @apply text-2xl font-bold text-snow mb-4;
+  }
+
+  .nav-link {
+    @apply text-dark hover:text-lightblue transition-colors;
+  }
+
+  .nav-link-alt {
+    @apply text-snow hover:text-lightblue transition-colors;
+  }
+
+  .feature-highlight {
+    @apply bg-yellow/10 border-l-4 border-yellow p-4 rounded-r-md;
+  }
+
+  .feature-important {
+    @apply bg-teal/10 border-l-4 border-teal p-4 rounded-r-md;
+  }
+}
+*/
