@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        serif: ['Merriweather', 'Georgia', 'serif'],
+      },
+      colors: {
+        'space-cadet': '#1F2647',
+        'snow': '#FFFBFC',
+      }
+    },
   },
   plugins: [],
 }
