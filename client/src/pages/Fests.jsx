@@ -76,7 +76,7 @@ const Fests = () => {
       <div className="relative aspect-[16/4.5] w-full shadow-2xl mb-20 overflow-hidden">
         <img src="/fest1.webp" alt="Student Clubs" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center">
-          <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/60 text-center -mb-7">
+          <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/60 text-center -mb-10">
           <style>
         {`
         @keyframes slideInUp {
@@ -94,7 +94,7 @@ const Fests = () => {
         }
       `}
       </style>
-            <h1 className="text-6xl font-bold text-[#FFFBFC] animate-fade-in-up">Campus <span className="text-[#0D9488]">Fests</span></h1>
+            <h1 className="text-6xl font-bold text-[#0D9488] animate-fade-in-up">Fests</h1>
             <p className="mt-2 text-lg font-medium text-[#FFFBFC] tracking-wide animate-slide-in-up">
               Dive into the festive pulse
             </p>
@@ -109,7 +109,7 @@ const Fests = () => {
           const isExpanded = expandedIndex === i;
 
           return (
-            <div key={i} className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl space-y-6 md:space-y-0">
+            <div key={i} className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl space-y-6 md:space-y-0 transition-transform hover:scale-[1.01] duration-300">
               {isEven ? (
                 <>
                   <div className="w-full md:w-1/2 space-y-4">
