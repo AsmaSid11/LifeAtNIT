@@ -72,7 +72,7 @@ const Fests = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   return (
-    <div className="bg-[#FFFBFC] min-h-screen bg-[#88DADA]/20">
+    <div className="bg-[#88DADA]/20 min-h-screen">
       <div className="relative aspect-[16/4.5] w-full shadow-2xl mb-20 overflow-hidden">
         <img src="/fest1.webp" alt="Student Clubs" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center">
