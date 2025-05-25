@@ -1,6 +1,7 @@
+import heroWave from "../assets/hero-wave.svg"; // Make sure this SVG exists
 const Clubs = () => {
   return (
-    <div className="bg-[#FFFBFC] min-h-screen">
+    <div className="bg-[#88DADA]/20 min-h-screen">
 
       {/* ✅ Hero Section */}
       <div className="relative aspect-[16/4.5] w-full shadow-2xl mb-20 overflow-hidden">
@@ -8,23 +9,51 @@ const Clubs = () => {
           src="/club5.avif"
           alt="Student Clubs"
           className="w-full h-full object-cover"
+
         />
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center">
+        
+         
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
           <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center">
-          <h1 className="text-6xl font-bold text-[#FFFBFC] ">Student Clubs</h1>
-          <p className="mt-2 text-lg font-medium text-[#FFFBFC] tracking-wide animate-fade-in ">
+          <style>
+        {`
+        @keyframes slideInUp {
+          from {
+            transform: translateY(40px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        .animate-slide-in-up {
+          animation: slideInUp 0.7s ease-out forwards;
+        }
+      `}
+      </style>
+          <h1 className="text-6xl font-bold text-[#FFFBFC] animate-fade-in-up">Student <span className="text-[#0D9488]">Clubs</span></h1>
+
+          <p className="mt-2 text-lg font-medium text-[#FFFBFC] tracking-wide animate-slide-in-up ">
             Connect. Collaborate. Create.
           </p>
-          </div>
+          
+        </div>
+        <img
+      src={heroWave} // make sure this path is correct
+      alt="wave"
+      className="absolute bottom-0 left-0 w-full h-16 md:h-20 object-cover z-10"
+    />
           
         </div>
 
+
        
       </div>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen ">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       {/* ✅ CLUB 1: Technology Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
       <div className="w-full md:w-1/2">
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
           Technology Club
@@ -38,7 +67,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 2: Cultural Club and Soap Box */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
           <img src="club2.jpeg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
@@ -51,7 +80,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 3: Movie Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
       <div className="w-full md:w-1/2">
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
           Movie Club
@@ -65,7 +94,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 4: Sports Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
           <img src="club2.jpeg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
@@ -78,7 +107,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 5: Photography Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
       <div className="w-full md:w-1/2">
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
           Photography Club
@@ -92,7 +121,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 6: Rhetorica and Ecocult Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
           <img src="club2.jpeg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
@@ -105,7 +134,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 7: Stargazing Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
       <div className="w-full md:w-1/2">
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
           Stargazing Club
@@ -119,7 +148,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 8: Sargam Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl ">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
           <img src="club2.jpeg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
