@@ -14,7 +14,7 @@ const Clubs = () => {
         
          
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center">
+          <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center mb-[7rem]">
           <style>
         {`
         @keyframes slideInUp {
@@ -58,7 +58,7 @@ const Clubs = () => {
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
           Technology Club
           </div>
-          <p className="text-[#1F2647] leading-relaxed">The Technology Club serves as a hub for innovation and technological exploration. It encompasses subdivisions like Robotics, Google Developer Student Clubs (GDSC), E-Vision (focusing on electric vehicles and green energy), and Semicolon—the official coding club. The club organizes workshops, hackathons, and events such as Tech-Fusion, encouraging students to engage in hands-on projects and collaborative learning.</p>
+          <p className="text-[#1F2647] leading-relaxed">The Technology Club serves as a hub for innovation and technological exploration. It encompasses subdivisions like Robotics, Google Developer Student Clubs (GDSC), E-Vision, and Semicolon—the official coding club. The club organizes workshops, hackathons,encouraging students to engage in hands-on projects and collaborative learning.</p>
         </div>
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
           <img src="club2.jpeg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>

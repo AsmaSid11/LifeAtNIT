@@ -76,7 +76,7 @@ const Fests = () => {
       <div className="relative aspect-[16/4.5] w-full shadow-2xl mb-20 overflow-hidden">
         <img src="/fest1.webp" alt="Student Clubs" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center">
-          <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/60 text-center">
+          <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/60 text-center mb-[7rem]">
           <style>
         {`
         @keyframes slideInUp {
