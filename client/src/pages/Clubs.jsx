@@ -14,7 +14,7 @@ const Clubs = () => {
         
          
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center mb-[7rem]">
+          <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center -mb-7">
           <style>
         {`
         @keyframes slideInUp {
