@@ -25,7 +25,7 @@ const Navbar = () => {
             >
               <img src="/images/logo-white.png" alt="NIT Srinagar Logo" className="h-6 w-6 sm:h-8 sm:w-8 mr-2 group-hover:scale-110 transition-all duration-300" />
               <div className="flex flex-col relative">
-                <span className="hidden md:block text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-snow to-snow/80 bg-clip-text text-transparent group-hover:from-yellow group-hover:to-lightblue transition-all duration-300 whitespace-nowrap font-sans tracking-wide">
+                <span className="md:block text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-snow to-snow/80 bg-clip-text text-transparent group-hover:from-yellow group-hover:to-lightblue transition-all duration-300 whitespace-nowrap font-sans tracking-wide">
                 Life@NIT
                 </span>
                 {/* <div className="flex items-center gap-2">
