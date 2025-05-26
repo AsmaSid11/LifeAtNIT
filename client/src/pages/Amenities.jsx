@@ -104,7 +104,7 @@ const Amenities = () => {
 	const [expanded, setExpanded] = useState(null);
 	const [carouselIdx, setCarouselIdx] = useState(0);
 	const cardRefs = useRef([]);
-	const autoScrollRef = useRef();
+	// const autoScrollRef = useRef();
 
 	const handleExpand = (idx) => {
 		setExpanded(expanded === idx ? null : idx);
@@ -128,15 +128,15 @@ const Amenities = () => {
 	};
 
 	// Auto-scroll carousel when expanded
-	useEffect(() => {
-		if (expanded !== null) {
-			const photos = amenitiesData[expanded].photos;
-			autoScrollRef.current = setInterval(() => {
-				setCarouselIdx((prev) => (prev === photos.length - 1 ? 0 : prev + 1));
-			}, 3000); // 3 seconds
-		}
-		return () => clearInterval(autoScrollRef.current);
-	}, [expanded]);
+	// useEffect(() => {
+	// 	if (expanded !== null) {
+	// 		const photos = amenitiesData[expanded].photos;
+	// 		autoScrollRef.current = setInterval(() => {
+	// 			setCarouselIdx((prev) => (prev === photos.length - 1 ? 0 : prev + 1));
+	// 		}, 3000); // 3 seconds
+	// 	}
+	// 	return () => clearInterval(autoScrollRef.current);
+	// }, [expanded]);
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-lightblue/10 to-teal/10">
@@ -159,7 +159,7 @@ const Amenities = () => {
 				</div>
 			</div>
 			{/* Main Content */}
-			<div className="max-w-7xl mx-auto px-2 xs:px-4 sm:px-6 lg:px-8">
+			<div className="max-w-7xl mx-auto px-2 xs:px-4 sm:px-6 lg:px-8 pb-16">
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
 					{amenitiesData.map((amenity, idx) => (
 						<div
