@@ -29,7 +29,7 @@ const teamMembers = [
   {
     name: "Asma Siddiqui",
     role: "Web Developer",
-    image: userIcon,
+    image: "/images/team/asma.png",
     funFact: "Bookmarks aren't just for browsers 🔖",
     email: "asmasiddiqui511@gmail.com",
     enrollment: "2023BCSE029",
