@@ -9,6 +9,7 @@ import Amenities from './pages/Amenities';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import ScrollToTop from "./components/ScrollToTop"; 
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <div className="min-h-screen bg-gray-50">
           <Navbar />
           <main>
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/accommodation" element={<Accommodation />} />
