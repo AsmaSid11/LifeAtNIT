@@ -34,7 +34,7 @@ const Clubs = () => {
       </style>
           <h1 className="text-6xl font-bold text-[#FFFBFC] animate-fade-in-up">Student <span className="text-[#0D9488]">Clubs</span></h1>
 
-          <p className="mt-2 text-lg font-medium text-[#FFFBFC] tracking-wide animate-slide-in-up ">
+          <p className="mt-1 text-lg font-medium text-[#FFFBFC] tracking-wide animate-slide-in-up ">
             Connect. Collaborate. Create.
           </p>
           

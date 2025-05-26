@@ -95,8 +95,8 @@ const Fests = () => {
       `}
       </style>
             <h1 className="text-6xl font-bold text-[#0D9488] animate-fade-in-up">Fests</h1>
-            <p className="mt-2 text-lg font-medium text-[#FFFBFC] tracking-wide animate-slide-in-up">
-              Dive into the festive pulse
+            <p className="mt-1 text-lg font-medium text-[#FFFBFC] tracking-wide animate-slide-in-up">
+             <i>Dive into the festive pulse</i> 
             </p>
           </div>
           <img src={heroWave} alt="wave" className="absolute bottom-0 left-0 w-full h-16 md:h-20 object-cover z-10" />
