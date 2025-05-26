@@ -4,11 +4,34 @@ import heroWave from "../assets/hero-wave.svg"; // Make sure this SVG exists
 const amenitiesData = [
 	{
 		name: "Sports Facilities",
-		image: "/Amenities/sports.jpg",
+		image: "/Amenities/track2.jpg",
 		photos: [
-			"/Amenities/sports.jpg",
-			"/Amenities/sports2.jpg",
-			"/Amenities/sports3.jpg",
+			"/Amenities/track3.jpg",
+			"/Amenities/playground.jpg",
+			"/Amenities/track.jpg",
+			"/Amenities/track2.jpg",
+			"/Amenities/track4.jpg",
+			"/Amenities/track5.jpg",
+			"/Amenities/tennis-court1.jpg",
+			"/Amenities/tennis-court2.jpg",
+			"/Amenities/tennis-court4.jpg",
+			"/Amenities/cricket.jpg",
+			"/Amenities/gymkhana.jpg",
+			"/Amenities/football6.jpg",
+			"/Amenities/football5.jpg",
+			"/Amenities/tennis-court5.jpg",
+			"/Amenities/football7.jpg",
+			"/Amenities/basketball-court.jpg",
+			"/Amenities/tennis-court3.jpg",
+			"/Amenities/football3.jpg",
+			"/Amenities/basketball-court3.jpg",
+			"/Amenities/basketball-court4.jpg",
+			"/Amenities/cricket2.jpg",
+			"/Amenities/cricket3.jpg",
+			"/Amenities/football.jpg",
+			"/Amenities/basketball-court2.jpg",
+			"/Amenities/football2.jpg",
+			"/Amenities/football4.jpg",
 		],
 		brief: "Information about sports grounds, gymnasium, and other sports facilities.",
 		details:
@@ -21,6 +44,8 @@ const amenitiesData = [
 			"/Amenities/library.jpg",
 			"/Amenities/library2.jpg",
 			"/Amenities/library3.jpg",
+			"/Amenities/library4.jpg",
+			"/Amenities/library5.jpg",
 		],
 		brief: "Details about the central library, digital resources, and study spaces.",
 		details:
@@ -33,6 +58,7 @@ const amenitiesData = [
 			"/Amenities/medical.jpg",
 			"/Amenities/medical2.jpg",
 			"/Amenities/medical3.jpg",
+			"/Amenities/medical4.jpg",
 		],
 		brief: "Information about the health center and medical services available on campus.",
 		details:
@@ -45,6 +71,9 @@ const amenitiesData = [
 			"/Amenities/cafeteria.jpg",
 			"/Amenities/cafeteria2.jpg",
 			"/Amenities/cafeteria3.jpg",
+			"/Amenities/canteen.jpg",
+			"/Amenities/canteen2.jpg",
+			"/Amenities/canteen3.jpg",
 		],
 		brief: "Details about food courts, canteens, and dining facilities.",
 		details:
@@ -104,7 +133,7 @@ const Amenities = () => {
 	const [expanded, setExpanded] = useState(null);
 	const [carouselIdx, setCarouselIdx] = useState(0);
 	const cardRefs = useRef([]);
-	// const autoScrollRef = useRef();
+	const autoScrollRef = useRef();
 
 	const handleExpand = (idx) => {
 		setExpanded(expanded === idx ? null : idx);
@@ -128,15 +157,15 @@ const Amenities = () => {
 	};
 
 	// Auto-scroll carousel when expanded
-	// useEffect(() => {
-	// 	if (expanded !== null) {
-	// 		const photos = amenitiesData[expanded].photos;
-	// 		autoScrollRef.current = setInterval(() => {
-	// 			setCarouselIdx((prev) => (prev === photos.length - 1 ? 0 : prev + 1));
-	// 		}, 3000); // 3 seconds
-	// 	}
-	// 	return () => clearInterval(autoScrollRef.current);
-	// }, [expanded]);
+	useEffect(() => {
+		if (expanded !== null) {
+			const photos = amenitiesData[expanded].photos;
+			autoScrollRef.current = setInterval(() => {
+				setCarouselIdx((prev) => (prev === photos.length - 1 ? 0 : prev + 1));
+			}, 3000); // 3 seconds
+		}
+		return () => clearInterval(autoScrollRef.current);
+	}, [expanded]);
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-lightblue/10 to-teal/10">

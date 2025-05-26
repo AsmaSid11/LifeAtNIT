@@ -4,15 +4,15 @@ import { Parallax } from 'react-scroll-parallax';
 import { useEffect } from 'react';
 
 const oldGuestHouseImages = [
-  'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&w=800&q=80',
-  'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&w=800&q=80',
-  'https://images.unsplash.com/photo-1542928658-22251e208ac1?ixlib=rb-4.0.3&w=800&q=80',
+  '/Amenities/old-guest-house.jpg',
+  '/Amenities/old-guest-house2.jpg',
+  '/Amenities/old-guest-house.jpg',
 ];
 
 const newGuestHouseImages = [
-  'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&w=800&q=80',
-  'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-4.0.3&w=800&q=80',
-  'https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&w=800&q=80',
+  '/Amenities/old-guest-house.jpg',
+  '/Amenities/old-guest-house2.jpg',
+  '/Amenities/old-guest-house.jpg',
 ];
 
 const heroBg =
