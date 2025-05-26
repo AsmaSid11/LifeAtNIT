@@ -19,7 +19,7 @@ const teamMembers = [
   {
     name: "Qazi Izma",
     role: "Web Developer",
-    image: userIcon,
+    image: "/images/team/izma.jpg",
     funFact: "Loves code and caffeine ☕",
     email: "qaziizmaa@gmail.com ",
     enrollment: "2021BITE025",
