@@ -39,7 +39,7 @@ const teamMembers = [
   {
     name: "Harshita",
     role: "Web Developer",
-    image: "/images/ContactUs/harshita.jpg", 
+    image: "/images/team/harshita.jpg", 
     funFact: "Finds peace in coding and singing 🌼",
     email: "harshita2386@gmail.com",
     enrollment: "2023BCSE022",
@@ -49,7 +49,7 @@ const teamMembers = [
   {
     name: "Ankita Kuntal",
     role: "Web Developer",
-    image: userIcon,
+    image: "/images/team/ankita.jpg",
     funFact: "Can center divs but not her inner peace!✌",
     email: "2023nitsgr153@nitsri.ac.in",
     enrollment: "2023BITE007",
