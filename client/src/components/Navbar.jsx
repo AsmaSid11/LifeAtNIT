@@ -13,44 +13,61 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-lg">
+    <nav className="bg-dark shadow-lg border-b border-lightblue/20 backdrop-blur-sm bg-opacity-97 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-blue-600">LifeAtNIT</span>
-            </Link>
+            <a 
+              href="https://nitsri.ac.in" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center group"
+            >
+              <img src="/images/logo-white.png" alt="NIT Srinagar Logo" className="h-6 w-6 sm:h-8 sm:w-8 mr-2 group-hover:scale-110 transition-all duration-300" />
+              <div className="flex flex-col relative">
+                <span className="hidden md:block text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-snow to-snow/80 bg-clip-text text-transparent group-hover:from-yellow group-hover:to-lightblue transition-all duration-300 whitespace-nowrap font-sans tracking-wide">
+                Life@NIT
+                </span>
+                {/* <div className="flex items-center gap-2">
+                  <span className="text-sm sm:text-base font-bold bg-gradient-to-r from-yellow to-lightblue bg-clip-text text-transparent md:bg-none md:text-lightblue md:group-hover:text-yellow md:transition-colors md:duration-300 md:font-medium">
+                    Life @ NIT Srinagar
+                  </span>
+                </div> */}
+                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow to-lightblue group-hover:w-full transition-all duration-500"></div>
+              </div>
+            </a>
           </div>
 
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-1">
             {/* Home link */}
             <Link
               to="/"
-              className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              className="px-4 py-2 rounded-lg text-sm font-medium text-snow/80 hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 relative group"
             >
-              Home
+              <span className="relative z-10">Home</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
             </Link>
 
             {/* Accommodation Dropdown */}
             <div className="relative">
               <button
                 onClick={() => setAccommodationOpen(!accommodationOpen)}
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center gap-1"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-snow/80 hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
               >
-                Accommodation
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="relative z-10">Accommodation</span>
+                <svg className="w-4 h-4 relative z-10 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
               </button>
               
               {accommodationOpen && (
-                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
-                  {/* ^ Added z-50 class to make it appear on top */}
+                <div className="absolute left-0 mt-2 w-48 rounded-lg shadow-lg bg-dark/95 backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50 transform origin-top transition-all duration-200">
                   <div className="py-1">
                     <Link
                       to="/accommodation"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className="block px-4 py-2 text-sm text-snow/80 hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                       onClick={() => setAccommodationOpen(false)}
                     >
                       Guest House
@@ -59,7 +76,7 @@ const Navbar = () => {
                       href="https://hostel-page-module-nit-sgr.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className="block px-4 py-2 text-sm text-snow/80 hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                       onClick={() => setAccommodationOpen(false)}
                     >
                       Hostel
@@ -74,9 +91,10 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-snow/80 hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 relative group"
               >
-                {link.name}
+                <span className="relative z-10">{link.name}</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
               </Link>
             ))}
           </div>
@@ -85,7 +103,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="inline-flex items-center justify-center p-2 rounded-lg text-snow/80 hover:text-yellow hover:bg-lightblue/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-yellow transition-all duration-300"
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
@@ -104,12 +122,12 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden bg-dark/95 backdrop-blur-sm border-t border-lightblue/20">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {/* Home link for mobile */}
             <Link
               to="/"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-lg text-base font-medium text-snow/80 hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
               onClick={() => setIsOpen(false)}
             >
               Home
@@ -119,10 +137,10 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setAccommodationOpen(!accommodationOpen)}
-                className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center justify-between"
+                className="w-full text-left px-3 py-2 rounded-lg text-base font-medium text-snow/80 hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center justify-between"
               >
                 Accommodation
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
@@ -131,7 +149,7 @@ const Navbar = () => {
                 <div className="pl-4">
                   <Link
                     to="/accommodation"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-lg text-base font-medium text-snow/80 hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                     onClick={() => {
                       setIsOpen(false);
                       setAccommodationOpen(false);
@@ -143,7 +161,7 @@ const Navbar = () => {
                     href="https://hostel-page-module-nit-sgr.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-lg text-base font-medium text-snow/80 hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                     onClick={() => {
                       setIsOpen(false);
                       setAccommodationOpen(false);
@@ -160,7 +178,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                className="block px-3 py-2 rounded-lg text-base font-medium text-snow/80 hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}

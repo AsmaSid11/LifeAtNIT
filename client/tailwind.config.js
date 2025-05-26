@@ -6,6 +6,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+
+      fontFamily: {
+        serif: ['Merriweather', 'Georgia', 'serif'],
+      },
+
       colors: {
         dark: '#1F2647',     // Space Cadet - navy blue
         lightblue: '#88DADA', // Tiffany Blue - light blue
