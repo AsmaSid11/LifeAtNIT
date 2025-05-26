@@ -295,6 +295,18 @@ const Amenities = () => {
 											boxShadow: "0 8px 32px 0 rgba(13, 148, 136, 0.13)",
 										}}
 									>
+										<button
+                                            className="absolute top-2 right-2 bg-snow/90 rounded-full p-1 shadow-lg hover:bg-gray-200 transition"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleExpand(idx); // Close the card
+                                            }}
+                                            style={{ zIndex: 3 }}
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-6 h-6 text-gray-500">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </button>
 										<h2 className="text-xl xs:text-2xl md:text-3xl font-bold text-dark mb-2">{amenity.name}</h2>
 										<p className="text-dark/70 text-sm xs:text-base mb-2 xs:mb-4">{amenity.brief}</p>
 										<p className="text-dark/80 text-sm xs:text-base">{amenity.details}</p>
