@@ -14,7 +14,7 @@ const Clubs = () => {
         
          
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center mb-[7rem]">
+          <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center -mb-7">
           <style>
         {`
         @keyframes slideInUp {
@@ -34,7 +34,7 @@ const Clubs = () => {
       </style>
           <h1 className="text-6xl font-bold text-[#FFFBFC] animate-fade-in-up">Student <span className="text-[#0D9488]">Clubs</span></h1>
 
-          <p className="mt-2 text-lg font-medium text-[#FFFBFC] tracking-wide animate-slide-in-up ">
+          <p className="mt-1 text-lg font-medium text-[#FFFBFC] tracking-wide animate-slide-in-up ">
             Connect. Collaborate. Create.
           </p>
           
@@ -53,7 +53,7 @@ const Clubs = () => {
       <div className="min-h-screen ">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       {/* ✅ CLUB 1: Technology Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5 transition-transform hover:scale-[1.01] duration-300">
       <div className="w-full md:w-1/2">
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
           Technology Club
@@ -67,7 +67,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 2: Cultural Club and Soap Box */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5 transition-transform hover:scale-[1.01] duration-300">
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
           <img src="club2.jpeg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
@@ -80,7 +80,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 3: Movie Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5 transition-transform hover:scale-[1.01] duration-300">
       <div className="w-full md:w-1/2">
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
           Movie Club
@@ -94,7 +94,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 4: Sports Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5 transition-transform hover:scale-[1.01] duration-300">
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
           <img src="club2.jpeg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
@@ -107,7 +107,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 5: Photography Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5 transition-transform hover:scale-[1.01] duration-300">
       <div className="w-full md:w-1/2">
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
           Photography Club
@@ -121,7 +121,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 6: Rhetorica and Ecocult Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5 transition-transform hover:scale-[1.01] duration-300">
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
           <img src="club2.jpeg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
@@ -134,7 +134,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 7: Stargazing Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5 transition-transform hover:scale-[1.01] duration-300">
       <div className="w-full md:w-1/2">
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
           Stargazing Club
@@ -148,7 +148,7 @@ const Clubs = () => {
       </div>
 
       {/* ✅ CLUB 8: Sargam Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5">
+      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5 transition-transform hover:scale-[1.01] duration-300">
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
           <img src="club2.jpeg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
