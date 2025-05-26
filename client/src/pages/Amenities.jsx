@@ -158,13 +158,21 @@ const Amenities = () => {
 
 	// Auto-scroll carousel when expanded
 	useEffect(() => {
+		let intervalId; // Store the interval ID
+
 		if (expanded !== null) {
 			const photos = amenitiesData[expanded].photos;
-			autoScrollRef.current = setInterval(() => {
+			intervalId = setInterval(() => {
 				setCarouselIdx((prev) => (prev === photos.length - 1 ? 0 : prev + 1));
 			}, 3000); // 3 seconds
 		}
-		return () => clearInterval(autoScrollRef.current);
+
+		// Clear the interval in the cleanup function
+		return () => {
+			if (intervalId) {
+				clearInterval(intervalId);
+			}
+		};
 	}, [expanded]);
 
 	return (
