@@ -4,15 +4,14 @@ import { Parallax } from 'react-scroll-parallax';
 import { useEffect } from 'react';
 
 const oldGuestHouseImages = [
-  '/Amenities/old-guest-house.jpg',
-  '/Amenities/old-guest-house2.jpg',
-  '/Amenities/old-guest-house.jpg',
+  '/Amenities/old-guest-house1.jpg',
+  '/Amenities/new-guest-house2.jpg',
+  '/Amenities/old-guest-house3.jpg',
 ];
 
 const newGuestHouseImages = [
-  '/Amenities/old-guest-house.jpg',
-  '/Amenities/old-guest-house2.jpg',
-  '/Amenities/old-guest-house.jpg',
+  '/Amenities/new-guest-house.jpg',
+  '/Amenities/old-guest-house4.JPG',
 ];
 
 const heroBg =
@@ -78,244 +77,120 @@ const Accommodation = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            Experience a blend of classic charm and modern luxury.
-            <br className="hidden xs:block" />
+            Experience a blend of classic charm and modern luxury.<br className="hidden xs:block" />
             Discover your perfect stay at our Old &amp; New Guest Houses.
           </motion.p>
         </motion.div>
         {/* Animated floating shapes */}
-        <motion.div
-          className="absolute left-4 top-4 sm:left-10 sm:top-10 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-[#88DADA]/60 blur-2xl"
-          animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
-          transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
-        />
-        <motion.div
-          className="absolute right-8 bottom-4 sm:right-20 sm:bottom-10 w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-[#DDA853]/40 blur-2xl"
-          animate={{ y: [0, -30, 0], x: [0, -20, 0] }}
-          transition={{ repeat: Infinity, duration: 7, ease: 'easeInOut' }}
-        />
-        <motion.div
-          className="absolute left-1/2 top-1/2 w-6 h-6 sm:w-10 sm:h-10 rounded-full bg-[#1F2647]/40 blur-xl"
-          animate={{ y: [0, 20, 0], x: [0, -15, 0] }}
-          transition={{ repeat: Infinity, duration: 8, ease: 'easeInOut' }}
-        />
+        <motion.div className="absolute left-4 top-4 sm:left-10 sm:top-10 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-[#88DADA]/60 blur-2xl" animate={{ y: [0, 30, 0], x: [0, 20, 0] }} transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }} />
+        <motion.div className="absolute right-8 bottom-4 sm:right-20 sm:bottom-10 w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-[#DDA853]/40 blur-2xl" animate={{ y: [0, -30, 0], x: [0, -20, 0] }} transition={{ repeat: Infinity, duration: 7, ease: 'easeInOut' }} />
+        <motion.div className="absolute left-1/2 top-1/2 w-6 h-6 sm:w-10 sm:h-10 rounded-full bg-[#1F2647]/40 blur-xl" animate={{ y: [0, 20, 0], x: [0, -15, 0] }} transition={{ repeat: Infinity, duration: 8, ease: 'easeInOut' }} />
       </div>
 
+      {/* Guest House Overview Card */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="max-w-7xl mx-auto py-8 sm:py-12 px-2 xs:px-4 sm:px-6 lg:px-8"
-      >
-
-        {/* Old Guest House Section */}
-        <Parallax speed={-10}>
-          <section className="mb-20 sm:mb-32" id="old-guest-house">
-            <motion.h2
-              initial={{ x: -100 }}
-              whileInView={{ x: 0 }}
-              className="text-2xl sm:text-3xl font-bold text-[#1F2647] mb-6 sm:mb-8"
-            >
-              Old Guest House
-            </motion.h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-              {/* Gallery with 3D effect */}
-              <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 sm:gap-8">
-                {oldGuestHouseImages.map((img, index) => (
-                  <motion.div
-                    key={index}
-                    className="group relative overflow-visible rounded-2xl shadow-2xl bg-white/60 backdrop-blur-md"
-                    whileHover={{
-                      scale: 1.08,
-                      rotateY: 10,
-                      boxShadow: "0 16px 40px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
-                      zIndex: 30,
-                      transition: { type: 'spring', stiffness: 300 },
-                    }}
-                    style={{
-                      perspective: 1000,
-                      transformStyle: "preserve-3d",
-                    }}
-                  >
-                    <img
-                      src={img}
-                      alt={`Old Guest House ${index + 1}`}
-                      className="w-full h-44 xs:h-56 sm:h-64 object-cover rounded-2xl shadow-lg group-hover:shadow-2xl group-hover:scale-105 transition-all duration-500"
-                      style={{
-                        boxShadow: "0 8px 24px 0 rgba(13,148,136,0.10)",
-                        transition: "box-shadow 0.3s, transform 0.3s",
-                      }}
-                    />
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#1F2647]/10 to-[#88DADA]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 bg-[#FFFBFC]/80 px-2 py-1 sm:px-4 sm:py-2 rounded-xl shadow text-[#1F2647] font-semibold text-sm sm:text-lg opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      View {index + 1}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              {/* Card with glassmorphism and 3D hover */}
-              <motion.div
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                whileHover={{
-                  scale: 1.03,
-                  rotateX: 6,
-                  boxShadow: "0 16px 40px 0 rgba(221,168,83,0.18), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
-                  transition: { type: 'spring', stiffness: 200 },
-                }}
-                className="bg-white/70 backdrop-blur-xl p-4 sm:p-8 rounded-2xl text-[#1F2647] shadow-2xl border border-[#88DADA]/20 flex flex-col justify-center mt-4 xs:mt-0"
-                style={{
-                  perspective: 800,
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-4 text-[#0D9488] drop-shadow">Classic Comfort</h3>
-                <ul className="space-y-2 sm:space-y-4 text-base sm:text-lg">
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#DDA853] text-xl">🏛️</span> Heritage architecture
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#0D9488] text-xl">🛏️</span> Spacious rooms with vintage charm
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#88DADA] text-xl">🌳</span> Beautiful garden views
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#1F2647] text-xl">🔒</span> 24/7 security
-                  </li>
-                </ul>
-              </motion.div>
-            </div>
-          </section>
-        </Parallax>
-
-        {/* New Guest House Section */}
-        <Parallax speed={10}>
-          <section className="mb-20 sm:mb-32" id="new-guest-house">
-            <motion.h2
-              initial={{ x: 100 }}
-              whileInView={{ x: 0 }}
-              className="text-2xl sm:text-3xl font-bold text-[#1F2647] mb-6 sm:mb-8 text-right"
-            >
-              New Guest House
-            </motion.h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-              <motion.div
-                initial={{ opacity: 0, x: -100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                whileHover={{
-                  scale: 1.03,
-                  rotateX: 6,
-                  boxShadow: "0 16px 40px 0 rgba(221,168,83,0.18), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
-                  transition: { type: 'spring', stiffness: 200 },
-                }}
-                className="bg-white/70 backdrop-blur-xl p-4 sm:p-8 rounded-2xl text-[#1F2647] shadow-2xl border border-[#88DADA]/20 order-2 lg:order-1 flex flex-col justify-center mt-4 xs:mt-0"
-                style={{
-                  perspective: 800,
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-4 text-[#DDA853] drop-shadow">Modern Luxury</h3>
-                <ul className="space-y-2 sm:space-y-4 text-base sm:text-lg">
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#DDA853] text-xl">✨</span> Contemporary design
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#0D9488] text-xl">❄️</span> Air-conditioned rooms
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#88DADA] text-xl">🍽️</span> Modern dining facility
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#1F2647] text-xl">📶</span> High-speed WiFi
-                  </li>
-                </ul>
-              </motion.div>
-              <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 sm:gap-8 order-1 lg:order-2">
-                {newGuestHouseImages.map((img, index) => (
-                  <motion.div
-                    key={index}
-                    className="group relative overflow-visible rounded-2xl shadow-2xl bg-white/60 backdrop-blur-md"
-                    whileHover={{
-                      scale: 1.06,    // Reduced scale
-                      rotateY: -8,   // Reduced rotation
-                      boxShadow: "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)", // Subtler shadow
-                      zIndex: 30,
-                      transition: { type: 'spring', stiffness: 280 }, // Adjusted transition
-                    }}
-                    style={{
-                      perspective: 1000,
-                      transformStyle: "preserve-3d",
-                    }}
-                  >
-                    <img
-                      src={img}
-                      alt={`New Guest House ${index + 1}`}
-                      className="w-full h-44 xs:h-56 sm:h-64 object-cover rounded-2xl shadow-lg group-hover:shadow-2xl group-hover:scale-105 transition-all duration-500"
-                      style={{
-                        boxShadow: "0 8px 24px 0 rgba(13,148,136,0.10)",
-                        transition: "box-shadow 0.3s, transform 0.3s",
-                      }}
-                    />
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#1F2647]/10 to-[#88DADA]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 bg-[#FFFBFC]/80 px-2 py-1 sm:px-4 sm:py-2 rounded-xl shadow text-[#1F2647] font-semibold text-sm sm:text-lg opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      View {index + 1}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </Parallax>
-      </motion.div>
-
-      {/* Contact Section */}
-      <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.9, ease: [0.39, 0.575, 0.565, 1] }}
-        className="py-10 sm:py-16 px-2 xs:px-4 sm:px-6 lg:px-8"
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        whileHover={{ scale: 1.03, rotateX: 4, boxShadow: '0 12px 40px 0 rgba(13,148,136,0.13)' }}
+        className="max-w-4xl mx-auto bg-white/90 rounded-3xl shadow-2xl p-6 sm:p-10 mb-10 mt-8 text-[#1F2647] flex flex-col gap-4"
+        style={{ perspective: 800, transformStyle: 'preserve-3d' }}
       >
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-4 sm:mb-6">Book Your Stay</h2>
-          <p className="text-base sm:text-lg text-dark/80 mb-6 sm:mb-8">
-            For reservations and inquiries, reach out to us directly:
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <motion.a
-              href="tel:+911234567890"
-              whileHover={{
-                scale: 1.08,
-                boxShadow: "0 8px 32px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
-                y: -6,
-              }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ type: "spring", stiffness: 300, damping: 18 }}
-              className="flex items-center gap-3 bg-gradient-to-r from-[#0D9488] to-[#88DADA] text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:from-[#0D9488]/90 hover:to-[#88DADA]/90 transition-all duration-300 text-lg sm:text-xl border-2 border-transparent hover:border-[#0D9488]"
-              style={{ textDecoration: "none", perspective: "600px", transformStyle: "preserve-3d" }}
-            >
-              <span className="text-2xl drop-shadow">📞</span> Call Now
-            </motion.a>
-            <motion.a
-              href="mailto:guesthouse@nit.edu.in"
-              whileHover={{
-                scale: 1.08,
-                boxShadow: "0 8px 32px 0 rgba(31,38,71,0.18), 0 1.5px 8px 0 rgba(13,148,136,0.10)",
-                y: -6,
-              }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ type: "spring", stiffness: 300, damping: 18 }}
-              className="flex items-center gap-3 bg-gradient-to-r from-[#1F2647] to-[#0D9488] text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:from-[#1F2647]/90 hover:to-[#0D9488]/90 transition-all duration-300 text-lg sm:text-xl border-2 border-transparent hover:border-[#1F2647]"
-              style={{ textDecoration: "none", perspective: "600px", transformStyle: "preserve-3d" }}
-            >
-              <span className="text-2xl drop-shadow">✉️</span> Email Us
-            </motion.a>
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#0D9488] mb-2">NIT Srinagar Guest House</h2>
+        <p className="text-base sm:text-lg">National Institute of Technology, Srinagar is one of the thirty NITs in the Northern Regions of the country, established in 1960 as Regional Engineering College under Govt. of India during 2nd 5 year Plan. The Institute acquired the status of National Institute of Technology with deemed to be University status during August, 2003 and attained full academic autonomy. The Institute is situated at the banks of world-famous Dal Lake, with the far-famed Hazratbal Shrine on other side of the campus. NIT Srinagar is a residential Institute with accommodation facility in Hostels and Staff-Quarters. Facilities and amenities are available at the institution such as NSS, Bank, Shopping Complex, Recreational Centre, Dispensary with Ambulances, Guest House, Students Activity Centre, Gymnasium, Computer Centres, Generator, Bus Facility.</p>
+      </motion.div>
+
+      {/* Old & New Guest House Features */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-2 xs:px-4 sm:px-6 lg:px-8 mb-10">
+        {/* Old Guest House */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          whileHover={{ scale: 1.03, rotateY: 6, boxShadow: '0 16px 40px 0 rgba(13,148,136,0.13)' }}
+          className="bg-white/80 rounded-2xl shadow-xl p-6 flex flex-col gap-4"
+          style={{ perspective: 800, transformStyle: 'preserve-3d' }}
+        >
+          <h3 className="text-xl sm:text-2xl font-semibold text-[#0D9488] mb-2">Old Guest House</h3>
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-4">
+            {oldGuestHouseImages.map((img, index) => (
+              <motion.img
+                key={index}
+                src={img}
+                alt={`Old Guest House ${index + 1}`}
+                className="w-full h-40 object-cover rounded-xl shadow"
+                whileHover={{ scale: 1.06, boxShadow: '0 8px 32px 0 rgba(13,148,136,0.18)' }}
+                transition={{ duration: 0.3 }}
+              />
+            ))}
           </div>
-          <div className="mt-5 text-xs text-dark/60">
-            <span>Phone: +91 12345 67890</span> &nbsp;|&nbsp; <span>Email: guesthouse@nit.edu.in</span>
+          <ul className="space-y-2 text-base sm:text-lg mt-2">
+            <li className="flex items-center gap-2"><span className="text-[#DDA853] text-xl">🏛️</span> Heritage architecture</li>
+            <li className="flex items-center gap-2"><span className="text-[#0D9488] text-xl">🛏️</span> Spacious rooms with vintage charm</li>
+            <li className="flex items-center gap-2"><span className="text-[#88DADA] text-xl">🌳</span> Beautiful garden views</li>
+            <li className="flex items-center gap-2"><span className="text-[#1F2647] text-xl">🔒</span> 24/7 security</li>
+          </ul>
+        </motion.div>
+        {/* New Guest House */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          whileHover={{ scale: 1.03, rotateY: -6, boxShadow: '0 16px 40px 0 rgba(221,168,83,0.13)' }}
+          className="bg-white/80 rounded-2xl shadow-xl p-6 flex flex-col gap-4"
+          style={{ perspective: 800, transformStyle: 'preserve-3d' }}
+        >
+          <h3 className="text-xl sm:text-2xl font-semibold text-[#DDA853] mb-2">New Guest House</h3>
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-4">
+            {newGuestHouseImages.map((img, index) => (
+              <motion.img
+                key={index}
+                src={img}
+                alt={`New Guest House ${index + 1}`}
+                className="w-full h-40 object-cover rounded-xl shadow"
+                whileHover={{ scale: 1.06, boxShadow: '0 8px 32px 0 rgba(221,168,83,0.18)' }}
+                transition={{ duration: 0.3 }}
+              />
+            ))}
+          </div>
+          <ul className="space-y-2 text-base sm:text-lg mt-2">
+            <li className="flex items-center gap-2"><span className="text-[#DDA853] text-xl">✨</span> Contemporary design</li>
+            <li className="flex items-center gap-2"><span className="text-[#0D9488] text-xl">❄️</span> Air-conditioned rooms</li>
+            <li className="flex items-center gap-2"><span className="text-[#88DADA] text-xl">🍽️</span> Modern dining facility</li>
+            <li className="flex items-center gap-2"><span className="text-[#1F2647] text-xl">📶</span> High-speed WiFi</li>
+          </ul>
+        </motion.div>
+      </div>
+
+      {/* Quick Info Panel */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        whileHover={{ scale: 1.02, rotateX: 3, boxShadow: '0 8px 32px 0 rgba(13,148,136,0.13)' }}
+        className="max-w-4xl mx-auto bg-white/95 rounded-2xl shadow-2xl p-6 sm:p-10 mb-10 flex flex-col gap-4"
+        style={{ perspective: 800, transformStyle: 'preserve-3d' }}
+      >
+        <h3 className="text-xl sm:text-2xl font-bold text-[#0D9488] mb-2">Quick Info & Booking</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-2"><span className="text-2xl">✉️</span> <span><b>Email Booking:</b> <a href="mailto:guesthouse@nitsri.ac.in" className="text-[#0D9488] underline">guesthouse@nitsri.ac.in</a></span></div>
+            <div className="flex items-center gap-2"><span className="text-2xl">📞</span> <span><b>Booking Phone:</b> <a href="tel:9419220542" className="text-[#0D9488] underline">Mr. Kuldeep 9419220542</a></span></div>
+            <div className="flex items-center gap-2"><span className="text-2xl">🍽️</span> <span><b>Food Queries:</b> <a href="tel:9596043085" className="text-[#0D9488] underline">Mr. Deepak 9596043085</a></span></div>
+            <div className="flex items-center gap-2"><span className="text-2xl">📄</span> <span><b>Room Tariff:</b> <a href="https://nitsri.ac.in/Centre/Guest%20House/Guest_House_guidelines.pdf" target="_blank" rel="noopener noreferrer" className="text-[#0D9488] underline">Guidelines PDF</a></span></div>
+            <div className="flex items-center gap-2"><span className="text-2xl">🌐</span> <span><b>Website:</b> <a href="https://nitsri.ac.in/Centre/Deptindex.aspx?page=a&ItemID=eaeqs&nCentreID=ci" target="_blank" rel="noopener noreferrer" className="text-[#0D9488] underline">Guest House Webpage</a></span></div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <div className="flex items-start gap-2"><span className="text-2xl">📝</span> <span><b>Booking Instructions:</b> Please email for booking. Avoid calling unless you do not get a response within 2 working days. No calls or email responses on Saturdays and Sundays. Avoid calling before 10 am and after 5 pm, unless for food orders.</span></div>
+            <div className="flex items-start gap-2"><span className="text-2xl">🍴</span> <span><b>Food Arrangements:</b> For breakfast, inform the night before. For lunch, confirm by 10 am. For dinner, confirm by 2:30 pm. For group/party (6+), inform at least 10 days in advance.</span></div>
+            <div className="flex items-start gap-2"><span className="text-2xl">❗</span> <span><b>Complaints:</b> Write to Dr. Vivek (Dept. of Civil Engg.) at <a href="mailto:guesthouse@nitsri.ac.in" className="text-[#0D9488] underline">guesthouse@nitsri.ac.in</a></span></div>
           </div>
         </div>
-      </motion.section>
+      </motion.div>
     </div>
   );
 };
