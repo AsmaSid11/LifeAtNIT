@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const features = [
   {
@@ -117,7 +119,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Professional Hero Section - Keep as is */}
+      {/* Professional Hero Section - Made Responsive */}
       <div className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80"
@@ -126,13 +128,13 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
 
-        <div className="relative z-10 text-center max-w-7xl mx-auto px-6">
-          {/* Clean Hero Text */}
-          <div className="relative h-32 mb-8 flex items-center justify-center">
+        <div className="relative z-10 text-center max-w-7xl mx-auto px-4 sm:px-6">
+          {/* Clean Hero Text - Responsive sizing */}
+          <div className="relative h-20 sm:h-24 md:h-32 mb-6 sm:mb-8 flex items-center justify-center">
             {heroTexts.map((text, index) => (
               <h1
                 key={index}
-                className={`absolute text-3xl md:text-5xl lg:text-6xl font-bold leading-tight transition-all duration-1000 transform whitespace-nowrap ${
+                className={`absolute text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight transition-all duration-1000 transform px-2 text-center ${
                   index === currentSlide
                     ? 'opacity-100 translate-y-0 scale-100'
                     : 'opacity-0 translate-y-8 scale-95'
@@ -143,22 +145,22 @@ export default function Home() {
             ))}
           </div>
 
-          <p className="text-lg md:text-xl text-gray-200 font-medium mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 font-small mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-sm px-4">
             Discover excellence in education and innovation in the heart of Kashmir
           </p>
 
-          {/* Enhanced Achievement Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
+          {/* Enhanced Achievement Stats - Responsive grid and sizing */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto mb-16 sm:mb-20 md:mb-12">
             {achievements.map((stat, index) => (
               <div 
                 key={stat.label}
-                className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 group"
+                className="bg-white/10 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 group"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="text-2xl md:text-3xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300" style={{ color: '#DDA853' }}>
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300" style={{ color: '#DDA853' }}>
                   {stat.value}
                 </div>
-                <div className="text-white font-semibold text-sm mb-1">
+                <div className="text-white font-semibold text-xs sm:text-sm mb-1">
                   {stat.label}
                 </div>
                 <div className="text-gray-300 text-xs">
@@ -169,8 +171,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Enhanced Scroll Indicator */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group" onClick={scrollToFeatures}>
+        {/* Enhanced Scroll Indicator - Positioned better for mobile */}
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group" onClick={scrollToFeatures}>
           <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center group-hover:border-white transition-colors duration-300" >
             <div className="w-1 h-3 rounded-full mt-2 group-hover:bg-white transition-colors duration-300" style={{ backgroundColor: 'white' }} />
           </div>
@@ -179,23 +181,23 @@ export default function Home() {
 
      
 
-      {/* Refined Features Section */}
-      <div className="features-section bg-gray-50 py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
+      {/* Refined Features Section - Already responsive */}
+      <div className="features-section bg-gray-50 py-12 sm:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#DDA853', color: '#1F2647' }}>
               <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#1F2647' }}></span>
               Why Choose Us?
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1F2647' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1F2647' }}>
               Your Gateway to Success
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-500 max-w-1xl mx-auto px-4">
               Discover what makes NIT Srinagar the premier destination for academic and personal growth
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {features.map((feature, index) => (
               <div
                 key={feature.title}
@@ -224,6 +226,7 @@ export default function Home() {
                     </p>
                     
                     <div className="flex items-center group/link cursor-pointer">
+                    <Link to={feature.link} className="flex items-center group/link cursor-pointer">
                       <span className="font-medium mr-2 transition-colors duration-300" style={{ color: '#0D9488' }}>
                         Explore More
                       </span>
@@ -232,6 +235,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                       </div>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -256,25 +260,25 @@ export default function Home() {
         </svg>
       </div>
 
-      {/* Refined Testimonials Section */}
-      <div className="py-16" style={{ backgroundColor: '#88DADA' }}>
-        <div className="max-w-5xl mx-auto px-6 text-center">
+      {/* Refined Testimonials Section - Made responsive */}
+      <div className="py-12 sm:py-16" style={{ backgroundColor: '#88DADA' }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           <div className="mb-12">
             <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#1F2647', color: '#DDA853' }}>
               <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#DDA853' }}></span>
               Success Stories
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1F2647' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1F2647' }}>
               Voices of Excellence
             </h2>
-            <p className="text-lg max-w-xl mx-auto" style={{ color: '#1F2647' }}>
+            <p className="text-base sm:text-lg max-w-xl mx-auto px-4" style={{ color: '#1F2647' }}>
               Hear from our accomplished alumni who are making their mark globally
             </p>
           </div>
           
           <div className="relative">
-            <div className="bg-white rounded-2xl shadow-lg p-8 max-w-3xl mx-auto border-t-4" style={{ borderTopColor: '#DDA853' }}>
-              <div className="relative h-48 flex items-center justify-center">
+            <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 max-w-3xl mx-auto border-t-4" style={{ borderTopColor: '#DDA853' }}>
+              <div className="relative h-56 sm:h-48 flex items-center justify-center">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
@@ -284,7 +288,7 @@ export default function Home() {
                         : 'opacity-0 scale-95'
                     }`}
                   >
-                    <div className="flex flex-col items-center h-full justify-center">
+                    <div className="flex flex-col items-center h-full justify-center px-4">
                       <div className="relative mb-4">
                         <img
                           src={testimonial.image}
@@ -293,11 +297,11 @@ export default function Home() {
                           style={{ borderColor: '#DDA853' }}
                         />
                       </div>
-                      <blockquote className="text-lg md:text-xl font-medium italic mb-4 max-w-2xl leading-relaxed" style={{ color: '#1F2647' }}>
+                      <blockquote className="text-base sm:text-lg md:text-xl font-medium italic mb-4 max-w-2xl leading-relaxed" style={{ color: '#1F2647' }}>
                         "{testimonial.text}"
                       </blockquote>
                       <div className="text-center">
-                        <div className="text-lg font-bold mb-1" style={{ color: '#1F2647' }}>
+                        <div className="text-base sm:text-lg font-bold mb-1" style={{ color: '#1F2647' }}>
                           {testimonial.name}
                         </div>
                         <div className="text-sm" style={{ color: '#0D9488' }}>
@@ -328,36 +332,36 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Refined Campus Highlights Section */}
-      <div className="bg-gray-50 py-16 py-12">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* Refined Campus Highlights Section - Made responsive */}
+      <div className="bg-gray-50 py-12 sm:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#1F2647', color: '#DDA853' }}>
               <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#DDA853' }}></span>
               Campus Overview
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1F2647' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1F2647' }}>
               Excellence in Every Corner
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
               State-of-the-art facilities designed to nurture innovation and academic excellence
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {campusHighlights.map((item, index) => (
               <div 
                 key={item.title} 
-                className="group text-center p-6 rounded-xl transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-200 bg-white hover:bg-blue-50 cursor-pointer reveal opacity-0"
+                className="group text-center p-4 sm:p-6 rounded-xl transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-200 bg-white hover:bg-blue-50 cursor-pointer reveal opacity-0"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="text-3xl mb-3 transition-transform duration-300 group-hover:scale-110">
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3 transition-transform duration-300 group-hover:scale-110">
                   {item.icon}
                 </div>
-                <div className="text-2xl font-bold mb-2 transition-colors duration-300" style={{ color: '#1F2647' }}>
+                <div className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 transition-colors duration-300" style={{ color: '#1F2647' }}>
                   {item.count}
                 </div>
-                <div className="font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-300">
+                <div className="text-sm sm:font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-300">
                   {item.title}
                 </div>
               </div>
@@ -385,35 +389,35 @@ export default function Home() {
 </div>
 
     
-      {/* Refined Call to Action */}
-      <div className="py-16 bg-yellow" >
-        <div className="max-w-5xl mx-auto text-center px-6">
-          <div className="mb-10">
+      {/* Refined Call to Action - Made responsive */}
+      <div className="py-12 sm:py-16 bg-yellow" >
+        <div className="max-w-5xl mx-auto text-center px-4 sm:px-6">
+          <div className="mb-8 sm:mb-10">
             <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#1F2647', color: '#88DADA' }}>
               <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#88DADA' }}></span>
               Take Action
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-4 text-dark">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-dark px-4">
               Your Future Starts Here
             </h2>
-            <p className="text-m max-w-1xl mx-auto mb-10" style={{ color: 'white' }}>
+            <p className="text-sm sm:text-base max-w-1xl mx-auto mb-8 sm:mb-10 px-4" style={{ color: 'white' }}>
               Join thousands of successful alumni who began their journey at NIT Srinagar.
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button className="group px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-12 px-4">
+            <button className="group px-6 sm:px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
                     style={{ backgroundColor: ' #1F2647', color: '#DDA853' }}>
               <span>Explore Student Life</span>
               <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </button>
-            <button className="group px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 flex items-center justify-center hover:bg-white hover:text-gray-800"
+            <button className="group px-6 sm:px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 flex items-center justify-center hover:bg-white hover:text-gray-800"
                     style={{ 
                       backgroundColor: 'transparent', 
-                      color: 'white',
-                      borderColor: 'white'
+                      color: '#1F2647',
+                      borderColor: '#1F2647'
                     }}>
               <span>Campus Tour</span>
               <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -422,20 +426,20 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto px-4">
             {[
               { icon: "🎓", title: "Academic Excellence", desc: "Top-tier education standards" },
               { icon: "🚀", title: "Innovation Hub", desc: "Cutting-edge research facilities" },
               { icon: "🌐", title: "Global Network", desc: "Worldwide alumni connections" }
             ].map((item, index) => (
               <div key={item.title} className="text-center group">
-                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-3xl sm:text-4xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
                 </div>
-                <div className="font-bold text-base mb-2" style={{ color: '#DDA853' }}>
+                <div className="font-bold text-sm sm:text-base mb-1 sm:mb-2" >
                   {item.title}
                 </div>
-                <div className="text-sm">
+                <div className="text-xs sm:text-sm" style={{ color: '#ffffff' }}>
                   {item.desc}
                 </div>
               </div>

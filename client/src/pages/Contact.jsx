@@ -19,7 +19,7 @@ const teamMembers = [
   {
     name: "Qazi Izma",
     role: "Web Developer",
-    image: userIcon,
+    image: "/images/team/izma.jpg",
     funFact: "Loves code and caffeine ☕",
     email: "qaziizmaa@gmail.com ",
     enrollment: "2021BITE025",
@@ -29,7 +29,7 @@ const teamMembers = [
   {
     name: "Asma Siddiqui",
     role: "Web Developer",
-    image: userIcon,
+    image: "/images/team/asma.png",
     funFact: "Bookmarks aren't just for browsers 🔖",
     email: "asmasiddiqui511@gmail.com",
     enrollment: "2023BCSE029",
@@ -39,7 +39,7 @@ const teamMembers = [
   {
     name: "Harshita",
     role: "Web Developer",
-    image: "/images/ContactUs/harshita.jpg", 
+    image: "/images/team/harshita.jpg", 
     funFact: "Finds peace in coding and singing 🌼",
     email: "harshita2386@gmail.com",
     enrollment: "2023BCSE022",
@@ -49,7 +49,7 @@ const teamMembers = [
   {
     name: "Ankita Kuntal",
     role: "Web Developer",
-    image: userIcon,
+    image: "/images/team/ankita.jpg",
     funFact: "Can center divs but not her inner peace!✌",
     email: "2023nitsgr153@nitsri.ac.in",
     enrollment: "2023BITE007",
@@ -152,7 +152,7 @@ const Contact = () => {
           <span className="font-medium text-teal">Gaash Team</span>—student
           developers from NIT Srinagar.
         </p>
-        {/* Cards */}
+        {/* Team Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto px-4 sm:px-6">
           {teamMembers.map((member, idx) => (
             <div

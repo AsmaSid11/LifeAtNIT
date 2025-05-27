@@ -8,7 +8,7 @@ const Clubs = () => {
       {/* ✅ Hero Section */}
       <div className="relative aspect-[16/4.5] w-full shadow-2xl mb-20 overflow-hidden">
         <img
-          src="/club5.avif"
+          src="/Clubs/DSC00584.JPG"
           alt="Student Clubs"
           className="w-full h-full object-cover"
 
@@ -74,22 +74,7 @@ const Clubs = () => {
           <p className="text-[#1F2647] leading-relaxed">The Technology Club serves as a hub for innovation and technological exploration. It encompasses subdivisions like Robotics, Google Developer Student Clubs (GDSC), E-Vision, and Semicolon—the official coding club. The club organizes workshops, hackathons,encouraging students to engage in hands-on projects and collaborative learning.</p>
         </div>
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
-          <motion.img
-            src="club2.jpeg"
-            alt="photo"
-            className="rounded-lg shadow-md object-cover w-full h-auto"
-            whileHover={{
-              scale: 1.08,
-              rotateY: 10,
-              boxShadow: "0 16px 40px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
-              zIndex: 30,
-              transition: { type: 'spring', stiffness: 300 },
-            }}
-            style={{
-              perspective: 1000,
-              transformStyle: "preserve-3d",
-            }}
-          />
+          <img src="/Clubs/DSC07633.JPG" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
         
       </motion.div>
@@ -108,22 +93,7 @@ const Clubs = () => {
         }}
       >
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
-          <motion.img
-            src="club2.jpeg"
-            alt="photo"
-            className="rounded-lg shadow-md object-cover w-full h-auto"
-            whileHover={{
-              scale: 1.08,
-              rotateY: 10,
-              boxShadow: "0 16px 40px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
-              zIndex: 30,
-              transition: { type: 'spring', stiffness: 300 },
-            }}
-            style={{
-              perspective: 1000,
-              transformStyle: "preserve-3d",
-            }}
-          />
+          <img src="/Clubs/DSC_1227.JPG" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
         <div className="w-full md:w-1/2">
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
@@ -153,22 +123,7 @@ const Clubs = () => {
           <p className="text-[#1F2647] leading-relaxed">The Movie Club offers a space for cinema enthusiasts to come together, watch, and discuss films. It serves as a medium for relaxation and cultural appreciation, often hosting screenings and discussions that delve into cinematic techniques and storytelling. </p>
         </div>
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
-          <motion.img
-            src="club2.jpeg"
-            alt="photo"
-            className="rounded-lg shadow-md object-cover w-full h-auto"
-            whileHover={{
-              scale: 1.08,
-              rotateY: 10,
-              boxShadow: "0 16px 40px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
-              zIndex: 30,
-              transition: { type: 'spring', stiffness: 300 },
-            }}
-            style={{
-              perspective: 1000,
-              transformStyle: "preserve-3d",
-            }}
-          />
+          <img src="/Clubs/pexels-tima-miroshnichenko-7991158.jpg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
        
       </motion.div>
@@ -187,22 +142,7 @@ const Clubs = () => {
         }}
       >
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
-          <motion.img
-            src="club2.jpeg"
-            alt="photo"
-            className="rounded-lg shadow-md object-cover w-full h-auto"
-            whileHover={{
-              scale: 1.08,
-              rotateY: 10,
-              boxShadow: "0 16px 40px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
-              zIndex: 30,
-              transition: { type: 'spring', stiffness: 300 },
-            }}
-            style={{
-              perspective: 1000,
-              transformStyle: "preserve-3d",
-            }}
-          />
+          <img src="/Clubs/pexels-pixabay-248547.jpg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
         <div className="w-full md:w-1/2">
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
@@ -232,22 +172,7 @@ const Clubs = () => {
           <p className="text-[#1F2647] leading-relaxed">The Photography Club nurtures the artistic talents of students interested in capturing moments through the lens. It conducts workshops, photo walks, and exhibitions, allowing members to develop their skills and showcase their work.</p>
         </div>
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
-          <motion.img
-            src="club2.jpeg"
-            alt="photo"
-            className="rounded-lg shadow-md object-cover w-full h-auto"
-            whileHover={{
-              scale: 1.08,
-              rotateY: 10,
-              boxShadow: "0 16px 40px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
-              zIndex: 30,
-              transition: { type: 'spring', stiffness: 300 },
-            }}
-            style={{
-              perspective: 1000,
-              transformStyle: "preserve-3d",
-            }}
-          />
+          <img src="/Clubs/pexels-asphotograpy-212372.jpg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
         
       </motion.div>
@@ -266,22 +191,7 @@ const Clubs = () => {
         }}
       >
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
-          <motion.img
-            src="club2.jpeg"
-            alt="photo"
-            className="rounded-lg shadow-md object-cover w-full h-auto"
-            whileHover={{
-              scale: 1.08,
-              rotateY: 10,
-              boxShadow: "0 16px 40px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
-              zIndex: 30,
-              transition: { type: 'spring', stiffness: 300 },
-            }}
-            style={{
-              perspective: 1000,
-              transformStyle: "preserve-3d",
-            }}
-          />
+          <img src="/Clubs/pexels-mikhail-nilov-8847168.jpg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
         <div className="w-full md:w-1/2">
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
@@ -311,22 +221,7 @@ const Clubs = () => {
           <p className="text-[#1F2647] leading-relaxed">For astronomy enthusiasts, the Stargazing Club offers opportunities to explore the night sky. It arranges observation sessions, lectures, and discussions, fostering a community interested in celestial phenomena and space science.</p>
         </div>
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
-          <motion.img
-            src="club2.jpeg"
-            alt="photo"
-            className="rounded-lg shadow-md object-cover w-full h-auto"
-            whileHover={{
-              scale: 1.08,
-              rotateY: 10,
-              boxShadow: "0 16px 40px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
-              zIndex: 30,
-              transition: { type: 'spring', stiffness: 300 },
-            }}
-            style={{
-              perspective: 1000,
-              transformStyle: "preserve-3d",
-            }}
-          />
+          <img src="/Clubs/pexels-lucaspezeta-2034892.jpg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto "/>
         </div>
         
       </motion.div>
@@ -345,22 +240,7 @@ const Clubs = () => {
         }}
       >
         <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
-          <motion.img
-            src="club2.jpeg"
-            alt="photo"
-            className="rounded-lg shadow-md object-cover w-full h-auto"
-            whileHover={{
-              scale: 1.08,
-              rotateY: 10,
-              boxShadow: "0 16px 40px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
-              zIndex: 30,
-              transition: { type: 'spring', stiffness: 300 },
-            }}
-            style={{
-              perspective: 1000,
-              transformStyle: "preserve-3d",
-            }}
-          />
+          <img src="/Clubs/pexels-warre-van-de-wouwer-400573496-32233892.jpg" alt="photo" className="rounded-lg shadow-md object-cover w-full h-auto"/>
         </div>
         <div className="w-full md:w-1/2">
           <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
