@@ -402,7 +402,6 @@ const Amenities = () => {
                     {/* Important People */}
                     {amenity.incharges.length > 0 && (
                       <div className="mb-4">
-                        <h3 className="text-lg font-semibold text-teal mb-2">Important People</h3>
                         <ul className="list-disc list-inside text-dark/80 text-sm xs:text-base">
                           {amenity.incharges.map((person, index) => (
                             <li key={index}>{renderWithLineBreaks(person)}</li>
