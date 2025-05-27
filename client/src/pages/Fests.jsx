@@ -4,33 +4,33 @@ import heroWave from "../assets/hero-wave.svg";
 const events = [
   {
     title: "Techvaganza",
-    desc: "Techvaganza is our flagship event with coding marathons, tech talks, and exhibitions.",
+    
     details: "Techvaganza is a vibrant celebration of technology, innovation, and youthful energy. The fest brings  together tech enthusiasts, gamers, entrepreneurs, and thinkers from across the region. With an engaging mix of technical workshops, spirited competitions, and inspiring talks, Techvaganza offers a platform for ideas to flourish and talents to shine.The event pulses with creativity and collaboration. ",
-    images: ["/fest1.webp", "/club2.jpeg", "/club5.avif"],
+    images: ["/Clubs/DSC07966.JPG", "/Clubs/DSC08125 (1).JPG", "/Clubs/DSC02146.JPG","/Clubs/DSC08048.JPG","/Clubs/DSC08217.JPG","/Clubs/DSC08217.JPG"],
   },
   {
     title: "TedX",
-    desc: "TedX events bring thought leaders to our campus, sharing ideas worth spreading.",
+    
     details: "TedX NIT Srinagar is a platform that ignites ideas and inspires change. Bringing together thought leaders, innovators, and changemakers from diverse fields, TedX sparks meaningful conversations and celebrates the power of storytelling. From cutting-edge technology to personal journeys of resilience, each talk is a window into ideas worth spreading. The event fosters curiosity, challenges perspectives, and encourages the campus community to think beyond boundaries.",
-    images: ["/club5.avif", "/club2.jpeg", "/fest1.webp"],
+    images: ["/Clubs/DSC_0453.JPG", "/Clubs/DSC_0529.JPG", "/Clubs/DSC_0599 (1).JPG","/Clubs/DSC_0569.JPG","/Clubs/DSC_0538.JPG","/Clubs/DSC_0586.JPG"],
   },
   {
     title: "Rang-e-chinar",
-    desc: "A cultural fest celebrating drama, music, and dance with vibrant performances.",
+
     details: "Rang-e-Chinar is a vibrant celebration of culture and creativity at NIT Srinagar. This fest brings together the essence of Kashmir’s rich heritage through captivating performances, art displays, music, and storytelling. It is a space where tradition meets youthful expression, where colors, rhythms, and voices echo the spirit of the valley. Rang-e-Chinar offers students a soulful platform to embrace and showcase their cultural roots with pride and passion.",
-    images: ["/club5.avif", "/fest1.webp", "/club2.jpeg"],
+    images: ["/Clubs/DSC_0960.JPG", "/Clubs/DSC_1265.JPG", "/Clubs/DSC02196 (1).JPG"],
   },
   {
     title: "Extravaganza",
-    desc: "From inter-departmental cricket to marathon races, it's all about the game!",
+
     details: "Extravaganza is the heartbeat of cultural celebration at NIT Srinagar. Blending music, dance, drama, and art, it showcases the vibrant talents of students and creates unforgettable moments of joy and unity. From electrifying performances to creative exhibitions, Extravaganza is where passion meets performance — a true celebration of expression, diversity, and the colorful spirit of campus life.",
-    images: ["/club5.avif", "/club2.jpeg", "/fest1.webp"],
+    images: ["/Clubs/DSC_1260.JPG", "/Clubs/DSC_1227.JPG", "/Clubs/DSC_1265.JPG","/Clubs/DSC_1205.JPG","/Clubs/DSC_1248.JPG","/Clubs/DSC_1026.JPG"],
   },
   {
     title: "Techfusion",
-    desc: "A fusion of art and tech with photography workshops and AI-generated galleries.",
+
     details:"Techfusion is where innovation meets imagination at NIT Srinagar. A celebration of emerging technologies and creative thinking, it brings together coders, developers, designers, and tech enthusiasts under one roof. With hands-on projects, interactive showcases, and problem-solving challenges, Techfusion serves as a dynamic platform for students to fuse their technical skills with artistic flair — driving the spirit of innovation forward on campus.",
-    images: ["/fest1.webp", "/club5.avif", "/club2.jpeg"],
+    images: ["/Clubs/DSC00586.JPG", "/Clubs/DSC00598.JPG", "/Clubs/DSC00584.JPG"],
   },
 ];
 
@@ -69,12 +69,12 @@ const Carousel = ({ images }) => {
 };
 
 const Fests = () => {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+
 
   return (
     <div className="bg-[#88DADA]/20 min-h-screen">
       <div className="relative aspect-[16/4.5] w-full shadow-2xl mb-20 overflow-hidden">
-        <img src="/fest1.webp" alt="Student Clubs" className="w-full h-full object-cover" />
+        <img src="/Clubs/DSC07608.JPG" alt="Student Clubs" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center">
           <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center -mb-10">
           <style>
@@ -106,7 +106,7 @@ const Fests = () => {
       <div className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-12 ">
         {events.map((event, i) => {
           const isEven = i % 2 === 0;
-          const isExpanded = expandedIndex === i;
+
 
           return (
             <div key={i} className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl space-y-6 md:space-y-0 transition-transform hover:scale-[1.01] duration-300">
@@ -114,13 +114,9 @@ const Fests = () => {
                 <>
                   <div className="w-full md:w-1/2 space-y-4">
                     <h2 className="text-3xl font-bold font-serif text-[#1F2647]">{event.title}</h2>
-                    <p className="text-[#1F2647] leading-relaxed">{isExpanded ? event.details : event.desc}</p>
-                    <button
-                      onClick={() => setExpandedIndex(isExpanded ? null : i)}
-                      className="text-sm text-teal-600 hover:underline"
-                    >
-                      {isExpanded ? "Show Description" : "Show More"}
-                    </button>
+                    <p className="text-[#1F2647] leading-relaxed">{event.details} </p>
+                    
+                      
                   </div>
                   <div className="w-full md:w-1/2">
                     <Carousel images={event.images} />
@@ -133,13 +129,10 @@ const Fests = () => {
                   </div>
                   <div className="w-full md:w-1/2 space-y-4">
                     <h2 className="text-3xl font-bold font-serif text-[#1F2647] pl-8">{event.title}</h2>
-                    <p className="text-[#1F2647] leading-relaxed pl-8">{isExpanded ? event.details : event.desc}</p>
-                    <button
-                      onClick={() => setExpandedIndex(isExpanded ? null : i)}
-                      className="text-sm text-teal-600 hover:underline pl-8"
-                    >
-                      {isExpanded ? "Show Description" : "Show More"}
-                    </button>
+                    <p className="text-[#1F2647] leading-relaxed pl-8"> {event.details}</p>
+                    
+
+
                   </div>
                 </>
               )}
