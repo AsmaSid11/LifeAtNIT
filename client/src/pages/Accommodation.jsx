@@ -236,11 +236,11 @@ const Accommodation = () => {
                     key={index}
                     className="group relative overflow-visible rounded-2xl shadow-2xl bg-white/60 backdrop-blur-md"
                     whileHover={{
-                      scale: 1.08,
-                      rotateY: -10,
-                      boxShadow: "0 16px 40px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
+                      scale: 1.06,    // Reduced scale
+                      rotateY: -8,   // Reduced rotation
+                      boxShadow: "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)", // Subtler shadow
                       zIndex: 30,
-                      transition: { type: 'spring', stiffness: 300 },
+                      transition: { type: 'spring', stiffness: 280 }, // Adjusted transition
                     }}
                     style={{
                       perspective: 1000,

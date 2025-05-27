@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion"; // Import motion
 import heroWave from "../assets/hero-wave.svg";
 
 const events = [
@@ -46,7 +47,18 @@ const Carousel = ({ images }) => {
   const next = () => setIndex((index + 1) % images.length);
 
   return (
-    <div className="relative w-full h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-md">
+    <motion.div // Wrap the carousel with motion.div
+      className="relative w-full h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-md"
+      whileHover={{ // Add hover animation
+        scale: 1.05,
+        boxShadow: "0 8px 24px 0 rgba(13,148,136,0.25), 0 1.5px 8px 0 rgba(31,38,71,0.10)",
+        transition: { type: 'spring', stiffness: 300 },
+      }}
+      style={{
+        perspective: 1000,
+        transformStyle: "preserve-3d",
+      }}
+    >
       <img
         src={images[index]}
         alt="event"
@@ -64,7 +76,7 @@ const Carousel = ({ images }) => {
       >
         &#10095;
       </button>
-    </div>
+    </motion.div>
   );
 };
 
