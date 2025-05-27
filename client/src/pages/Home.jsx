@@ -121,11 +121,22 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       {/* Professional Hero Section - Made Responsive */}
       <div className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80"
-          alt="Campus"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
-        />
+        >
+          <source src="/videos/hero2.mp4" type="video/mp4" />
+          {/* Fallback image in case video doesn't load */}
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80"
+            alt="Campus"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
 
         <div className="relative z-10 text-center max-w-7xl mx-auto px-4 sm:px-6">
