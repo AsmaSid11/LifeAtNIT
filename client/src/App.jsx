@@ -7,6 +7,7 @@ import Clubs from './pages/Clubs';
 import Fests from './pages/Fests';
 import Amenities from './pages/Amenities';
 import Contact from './pages/Contact';
+import FAQ from './pages/FAQ';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import ScrollToTop from "./components/ScrollToTop"; 
@@ -25,6 +26,7 @@ function App() {
               <Route path="/clubs" element={<Clubs />} />
               <Route path="/fests" element={<Fests />} />
               <Route path="/amenities" element={<Amenities />} />
+              <Route path="/faq" element={<FAQ />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
