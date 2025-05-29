@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [accommodationOpen, setAccommodationOpen] = useState(false);
+  const [achievementsOpen, setAchievementsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
@@ -68,6 +69,55 @@ const Navbar = () => {
               <span className="relative z-10">Home</span>
               <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
             </Link>
+
+            {/* Achievements Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setAchievementsOpen(!achievementsOpen)}
+                className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
+              >
+                <span className="relative z-10">Achievements</span>
+                <svg className="w-4 h-4 relative z-10 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
+              </button>
+
+              {achievementsOpen && (
+                <div className="absolute left-0 mt-2 w-48 rounded-lg shadow-lg bg-dark/95 backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50">
+                  <div className="py-1">
+                    <Link
+                      to="/achievements/student"
+                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                      onClick={() => setAchievementsOpen(false)}
+                    >
+                      Student Achievements
+                    </Link>
+                    <Link
+                      to="/achievements/faculty"
+                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                      onClick={() => setAchievementsOpen(false)}
+                    >
+                      Faculty Recognition
+                    </Link>
+                    <Link
+                      to="/achievements/placements"
+                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                      onClick={() => setAchievementsOpen(false)}
+                    >
+                      Placements
+                    </Link>
+                    <Link
+                      to="/achievements/startups"
+                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                      onClick={() => setAchievementsOpen(false)}
+                    >
+                      Startups
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Accommodation Dropdown */}
             <div className="relative">
@@ -150,6 +200,64 @@ const Navbar = () => {
             >
               Home
             </Link>
+
+            {/* Mobile Achievements */}
+            <div className="relative">
+              <button
+                onClick={() => setAchievementsOpen(!achievementsOpen)}
+                className="w-full text-left px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center justify-between"
+              >
+                Achievements
+                <svg className="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {achievementsOpen && (
+                <div className="pl-4">
+                  <Link
+                    to="/achievements/student"
+                    className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={() => {
+                      setIsOpen(false);
+                      setAchievementsOpen(false);
+                    }}
+                  >
+                    Student Achievements
+                  </Link>
+                  <Link
+                    to="/achievements/faculty"
+                    className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={() => {
+                      setIsOpen(false);
+                      setAchievementsOpen(false);
+                    }}
+                  >
+                    Faculty Recognition
+                  </Link>
+                  <Link
+                    to="/achievements/placements"
+                    className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={() => {
+                      setIsOpen(false);
+                      setAchievementsOpen(false);
+                    }}
+                  >
+                    Placements
+                  </Link>
+                  <Link
+                    to="/achievements/startups"
+                    className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={() => {
+                      setIsOpen(false);
+                      setAchievementsOpen(false);
+                    }}
+                  >
+                    Startups
+                  </Link>
+                </div>
+              )}
+            </div>
 
             {/* Mobile Accommodation */}
             <div className="relative">

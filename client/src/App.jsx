@@ -8,6 +8,10 @@ import Fests from './pages/Fests';
 import Amenities from './pages/Amenities';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
+import StudentAchievements from './pages/achievements/StudentAchievements';
+import FacultyRecognition from './pages/achievements/FacultyRecognition';
+import Placements from './pages/achievements/Placements';
+import Startups from './pages/achievements/Startups';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import ScrollToTop from "./components/ScrollToTop"; 
@@ -28,6 +32,10 @@ function App() {
               <Route path="/amenities" element={<Amenities />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/achievements/student" element={<StudentAchievements />} />
+              <Route path="/achievements/faculty" element={<FacultyRecognition />} />
+              <Route path="/achievements/placements" element={<Placements />} />
+              <Route path="/achievements/startups" element={<Startups />} />
             </Routes>
           </main>
         </div>
