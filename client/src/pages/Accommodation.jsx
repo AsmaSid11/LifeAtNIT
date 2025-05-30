@@ -4,14 +4,14 @@ import { Parallax } from 'react-scroll-parallax';
 import { useEffect } from 'react';
 
 const oldGuestHouseImages = [
-  '/Amenities/old-guest-house1.jpg',
-  '/Amenities/new-guest-house2.jpg',
-  '/Amenities/old-guest-house3.jpg',
+  '/Amenities/old-guest-house1.webp',
+  '/Amenities/new-guest-house2.webp',
+  '/Amenities/old-guest-house3.webp',
 ];
 
 const newGuestHouseImages = [
-  '/Amenities/new-guest-house.jpg',
-  '/Amenities/old-guest-house4.JPG',
+  '/Amenities/new-guest-house.webp',
+  '/Amenities/old-guest-house4.webp',
 ];
 
 const heroBg =

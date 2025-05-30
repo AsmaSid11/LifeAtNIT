@@ -9,7 +9,7 @@ import {
   FaYoutube,
   FaFacebook,
 } from "react-icons/fa";
-import userIcon from "/images/userIcon.png";
+import userIcon from "/images/userIcon.webp";
 import heroWave from "../assets/hero-wave.svg";
 import { useState } from "react";
 
@@ -17,7 +17,7 @@ const teamMembers = [
   {
     name: "Qazi Izma",
     role: "Web Developer",
-    image: "/images/team/izma.jpg",
+    image: "/images/team/izma.webp",
     funFact: "Loves code and caffeine ☕",
     email: "qaziizmaa@gmail.com ",
     enrollment: "2021BITE025",
@@ -27,7 +27,7 @@ const teamMembers = [
   {
     name: "Asma Siddiqui",
     role: "Web Developer",
-    image: "/images/team/asma.png",
+    image: "/images/team/asma.webp",
     funFact: "Bookmarks aren't just for browsers 🔖",
     email: "asmasiddiqui511@gmail.com",
     enrollment: "2023BCSE029",
@@ -37,7 +37,7 @@ const teamMembers = [
   {
     name: "Harshita",
     role: "Web Developer",
-    image: "/images/team/harshita.jpg", 
+    image: "/images/team/harshita.webp", 
     funFact: "Finds peace in coding and singing 🌼",
     email: "harshita2386@gmail.com",
     enrollment: "2023BCSE022",
@@ -47,7 +47,7 @@ const teamMembers = [
   {
     name: "Ankita Kuntal",
     role: "Web Developer",
-    image: "/images/team/ankita.jpg",
+    image: "/images/team/ankita.webp",
     funFact: "Can center divs but not her inner peace!✌",
     email: "2023nitsgr153@nitsri.ac.in",
     enrollment: "2023BITE007",

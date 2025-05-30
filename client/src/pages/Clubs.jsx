@@ -6,7 +6,7 @@ const Clubs = () => {
     <div className="bg-[#88DADA]/20 min-h-screen">
       <div className="relative aspect-[16/4.5] w-full shadow-2xl mb-20 overflow-hidden">
         <img
-          src="/Clubs/DSC00584.JPG"
+          src="/Clubs/DSC00584.webp"
           alt="Student Clubs"
           className="w-full h-full object-cover"
         />
@@ -73,7 +73,7 @@ const Clubs = () => {
             </div>
             <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
               <motion.img
-                src="/Clubs/DSC07633.JPG"
+                src="/Clubs/DSC07633.webp"
                 alt="photo"
                 className="rounded-lg shadow-md object-cover w-full h-auto"
                 whileHover={{
@@ -104,7 +104,7 @@ const Clubs = () => {
           >
             <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
               <motion.img
-                src="/Clubs/DSC_1227.JPG"
+                src="/Clubs/DSC_1227.webp"
                 alt="photo"
                 className="rounded-lg shadow-md object-cover w-full h-auto"
                 whileHover={{
@@ -157,7 +157,7 @@ const Clubs = () => {
             </div>
             <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
               <motion.img
-                src="/Clubs/pexels-tima-miroshnichenko-7991158.jpg"
+                src="/Clubs/pexels-tima-miroshnichenko-7991158.webp"
                 alt="photo"
                 className="rounded-lg shadow-md object-cover w-full h-auto"
                 whileHover={{
@@ -188,7 +188,7 @@ const Clubs = () => {
           >
             <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
               <motion.img
-                src="/Clubs/pexels-pixabay-248547.jpg"
+                src="/Clubs/pexels-pixabay-248547.webp"
                 alt="photo"
                 className="rounded-lg shadow-md object-cover w-full h-auto"
                 whileHover={{
@@ -241,7 +241,7 @@ const Clubs = () => {
             </div>
             <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
               <motion.img
-                src="/Clubs/pexels-asphotograpy-212372.jpg"
+                src="/Clubs/pexels-asphotograpy-212372.webp"
                 alt="photo"
                 className="rounded-lg shadow-md object-cover w-full h-auto"
                 whileHover={{
@@ -272,7 +272,7 @@ const Clubs = () => {
           >
             <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
               <motion.img
-                src="/Clubs/pexels-mikhail-nilov-8847168.jpg"
+                src="/Clubs/pexels-mikhail-nilov-8847168.webp"
                 alt="photo"
                 className="rounded-lg shadow-md object-cover w-full h-auto"
                 whileHover={{
@@ -325,7 +325,7 @@ const Clubs = () => {
             </div>
             <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
               <motion.img
-                src="/Clubs/pexels-lucaspezeta-2034892.jpg"
+                src="/Clubs/pexels-lucaspezeta-2034892.webp"
                 alt="photo"
                 className="rounded-lg shadow-md object-cover w-full h-auto "
                 whileHover={{
@@ -356,7 +356,7 @@ const Clubs = () => {
           >
             <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
               <motion.img
-                src="/Clubs/pexels-warre-van-de-wouwer-400573496-32233892.jpg"
+                src="/Clubs/pexels-warre-van-de-wouwer-400573496-32233892.webp"
                 alt="photo"
                 className="rounded-lg shadow-md object-cover w-full h-auto"
                 whileHover={{
