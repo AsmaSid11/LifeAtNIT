@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-
 
 const features = [
   {
@@ -98,12 +96,12 @@ export default function Home() {
         }
       });
     };
-    
+
     const handleScroll = () => {
       reveal();
       setVisible(window.scrollY > 300);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     reveal();
     return () => window.removeEventListener("scroll", handleScroll);
@@ -140,32 +138,33 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
 
         <div className="relative z-10 text-center max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Clean Hero Text - Responsive sizing */}
-          <div className="relative h-20 sm:h-24 md:h-32 mb-6 sm:mb-8 flex items-center justify-center">
+          {/* Clean Hero Text - Responsive sizing with single line fix */}
+
+          <div className="relative h-20 sm:h-24 md:h-32 mb-2 sm:mb-4 flex items-center justify-center">
             {heroTexts.map((text, index) => (
               <h1
                 key={index}
-                className={`absolute text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight transition-all duration-1000 transform px-2 text-center ${
-                  index === currentSlide
+                className={`absolute text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight transition-all duration-1000 transform px-2 text-center whitespace-nowrap ${index === currentSlide
                     ? 'opacity-100 translate-y-0 scale-100'
                     : 'opacity-0 translate-y-8 scale-95'
-                }`}
+                  }`}
               >
                 <span className="text-white drop-shadow-lg">{text}</span>
               </h1>
             ))}
           </div>
 
+
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 font-small mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-sm px-4">
             Discover excellence in education and innovation in the heart of Kashmir
           </p>
 
-          {/* Enhanced Achievement Stats - Responsive grid and sizing */}
+          {/* Enhanced Achievement Stats - Fixed box sizes */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto mb-16 sm:mb-20 md:mb-12">
             {achievements.map((stat, index) => (
-              <div 
+              <div
                 key={stat.label}
-                className="bg-white/10 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 group"
+                className="bg-white/10 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 group h-24 sm:h-28 md:h-32 flex flex-col justify-center"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300" style={{ color: '#DDA853' }}>
@@ -190,71 +189,72 @@ export default function Home() {
         </div>
       </div>
 
-     
+
 
       {/* Refined Features Section - Already responsive */}
-      <div className="features-section bg-gray-50 py-12 sm:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#DDA853', color: '#1F2647' }}>
-              <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#1F2647' }}></span>
-              Why Choose Us?
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1F2647' }}>
-              Your Gateway to Success
-            </h2>
-            <p className="text-base sm:text-lg text-gray-500 max-w-1xl mx-auto px-4">
-              Discover what makes NIT Srinagar the premier destination for academic and personal growth
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={feature.title}
-                className="reveal opacity-0 group"
-                style={{ transitionDelay: `${index * 200}ms` }}
-              >
-                <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-t-4" style={{ borderTopColor: '#DDA853' }}>
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={feature.img}
-                      alt={feature.title}
-                      className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/10"></div>
-                    <div className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-xl transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: 'rgba(221, 168, 83, 0.9)' }}>
-                      {feature.icon}
-                    </div>
-                  </div>
+<div className="features-section bg-gray-50 py-12 sm:py-16">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <div className="text-center mb-12 sm:mb-16">
+      <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#DDA853', color: '#1F2647' }}>
+        <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#1F2647' }}></span>
+        Why Choose Us?
+      </div>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1F2647' }}>
+        Your Gateway to Success
+      </h2>
+      <p className="text-base sm:text-lg text-gray-500 max-w-1xl mx-auto px-4">
+        Discover what makes NIT Srinagar the premier destination for academic and personal growth
+      </p>
+    </div>
 
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#1F2647' }}>
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed mb-4">
-                      {feature.desc}
-                    </p>
-                    
-                    <div className="flex items-center group/link cursor-pointer">
-                    <Link to={feature.link} className="flex items-center group/link cursor-pointer">
-                      <span className="font-medium mr-2 transition-colors duration-300" style={{ color: '#0D9488' }}>
-                        Explore More
-                      </span>
-                      <div className="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 group-hover/link:translate-x-1" style={{ backgroundColor: '#0D9488' }}>
-                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </div>
-                      </Link>
-                    </div>
-                  </div>
+    <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+      {features.map((feature, index) => (
+        <div
+          key={feature.title}
+          className="reveal opacity-0 group h-full"
+          style={{ transitionDelay: `${index * 200}ms` }}
+        >
+          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-t-4 flex flex-col h-full" style={{ borderTopColor: '#DDA853' }}>
+            <div className="relative overflow-hidden">
+              <img
+                src={feature.img}
+                alt={feature.title}
+                className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/10"></div>
+              <div className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-xl transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: 'rgba(221, 168, 83, 0.9)' }}>
+                {feature.icon}
+              </div>
+            </div>
+
+            {/* Content area updated */}
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-xl font-bold mb-3" style={{ color: '#1F2647' }}>
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-4 flex-grow">
+                {feature.desc}
+              </p>
+
+              <div className="flex items-center group/link cursor-pointer mt-auto">
+                <span className="font-medium mr-2 transition-colors duration-300" style={{ color: '#0D9488' }}>
+                  Explore More
+                </span>
+                <div className="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 group-hover/link:translate-x-1" style={{ backgroundColor: '#0D9488' }}>
+                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </div>
               </div>
-            ))}
+            </div>
+            {/* End content area */}
           </div>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
+
 
       {/* Connecting Bridge */}
       <div className="h-8" style={{ backgroundColor: '#88DADA' }}>
@@ -286,25 +286,24 @@ export default function Home() {
               Hear from our accomplished alumni who are making their mark globally
             </p>
           </div>
-          
+
           <div className="relative">
             <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 max-w-3xl mx-auto border-t-4" style={{ borderTopColor: '#DDA853' }}>
               <div className="relative h-56 sm:h-48 flex items-center justify-center">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
-                    className={`absolute inset-0 transition-all duration-1000 ${
-                      index === currentTestimonial
+                    className={`absolute inset-0 transition-all duration-1000 ${index === currentTestimonial
                         ? 'opacity-100 scale-100'
                         : 'opacity-0 scale-95'
-                    }`}
+                      }`}
                   >
                     <div className="flex flex-col items-center h-full justify-center px-4">
                       <div className="relative mb-4">
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-16 h-16 rounded-full shadow-md border-3" 
+                          className="w-16 h-16 rounded-full shadow-md border-3"
                           style={{ borderColor: '#DDA853' }}
                         />
                       </div>
@@ -329,10 +328,9 @@ export default function Home() {
               {testimonials.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial ? 'scale-125' : 'hover:scale-110'
-                  }`}
-                  style={{ 
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentTestimonial ? 'scale-125' : 'hover:scale-110'
+                    }`}
+                  style={{
                     backgroundColor: index === currentTestimonial ? '#1F2647' : 'rgba(31, 38, 71, 0.3)'
                   }}
                   onClick={() => setCurrentTestimonial(index)}
@@ -358,11 +356,11 @@ export default function Home() {
               State-of-the-art facilities designed to nurture innovation and academic excellence
             </p>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {campusHighlights.map((item, index) => (
-              <div 
-                key={item.title} 
+              <div
+                key={item.title}
                 className="group text-center p-4 sm:p-6 rounded-xl transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-200 bg-white hover:bg-blue-50 cursor-pointer reveal opacity-0"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
@@ -384,22 +382,22 @@ export default function Home() {
 
 
 
-    {/* Connecting Bridge */}
+      {/* Connecting Bridge */}
       <div className="h-12 bg-yellow">
-  <svg
-    className="w-full h-full scale-x-[-1]"
-    viewBox="0 0 1200 32"
-    fill="none"
-    preserveAspectRatio="none"
-  >
-    <path
-      d="M0,0 C300,16 600,24 900,8 C1000,4 1100,12 1200,32 L1200,0 L0,0 Z"
-      fill="#f8fafc"
-    />
-  </svg>
-</div>
+        <svg
+          className="w-full h-full scale-x-[-1]"
+          viewBox="0 0 1200 32"
+          fill="none"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0 C300,16 600,24 900,8 C1000,4 1100,12 1200,32 L1200,0 L0,0 Z"
+            fill="#f8fafc"
+          />
+        </svg>
+      </div>
 
-    
+
       {/* Refined Call to Action - Made responsive */}
       <div className="py-12 sm:py-16 bg-yellow" >
         <div className="max-w-5xl mx-auto text-center px-4 sm:px-6">
@@ -415,21 +413,21 @@ export default function Home() {
               Join thousands of successful alumni who began their journey at NIT Srinagar.
             </p>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-12 px-4">
             <button className="group px-6 sm:px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
-                    style={{ backgroundColor: ' #1F2647', color: '#DDA853' }}>
+              style={{ backgroundColor: ' #1F2647', color: '#DDA853' }}>
               <span>Explore Student Life</span>
               <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </button>
             <button className="group px-6 sm:px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 flex items-center justify-center hover:bg-white hover:text-gray-800"
-                    style={{ 
-                      backgroundColor: 'transparent', 
-                      color: '#1F2647',
-                      borderColor: '#1F2647'
-                    }}>
+              style={{
+                backgroundColor: 'transparent',
+                color: '#1F2647',
+                borderColor: '#1F2647'
+              }}>
               <span>Campus Tour</span>
               <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />

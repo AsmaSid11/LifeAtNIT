@@ -47,7 +47,7 @@ const Navbar = () => {
               className="flex items-center group"
             >
               <img
-                src="/images/logo-white.png"
+                src="/images/logo-white.webp"
                 alt="NIT Srinagar Logo"
                 className="h-6 w-6 sm:h-8 sm:w-8 mr-2 group-hover:scale-110 transition-all duration-300"
               />
