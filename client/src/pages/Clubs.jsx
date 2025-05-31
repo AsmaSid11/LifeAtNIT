@@ -1,40 +1,27 @@
 import heroWave from "../assets/hero-wave.svg"; // Make sure this SVG exists
+import { motion } from 'framer-motion';
 const Clubs = () => {
   return (
     <div className="bg-[#88DADA]/20 min-h-screen">
 
       {/* ✅ Hero Section */}
       <div className="relative aspect-[16/4.5] w-full shadow-2xl mb-20 overflow-hidden">
-        <img
+        <motion.img
           src="/Clubs/DSC00584.JPG"
           alt="Student Clubs"
           className="w-full h-full object-cover"
-
+          initial={{ scale: 1.2 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2, ease: 'easeOut' }}
         />
         
          
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center -mb-7">
-          <style>
-        {`
-        @keyframes slideInUp {
-          from {
-            transform: translateY(40px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        .animate-slide-in-up {
-          animation: slideInUp 0.7s ease-out forwards;
-        }
-      `}
-      </style>
-          <h1 className="text-6xl font-bold text-[#FFFBFC] animate-fade-in-up">Student <span className="text-[#0D9488]">Clubs</span></h1>
 
-          <p className="mt-1 text-lg font-medium text-[#FFFBFC] tracking-wide animate-slide-in-up ">
+          <h1 className="text-6xl font-bold text-[#FFFBFC] animate-fade-in">Student <span className="text-[#0D9488]">Clubs</span></h1>
+
+          <p className="mt-1 text-lg font-medium text-[#FFFBFC] tracking-wide animate-fade-in-up ">
             Connect. Collaborate. Create.
           </p>
           
