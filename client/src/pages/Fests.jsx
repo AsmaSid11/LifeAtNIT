@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion"; // Import motion
 import heroWave from "../assets/hero-wave.svg";
 import { motion } from 'framer-motion';
 const events = [

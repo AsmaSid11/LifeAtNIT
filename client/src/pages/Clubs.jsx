@@ -1,4 +1,3 @@
-
 import heroWave from "../assets/hero-wave.svg"; // Make sure this SVG exists
 import { motion } from 'framer-motion';
 
@@ -13,66 +12,15 @@ const Clubs = () => {
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
           transition={{ duration: 2, ease: 'easeOut' }}
-  {/* <img
-          src="/Clubs/DSC00584.webp"
-          alt="Student Clubs"
-          className="w-full h-full object-cover" /> */}
-
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center -mb-7">
-
-
-          <h1 className="text-6xl font-bold text-[#FFFBFC] animate-fade-in">Student <span className="text-[#0D9488]">Clubs</span></h1>
-
-          <p className="mt-1 text-lg font-medium text-[#FFFBFC] tracking-wide animate-fade-in-up ">
-            Connect. Collaborate. Create.
-          </p>
-          
-        </div>
-        <img
-      src={heroWave} // make sure this path is correct
-      alt="wave"
-      className="absolute bottom-0 left-0 w-full h-16 md:h-20 object-cover z-10"
-    />
-          
-        </div>
-
-
-       
-      </div>
-      <div className="min-h-screen ">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      {/* ✅ CLUB 1: Technology Club */}
-      <div className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5 transition-transform hover:scale-[1.01] duration-300">
-      <div className="w-full md:w-1/2">
-          <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">
-          Technology Club
-=======
-            {/*<style>
-              {`
-                @keyframes slideInUp {
-                  from {
-                    transform: translateY(40px);
-                    opacity: 0;
-                  }
-                  to {
-                    transform: translateY(0);
-                    opacity: 1;
-                  }
-                }
-                .animate-slide-in-up {
-                  animation: slideInUp 0.7s ease-out forwards;
-                }
-              `}
-            </style>
-            <h1 className="text-6xl font-bold text-[#FFFBFC] animate-fade-in-up">
+            <h1 className="text-6xl font-bold text-[#FFFBFC] animate-fade-in">
               Student <span className="text-[#0D9488]">Clubs</span>
             </h1>
-            <p className="mt-1 text-lg font-medium text-[#FFFBFC] tracking-wide animate-slide-in-up ">
+            <p className="mt-1 text-lg font-medium text-[#FFFBFC] tracking-wide animate-fade-in-up ">
               Connect. Collaborate. Create.
-            </p> */}
-
+            </p>
           </div>
           <img
             src={heroWave}
@@ -87,9 +35,9 @@ const Clubs = () => {
           <motion.div
             className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5"
             whileHover={{
-              scale: 1.02, // Reduced scale
+              scale: 1.02,
               boxShadow:
-                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)", //Subtler shadow
+                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",
               transition: { type: 'spring', stiffness: 300 },
             }}
             style={{
@@ -105,7 +53,7 @@ const Clubs = () => {
                 The Technology Club serves as a hub for innovation and technological
                 exploration. It encompasses subdivisions like Robotics, Google Developer
                 Student Clubs (GDSC), E-Vision, and Semicolon—the official coding club.
-                The club organizes workshops, hackathons,encouraging students to engage
+                The club organizes workshops, hackathons, encouraging students to engage
                 in hands-on projects and collaborative learning.
               </p>
             </div>
@@ -130,9 +78,9 @@ const Clubs = () => {
           <motion.div
             className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5"
             whileHover={{
-              scale: 1.02,  // Reduced scale
+              scale: 1.02,
               boxShadow:
-                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",  // Subtler shadow
+                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",
               transition: { type: 'spring', stiffness: 300 },
             }}
             style={{
@@ -172,9 +120,9 @@ const Clubs = () => {
           <motion.div
             className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5"
             whileHover={{
-              scale: 1.02,  // Reduced scale
+              scale: 1.02,
               boxShadow:
-                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",  // Subtler shadow
+                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",
               transition: { type: 'spring', stiffness: 300 },
             }}
             style={{
@@ -214,9 +162,9 @@ const Clubs = () => {
           <motion.div
             className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5"
             whileHover={{
-              scale: 1.02,  // Reduced scale
+              scale: 1.02,
               boxShadow:
-                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",  // Subtler shadow
+                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",
               transition: { type: 'spring', stiffness: 300 },
             }}
             style={{
@@ -256,9 +204,9 @@ const Clubs = () => {
           <motion.div
             className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5"
             whileHover={{
-              scale: 1.02,  // Reduced scale
+              scale: 1.02,
               boxShadow:
-                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",  // Subtler shadow
+                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",
               transition: { type: 'spring', stiffness: 300 },
             }}
             style={{
@@ -298,9 +246,9 @@ const Clubs = () => {
           <motion.div
             className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5"
             whileHover={{
-              scale: 1.02,  // Reduced scale
+              scale: 1.02,
               boxShadow:
-                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",  // Subtler shadow
+                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",
               transition: { type: 'spring', stiffness: 300 },
             }}
             style={{
@@ -340,9 +288,9 @@ const Clubs = () => {
           <motion.div
             className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5"
             whileHover={{
-              scale: 1.02,  // Reduced scale
+              scale: 1.02,
               boxShadow:
-                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",  // Subtler shadow
+                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",
               transition: { type: 'spring', stiffness: 300 },
             }}
             style={{
@@ -382,9 +330,9 @@ const Clubs = () => {
           <motion.div
             className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5"
             whileHover={{
-              scale: 1.02,  // Reduced scale
+              scale: 1.02,
               boxShadow:
-                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",  // Subtler shadow
+                "0 12px 30px 0 rgba(13,148,136,0.20), 0 1px 6px 0 rgba(31,38,71,0.08)",
               transition: { type: 'spring', stiffness: 300 },
             }}
             style={{
