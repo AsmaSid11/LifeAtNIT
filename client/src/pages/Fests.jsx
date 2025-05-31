@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion"; // Import motion
 import heroWave from "../assets/hero-wave.svg";
-
+import { motion } from 'framer-motion';
 const events = [
   {
     title: "Techvaganza",
@@ -86,28 +86,18 @@ const Fests = () => {
   return (
     <div className="bg-[#88DADA]/20 min-h-screen">
       <div className="relative aspect-[16/4.5] w-full shadow-2xl mb-20 overflow-hidden">
-        <img src="/Clubs/DSC07608.webp" alt="Student Clubs" className="w-full h-full object-cover" />
+
+        <motion.img src="/Clubs/DSC07608.JPG" alt="Student Clubs" className="w-full h-full object-cover" initial={{ scale: 1.2 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2, ease: 'easeOut' }}/>
+
+            {/* <img src="/Clubs/DSC07608.webp" alt="Student Clubs" className="w-full h-full object-cover" /> */}
+
         <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center">
           <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center -mb-10">
-          <style>
-        {`
-        @keyframes slideInUp {
-          from {
-            transform: translateY(40px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        .animate-slide-in-up {
-          animation: slideInUp 0.7s ease-out forwards;
-        }
-      `}
-      </style>
-            <h1 className="text-6xl font-bold text-[#0D9488] animate-fade-in-up">Fests</h1>
-            <p className="mt-0 text-lg font-medium text-[#FFFBFC] tracking-wide animate-slide-in-up">
+          
+            <h1 className="text-6xl font-bold text-[#0D9488] animate-fade-in">Fests</h1>
+            <p className="mt-0 text-lg font-medium text-[#FFFBFC] tracking-wide animate-fade-in-up">
              <i>Dive into the festive pulse</i> 
             </p>
           </div>
