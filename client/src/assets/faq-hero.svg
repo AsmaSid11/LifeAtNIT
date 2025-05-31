@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Animated Question Mark 1 -->
+  <g transform="translate(100, 100)">
+    <circle cx="0" cy="0" r="40" fill="#E5E7EB" opacity="0.2">
+      <animate attributeName="r" values="40;45;40" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="#4B5563" font-size="40" font-weight="bold">
+      ?
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite" />
+    </text>
+  </g>
+
+  <!-- Animated Question Mark 2 -->
+  <g transform="translate(300, 80)">
+    <circle cx="0" cy="0" r="35" fill="#E5E7EB" opacity="0.2">
+      <animate attributeName="r" values="35;40;35" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="#4B5563" font-size="35" font-weight="bold">
+      ?
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite" />
+    </text>
+  </g>
+
+  <!-- Animated Question Mark 3 -->
+  <g transform="translate(500, 120)">
+    <circle cx="0" cy="0" r="30" fill="#E5E7EB" opacity="0.2">
+      <animate attributeName="r" values="30;35;30" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="#4B5563" font-size="30" font-weight="bold">
+      ?
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite" />
+    </text>
+  </g>
+
+  <!-- Chat Bubble 1 -->
+  <g transform="translate(200, 150)">
+    <path d="M0 0 L20 0 L20 20 L10 20 L0 30 Z" fill="#E5E7EB" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Chat Bubble 2 -->
+  <g transform="translate(400, 130)">
+    <path d="M0 0 L20 0 L20 20 L10 20 L0 30 Z" fill="#E5E7EB" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Chat Bubble 3 -->
+  <g transform="translate(600, 160)">
+    <path d="M0 0 L20 0 L20 20 L10 20 L0 30 Z" fill="#E5E7EB" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Floating Dots -->
+  <g transform="translate(150, 50)">
+    <circle cx="0" cy="0" r="3" fill="#4B5563" opacity="0.3">
+      <animate attributeName="cy" values="0;20;0" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  <g transform="translate(350, 30)">
+    <circle cx="0" cy="0" r="3" fill="#4B5563" opacity="0.3">
+      <animate attributeName="cy" values="0;20;0" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  <g transform="translate(550, 40)">
+    <circle cx="0" cy="0" r="3" fill="#4B5563" opacity="0.3">
+      <animate attributeName="cy" values="0;20;0" dur="3s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg> 
