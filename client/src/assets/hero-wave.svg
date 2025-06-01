@@ -2,8 +2,8 @@
 <svg width="1440" height="320" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#1F2647;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0D9488;stop-opacity:0.3" />
+      <stop offset="0%" style="stop-color:#DDA853;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0.3" />
     </linearGradient>
   </defs>
   
@@ -22,7 +22,7 @@
   </path>
 
   <!-- Second Wave -->
-  <path d="M0,224L60,213.3C120,203,240,181,360,181.3C480,181,600,203,720,224C840,245,960,267,1080,261.3C1200,256,1320,224,1380,208L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" fill="#0D9488" fill-opacity="0.3">
+  <path d="M0,224L60,213.3C120,203,240,181,360,181.3C480,181,600,203,720,224C840,245,960,267,1080,261.3C1200,256,1320,224,1380,208L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" fill="#FFD700" fill-opacity="0.3">
     <animate
       attributeName="d"
       dur="12s"

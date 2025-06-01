@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { FaSearch, FaChartLine, FaBuilding, FaLinkedin, FaGraduationCap, FaBriefcase } from "react-icons/fa";
+import {
+  FaSearch,
+  FaChartLine,
+  FaBuilding,
+  FaLinkedin,
+  FaGraduationCap,
+  FaBriefcase,
+} from "react-icons/fa";
 import {
   BarChart,
   Bar,
@@ -10,7 +17,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import heroWave from "../../assets/hero-wave.svg";
+import { motion } from "framer-motion";
 
 const internshipStats = [
   { dept: "CHE", value: "97.5%" },
@@ -46,33 +53,76 @@ const Placements = () => {
   }, []);
 
   const filteredRecruiters = [
-    "Google", "Amazon", "Microsoft", "NVIDIA", "Samsung", "Deloitte",
-    "TCS", "Infosys", "Wipro", "Accenture", "DE Shaw", "C-DOT",
-    "NTPC", "ONGC", "Reliance", "L&T", "Vedanta", "ICICI Bank",
-    "Optum", "Maruti Suzuki", "Ashok Leyland", "HP", "IndianOil", "BHEL",
-    "JSW Steel", "Jio", "Sigmoid", "Chegg", "Publicis Sapient", "Vedantu",
-    "Winjit", "Leena AI", "Innominds", "Clicklabs", "Subex", "XenonStack",
-    "FourKites", "Karza", "Think Gas", "Halliburton", "HDFC Bank",
-    "Capgemini", "Runaya", "Alstom", "Vivo", "Tekion", "Jungleworks", "Newzera",
-  ].filter(name => name.toLowerCase().includes(searchTerm.toLowerCase()));
+    "Google",
+    "Amazon",
+    "Microsoft",
+    "NVIDIA",
+    "Samsung",
+    "Deloitte",
+    "TCS",
+    "Infosys",
+    "Wipro",
+    "Accenture",
+    "DE Shaw",
+    "C-DOT",
+    "NTPC",
+    "ONGC",
+    "Reliance",
+    "L&T",
+    "Vedanta",
+    "ICICI Bank",
+    "Optum",
+    "Maruti Suzuki",
+    "Ashok Leyland",
+    "HP",
+    "IndianOil",
+    "BHEL",
+    "JSW Steel",
+    "Jio",
+    "Sigmoid",
+    "Chegg",
+    "Publicis Sapient",
+    "Vedantu",
+    "Winjit",
+    "Leena AI",
+    "Innominds",
+    "Clicklabs",
+    "Subex",
+    "XenonStack",
+    "FourKites",
+    "Karza",
+    "Think Gas",
+    "Halliburton",
+    "HDFC Bank",
+    "Capgemini",
+    "Runaya",
+    "Alstom",
+    "Vivo",
+    "Tekion",
+    "Jungleworks",
+    "Newzera",
+  ].filter((name) => name.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-lightblue/10 to-teal/10">
-      {/* Hero Section */}
-      <div className="relative bg-[#1F2647] text-snow py-12 sm:py-20 overflow-hidden">
-        <img
-          src={heroWave}
-          alt="wave pattern"
-          className="absolute bottom-0 left-0 w-full h-20 sm:h-24 md:h-30 object-cover animate-pulse"
-          style={{ zIndex: 1 }}
+      <div className="relative aspect-[16/4.5] w-full shadow-2xl mb-20 overflow-hidden">
+        <motion.img
+          src="../../images/p.jpeg"
+          alt="Student Clubs"
+          className="w-full h-full object-cover"
+          initial={{ scale: 1.2 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
         />
-        <div className="relative max-w-7xl mx-auto text-center">
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-snow drop-shadow-lg animate-fade-in-up mb-2 sm:mb-4">
-            Placements & Internships
-          </h1>
-          <p className="text-sm xs:text-base sm:text-lg md:text-xl text-[#DDA853] font-medium animate-fade-in-up delay-200 px-4">
-            Empowering students with exceptional career opportunities through strong industry connections
-          </p>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center">
+            <h1 className="text-6xl font-bold text-[#FFFBFC] animate-fade-in">
+              Student <span className="text-yellow">Placements</span>
+            </h1>
+            <p className="mt-1 text-lg font-medium text-[#FFFBFC] tracking-wide animate-fade-in-up">
+              Connect. Collaborate. Create.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -81,21 +131,33 @@ const Placements = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
             <FaChartLine className="text-3xl text-[#1F2647] mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Placement Rate</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Placement Rate
+            </h3>
             <p className="text-3xl font-bold text-[#DDA853]">95%+</p>
-            <p className="text-sm text-gray-500">Average placement rate across departments</p>
+            <p className="text-sm text-gray-500">
+              Average placement rate across departments
+            </p>
           </div>
           <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
             <FaBuilding className="text-3xl text-[#1F2647] mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Top Recruiters</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Top Recruiters
+            </h3>
             <p className="text-3xl font-bold text-[#DDA853]">50+</p>
-            <p className="text-sm text-gray-500">Leading companies visit our campus</p>
+            <p className="text-sm text-gray-500">
+              Leading companies visit our campus
+            </p>
           </div>
           <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
             <FaLinkedin className="text-3xl text-[#1F2647] mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Alumni Network</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Alumni Network
+            </h3>
             <p className="text-3xl font-bold text-[#DDA853]">10K+</p>
-            <p className="text-sm text-gray-500">Strong alumni network worldwide</p>
+            <p className="text-sm text-gray-500">
+              Strong alumni network worldwide
+            </p>
           </div>
         </div>
 
@@ -105,15 +167,20 @@ const Placements = () => {
             <FaLinkedin className="mr-2 text-[#DDA853]" /> Live LinkedIn Updates
           </h2>
           <p className="text-gray-600 mb-6">
-            Stay updated with placement and internship announcements from our T&P Cell:
+            Stay updated with placement and internship announcements from our
+            T&P Cell:
           </p>
-          <div className="elfsight-app-aac1a6f9-377a-4ba6-8bd2-e0625c1d8888" data-elfsight-app-lazy></div>
+          <div
+            className="elfsight-app-aac1a6f9-377a-4ba6-8bd2-e0625c1d8888"
+            data-elfsight-app-lazy
+          ></div>
         </section>
 
         {/* Internship Statistics */}
         <section className="bg-white rounded-xl shadow-lg p-6 mb-12 border border-gray-100">
           <h2 className="text-2xl font-semibold text-[#1F2647] mb-6 flex items-center">
-            <FaChartLine className="mr-2 text-[#DDA853]" /> Internship Statistics
+            <FaChartLine className="mr-2 text-[#DDA853]" /> Internship
+            Statistics
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {internshipStats.map((item) => (
@@ -121,8 +188,12 @@ const Placements = () => {
                 key={item.dept}
                 className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-[#DDA853] transition-all duration-300 hover:shadow-md"
               >
-                <div className="text-2xl font-bold text-[#1F2647] mb-1">{item.value}</div>
-                <div className="text-sm font-medium text-gray-700">{item.dept}</div>
+                <div className="text-2xl font-bold text-[#1F2647] mb-1">
+                  {item.value}
+                </div>
+                <div className="text-sm font-medium text-gray-700">
+                  {item.dept}
+                </div>
               </div>
             ))}
           </div>
@@ -133,32 +204,92 @@ const Placements = () => {
           <h2 className="text-2xl font-semibold text-[#1F2647] mb-6 flex items-center">
             <FaChartLine className="mr-2 text-[#DDA853]" /> Placement Statistics
           </h2>
-          
+
           {/* Chart */}
-          <div className="h-96 mb-8">
+          <div className="h-96 mb-8 bg-gradient-to-br from-[#FFF8E7] to-[#FFE4B5] rounded-xl p-6 shadow-lg">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={placementStats}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis dataKey="dept" stroke="#6b7280" />
-                <YAxis stroke="#6b7280" />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: 'white',
-                    border: '1px solid #e5e7eb',
-                    borderRadius: '0.5rem',
-                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+              <BarChart
+                data={placementStats}
+                margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+              >
+                <defs>
+                  <linearGradient id="avgGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#DDA853" stopOpacity={0.9} />
+                    <stop offset="95%" stopColor="#DDA853" stopOpacity={0.6} />
+                  </linearGradient>
+                  <linearGradient id="highGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#1F2647" stopOpacity={0.9} />
+                    <stop offset="95%" stopColor="#1F2647" stopOpacity={0.6} />
+                  </linearGradient>
+                  <linearGradient id="medGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#88DADA" stopOpacity={0.9} />
+                    <stop offset="95%" stopColor="#88DADA" stopOpacity={0.6} />
+                  </linearGradient>
+                </defs>
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  stroke="#E6D5B8"
+                  vertical={false}
+                />
+                <XAxis
+                  dataKey="dept"
+                  stroke="#1F2647"
+                  tick={{ fill: "#1F2647", fontSize: 12, fontWeight: 500 }}
+                  axisLine={{ stroke: "#1F2647", strokeWidth: 1.5 }}
+                />
+                <YAxis
+                  stroke="#1F2647"
+                  tick={{ fill: "#1F2647", fontSize: 12, fontWeight: 500 }}
+                  axisLine={{ stroke: "#1F2647", strokeWidth: 1.5 }}
+                  tickFormatter={(value) => `${value} LPA`}
+                />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: "rgba(255, 248, 231, 0.95)",
+                    border: "1px solid #DDA853",
+                    borderRadius: "0.5rem",
+                    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                    color: "#1F2647",
+                    backdropFilter: "blur(4px)",
+                  }}
+                  labelStyle={{ color: "#1F2647", fontWeight: "bold" }}
+                  formatter={(value) => [`${value} LPA`, ""]}
+                />
+                <Legend
+                  wrapperStyle={{
+                    paddingTop: "20px",
+                    fontSize: "12px",
+                    color: "#1F2647",
+                    fontWeight: 500,
                   }}
                 />
-                <Legend />
-                <Bar dataKey="avg" name="Average Package" fill="#1F2647" />
-                <Bar dataKey="high" name="Highest Package" fill="#DDA853" />
-                <Bar dataKey="med" name="Median Package" fill="#88DADA" />
+                <Bar
+                  dataKey="avg"
+                  name="Average Package"
+                  fill="url(#avgGradient)"
+                  radius={[4, 4, 0, 0]}
+                  maxBarSize={40}
+                />
+                <Bar
+                  dataKey="high"
+                  name="Highest Package"
+                  fill="url(#highGradient)"
+                  radius={[4, 4, 0, 0]}
+                  maxBarSize={40}
+                />
+                <Bar
+                  dataKey="med"
+                  name="Median Package"
+                  fill="url(#medGradient)"
+                  radius={[4, 4, 0, 0]}
+                  maxBarSize={40}
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>
 
           {/* Table */}
-          <div className="overflow-x-auto">
+          {/*<div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
@@ -179,7 +310,7 @@ const Placements = () => {
                 ))}
               </tbody>
             </table>
-          </div>
+          </div> */}
         </section>
 
         {/* Past Recruiters */}
