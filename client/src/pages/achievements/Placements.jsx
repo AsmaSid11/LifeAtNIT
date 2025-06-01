@@ -17,7 +17,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { motion } from "framer-motion";
+import heroWave from "../../assets/hero-wave.svg";
 
 const internshipStats = [
   { dept: "CHE", value: "97.5%" },
@@ -105,24 +105,23 @@ const Placements = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-lightblue/10 to-teal/10">
-      <div className="relative aspect-[16/4.5] w-full shadow-2xl mb-20 overflow-hidden">
-        <motion.img
-          src="../../images/p.jpeg"
-          alt="Student Clubs"
-          className="w-full h-full object-cover"
-          initial={{ scale: 1.2 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
+            {/* Animated Hero Section */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-yellow-100/60 via-lightblue/30 to-snow/80 py-10 sm:py-14 md:py-16 mb-6 sm:mb-10">
+        {/* Animated wave SVG */}
+        <img
+          src={heroWave}
+          alt="wave"
+          className="absolute bottom-0 left-0 w-full h-16 sm:h-20 md:h-24 object-cover animate-pulse"
+          style={{ zIndex: 1 }}
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <div className="py-6 px-4 w-full overflow-hidden bg-[#1F2647]/50 text-center">
-            <h1 className="text-6xl font-bold text-[#FFFBFC] animate-fade-in">
-              Student <span className="text-yellow">Placements</span>
-            </h1>
-            <p className="mt-1 text-lg font-medium text-[#FFFBFC] tracking-wide animate-fade-in-up">
-              Connect. Collaborate. Create.
-            </p>
-          </div>
+        <div className="relative z-10 flex flex-col items-center justify-center px-2">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold text-dark drop-shadow-lg animate-fade-in-up mb-2 sm:mb-4 text-center">
+            Internships & Placements
+          </h1>
+
+          <p className="text-base xs:text-lg md:text-xl text-teal font-medium animate-fade-in-up delay-200 text-center px-2">
+            Guiding students to success with our committed Training and Placement Cell.
+          </p>
         </div>
       </div>
 
