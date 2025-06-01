@@ -6,6 +6,10 @@ import {
   FaLinkedin,
   FaGraduationCap,
   FaBriefcase,
+  FaPhone,
+  FaEnvelope,
+  FaClock,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 import {
   BarChart,
@@ -36,7 +40,7 @@ const placementStats = [
   { dept: "ECE", avg: "8.5 LPA", high: "15.5 LPA", med: "8.9 LPA" },
   { dept: "ELE", avg: "8.61 LPA", high: "15.5 LPA", med: "7.5 LPA" },
   { dept: "MEC", avg: "8 LPA", high: "13.9 LPA", med: "8.5 LPA" },
-  { dept: "CHE", avg: "8.5 LPA", high: "9.32 LPA", med: "8.5 LPA" },
+  { dept: "CHE", avg: "8.5 LPA", high: "9.32 LPA", med: "13.9 LPA" },
   { dept: "CIV", avg: "7.92 LPA", high: "13.9 LPA", med: "7.6 LPA" },
   { dept: "MME", avg: "8 LPA", high: "16.6 LPA", med: "9.23 LPA" },
 ];
@@ -105,8 +109,8 @@ const Placements = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-lightblue/10 to-teal/10">
-            {/* Animated Hero Section */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-yellow-100/60 via-lightblue/30 to-snow/80 py-10 sm:py-14 md:py-16 mb-6 sm:mb-10">
+      {/* Animated Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-yellow-100/60 via-lightblue/30 to-snow/80 py-10 sm:py-14 md:py-16 mb-6 sm:mb-10">
         {/* Animated wave SVG */}
         <img
           src={heroWave}
@@ -120,7 +124,8 @@ const Placements = () => {
           </h1>
 
           <p className="text-base xs:text-lg md:text-xl text-teal font-medium animate-fade-in-up delay-200 text-center px-2">
-            Guiding students to success with our committed Training and Placement Cell.
+            Guiding students to success with our committed Training and Placement
+            Cell.
           </p>
         </div>
       </div>
@@ -313,7 +318,7 @@ const Placements = () => {
         </section>
 
         {/* Past Recruiters */}
-        <section className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+        <section className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 mb-12">
           <h2 className="text-2xl font-semibold text-[#1F2647] mb-6 flex items-center">
             <FaBuilding className="mr-2 text-[#DDA853]" /> Past Recruiters
           </h2>
@@ -344,6 +349,42 @@ const Placements = () => {
             ))}
           </div>
         </section>
+
+        {/* Contact Section */}
+        <section className="mt-20 mb-16 px-6 md:px-16 lg:px-24 text-center">
+  <h2 className="text-3xl md:text-4xl font-semibold text-[#1F2647] mb-10 flex justify-center items-center gap-2">
+    <FaPhone className="text-[#DDA853] text-xl md:text-2xl" />
+    Contact Us
+  </h2>
+
+  <div className="flex flex-col md:flex-row justify-center gap-10 text-[#1F2647]">
+    {/* Email */}
+    <div className="flex flex-col items-center space-y-1 max-w-xs">
+      <FaEnvelope className="text-[#DDA853] text-xl mb-1" />
+      <p className="text-sm text-gray-500">Email</p>
+      <p className="text-base font-medium">tnp@nitsri.ac.in</p>
+    </div>
+
+    {/* Phone */}
+    <div className="flex flex-col items-center space-y-1 max-w-xs">
+      <FaPhone className="text-[#DDA853] text-xl mb-1" />
+      <p className="text-sm text-gray-500">Phone</p>
+      <p className="text-base font-medium">+91-12345-67890</p>
+    </div>
+
+    {/* Address */}
+    <div className="flex flex-col items-center space-y-1 max-w-xs">
+      <FaMapMarkerAlt className="text-[#DDA853] text-xl mb-1" />
+      <p className="text-sm text-gray-500">Address</p>
+      <p className="text-base font-medium leading-relaxed">
+        Training & Placement Cell,<br />
+        NIT Srinagar, J&K, India
+      </p>
+    </div>
+  </div>
+</section>
+
+
       </div>
     </div>
   );
