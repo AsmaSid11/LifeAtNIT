@@ -124,8 +124,8 @@ const Placements = () => {
           </h1>
 
           <p className="text-base xs:text-lg md:text-xl text-teal font-medium animate-fade-in-up delay-200 text-center px-2">
-            Guiding students to success with our committed Training and Placement
-            Cell.
+            Guiding students to success with our committed Training and
+            Placement Cell.
           </p>
         </div>
       </div>
@@ -351,40 +351,55 @@ const Placements = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="mt-20 mb-16 px-6 md:px-16 lg:px-24 text-center">
-  <h2 className="text-3xl md:text-4xl font-semibold text-[#1F2647] mb-10 flex justify-center items-center gap-2">
-    <FaPhone className="text-[#DDA853] text-xl md:text-2xl" />
-    Contact Us
-  </h2>
-
-  <div className="flex flex-col md:flex-row justify-center gap-10 text-[#1F2647]">
-    {/* Email */}
-    <div className="flex flex-col items-center space-y-1 max-w-xs">
-      <FaEnvelope className="text-[#DDA853] text-xl mb-1" />
-      <p className="text-sm text-gray-500">Email</p>
-      <p className="text-base font-medium">tnp@nitsri.ac.in</p>
-    </div>
-
-    {/* Phone */}
-    <div className="flex flex-col items-center space-y-1 max-w-xs">
-      <FaPhone className="text-[#DDA853] text-xl mb-1" />
-      <p className="text-sm text-gray-500">Phone</p>
-      <p className="text-base font-medium">+91-12345-67890</p>
-    </div>
-
-    {/* Address */}
-    <div className="flex flex-col items-center space-y-1 max-w-xs">
-      <FaMapMarkerAlt className="text-[#DDA853] text-xl mb-1" />
-      <p className="text-sm text-gray-500">Address</p>
-      <p className="text-base font-medium leading-relaxed">
-        Training & Placement Cell,<br />
-        NIT Srinagar, J&K, India
-      </p>
-    </div>
-  </div>
-</section>
-
-
+        <section className="mt-20 mb-16 px-4 sm:px-8 md:px-16 lg:px-24">
+          <div className="max-w-3xl mx-auto py-10 px-4 sm:px-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-dark mb-1 text-center">
+              Training and Placement Cell - NIT Srinagar
+            </h2>
+            <div className="text-2xl md:text-3xl font-semibold text-yellow mb-8 text-center">
+              Contact Us
+            </div>
+            <div className="flex flex-col md:flex-row justify-center items-stretch gap-8">
+              {/* Email */}
+              <div className="flex-1 p-6 flex flex-col items-center mb-6 md:mb-0">
+                <FaEnvelope className="text-[#DDA853] text-2xl mb-2" />
+                <p className="text-sm text-gray-500 mb-2">Email</p>
+                <p className="text-base font-medium break-all">
+                  <a
+                    href="mailto:internships@nitsri.ac.in"
+                    className="hover:underline"
+                  >
+                    internships@nitsri.ac.in
+                  </a>
+                </p>
+                <p className="text-base font-medium break-all">
+                  <a
+                    href="mailto:placementStats@nitsri.ac.in"
+                    className="hover:underline"
+                  >
+                    placementStats@nitsri.ac.in
+                  </a>
+                </p>
+                <p className="text-base font-medium break-all">
+                  <a
+                    href="mailto:hodtandp@nitsri.ac.in"
+                    className="hover:underline"
+                  >
+                    hodtandp@nitsri.ac.in
+                  </a>
+                </p>
+              </div>
+              {/* Phone */}
+              <div className="flex-1 p-6 flex flex-col items-center">
+                <FaPhone className="text-[#DDA853] text-2xl mb-2" />
+                <p className="text-sm text-gray-500 mb-2">Phone</p>
+                <p className="text-base font-medium break-all">+91- 94192 26538</p>
+                <p className="text-base font-medium break-all">+91- 94192 26574</p>
+                <p className="text-base font-medium break-all">0194 - 2424809</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
