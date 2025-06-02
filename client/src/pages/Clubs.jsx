@@ -2,12 +2,114 @@ import { motion } from 'framer-motion';
 
 import heroWave from "../assets/hero-wave.svg";
 
+import { FaBrain, FaHandsHelping, FaLaughBeam } from "react-icons/fa";
+import {
+  Code,
+  Mic,
+  BrainCircuit,
+  Presentation,
+  Video,
+  Trophy,
+  ListChecks
+} from "lucide-react"; // or swap with any icon set you like
+
+const cardsData = [
+  {
+    title: "Coding Competitions",
+    description: "Sharpen your programming skills through national-level hackathons and algorithmic challenges.",
+    icon: <Code size={40} className="text-[#88DADA]" />,
+     bgColor: "bg-snow",
+  },
+  {
+    title: "Seminars",
+    description: "Engage with experts and expand your knowledge on cutting-edge technologies and industry trends.",
+
+    icon: <Presentation size={40} className="text-[#88DADA]" />,
+     bgColor: "bg-snow"
+  },
+  {
+    title: "Debates",
+    description: "Build confidence, critical thinking, and public speaking through structured intellectual debates.",
+
+    icon: <Mic size={40} className="text-[#88DADA]" />,
+     bgColor: "bg-snow"
+  },
+  {
+    title: "Technical Workshops",
+    description: "Hands-on experience with tools and frameworks through focused learning sessions.",
+    icon: <BrainCircuit size={40} className="text-[#88DADA]" />,
+     bgColor: "bg-snow"
+  },
+  {
+    title: "Movie Screenings",
+    description: "Unwind with curated film screenings ranging from thought-provoking documentaries to popular blockbusters.",
+    icon: <Video size={40} className="text-[#88DADA]" />,  // from lucide-react
+     bgColor: "bg-snow"
+  },
+  {
+    title: "Competitions",
+    description: "Engage in friendly competition through coding contests, design battles, hackathons, and more.",
+    icon: <Trophy size={40} className="text-[#88DADA]" />,  // from lucide-react
+     bgColor: "bg-snow"
+  },
+  {
+    title: "Quizzes",
+    description: "Challenge your intellect with quizzes on tech, pop culture, general knowledge, and beyond.",
+    icon: <ListChecks size={40} className="text-[#88DADA]" />,  // from lucide-react
+     bgColor: "bg-snow"
+  }
+  
+];
+
+const cardData = [
+  {
+    icon: <FaBrain size={40} className="text-[#88DADA]" />,
+    title: "Holistic Development",
+    description:
+      "Grow beyond academics through leadership roles, workshops, and interdisciplinary activities.",
+      bgColor: '#FFFBFC',
+  },
+  {
+    icon: <FaHandsHelping size={40} className="text-[#88DADA]" />,
+    title: "Collaboration and Teamwork",
+    description:
+      "Work on group projects and events that foster cooperation, communication, and shared goals.",
+    bgColor: '#FFFBFC',
+  },
+  {
+    icon: <FaLaughBeam size={40} className="text-[#88DADA]" />,
+    title: "Fun and Self Learning",
+    description:
+      "Participate in recreational clubs and self-paced learning initiatives to stay curious and inspired.",
+    bgColor: '#FFFBFC',
+  },
+];
+
+const InfoCards = ({ icon, title, description, bgColor }) => {
+  return (
+    <motion.div
+    className="flex flex-col items-center text-center rounded-lg p-6 shadow-md m-4 h-[22rem] w-[20rem] border-t-8 border-[#0D9488] overflow-scroll"
+    style={{ backgroundColor: bgColor }}
+    whileInView={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0, y: 50 }}
+    whileHover={{ scale: 1.05 }}
+    transition={{ type: 'spring', stiffness: 200 }}
+  >
+      <div className="mb-4">{icon}</div>
+      <h3 className="text-2xl font-bold text-[#1F2647] mb-2 font-serif">{title}</h3>
+      <p className="text-[#1F2647] text-sm font-serif leading-relaxed p-[1rem]">{description}</p>
+    </motion.div>
+  );
+};
+
+
+
 
 
 const ClubCard = ({ title, description, image, reverse }) => {
   return (
     <motion.div
-      className={`flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl mb-5 ${
+      className={`flex flex-col md:flex-row items-center border-t-8 border-[#1F2647] bg-snow p-8 shadow-lg rounded-xl mb-5 ${
         reverse ? 'md:flex-row-reverse' : ''
       }`}
       whileHover={{
@@ -37,12 +139,15 @@ const ClubCard = ({ title, description, image, reverse }) => {
         />
       </div>
       <div className="w-full md:w-1/2">
-        <div className="font-bold font-serif text-3xl text-[#1F2647] mb-4">{title}</div>
+        <div className="font-bold font-serif text-3xl text-[#DDA853] mb-4">{title}</div>
         <p className="text-[#1F2647] leading-relaxed">{description}</p>
       </div>
     </motion.div>
   );
 };
+
+
+
 
 
 const clubsData = [
@@ -52,6 +157,7 @@ const clubsData = [
       "The Technology Club serves as a hub for innovation and technological exploration. It encompasses subdivisions like Robotics, Google Developer Student Clubs (GDSC), E-Vision, and Semicolon—the official coding club. The club organizes workshops, hackathons, encouraging students to engage in hands-on projects and collaborative learning.",
     image: "/Clubs/DSC07633.webp",
     reverse: false,
+
   },
   {
     title: "Cultural Club and Soap Box",
@@ -102,6 +208,7 @@ const clubsData = [
     image: "/Clubs/pexels-warre-van-de-wouwer-400573496-32233892.webp",
     reverse: true,
   },
+  
 ];
 
 const Clubs = () => {
@@ -135,14 +242,102 @@ const Clubs = () => {
       </div>
 
       {/* Clubs Section */}
-      <div className="min-h-screen max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 mb-[5rem]">
         {clubsData.map((club, index) => (
           <ClubCard key={index} {...club} />
         ))}
       </div>
+    {/*What we do*/}
+    {/* Wavy Top Border */}
+<div className="h-8 bg-[#f8fafc]">
+  <svg
+    className="w-full h-full"
+    viewBox="0 0 1200 32"
+    fill="none"
+    preserveAspectRatio="none"
+  >
+    <path
+      d="M0,0 C300,16 600,24 900,8 C1000,4 1100,12 1200,32 L1200,0 L0,0 Z"
+      fill="#88DADA"  // This should match the section background below
+    />
+  </svg>
+</div>
+
+{/* Section Below with Matching Color */}
+<div className="py-12 sm:py-16" style={{ backgroundColor: '#1F2647' }}>
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    {/* Section Content */}
+    <h1 className='font-bold font-serif text-4xl text-[snow] justify-items-center text-center mb-[1rem]'>Activities</h1>
+    <div className="overflow-x-auto ml-[12rem] py-8">
+  <div className="flex gap-4 px-4">
+    {cardsData.map((card, index) => (
+      <motion.div
+      key={index}
+      className={`min-w-[300px] w-[20rem] h-[23rem] border-t-8 border-[#0D9488] flex-shrink-0 p-4 rounded-xl shadow-md ${card.bgColor} flex flex-col items-center text-center`}
+      style={{ backgroundColor: card.bgColor }}
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: 'spring', stiffness: 200 }}
+    >
+      <div className="flex justify-center items-center text-5xl">
+        {card.icon}
+      </div>
+      <h3 className="text-2xl font-bold mt-4 font-serif text-[#DDA853]">{card.title}</h3>
+      <p className="text-sm font-serif leading-relaxed p-[1rem]" style={{ color: "#1F2647" }}>
+        {card.description}
+      </p>
+    </motion.div>
+    
+    ))}
+  </div>
+</div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    {/*Why join us */}
+
+    {/* Wavy Top Border */}
+<div className="h-5 bg-[#DDA853] mt-[3rem]">
+  <svg
+    className="w-full h-full"
+    viewBox="0 0 1200 32"
+    fill="none"
+    preserveAspectRatio="none"
+  >
+    <path
+      d="M0,0 C300,16 600,24 900,8 C1000,4 1100,12 1200,32 L1200,0 L0,0 Z"
+      fill="#88DADA"  // This should match the section background below
+    />
+  </svg>
+</div>
+
+{/* Section Below with Matching Color */}
+<div className="py-10 sm:py-16 mb-[10rem]"  style={{ backgroundColor: '#DDA853' }}>
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    {/* Section Content */}
+    <h1 className='font-bold font-serif text-4xl text-snow justify-items-center text-center mt-[2rem]'>Why join Clubs?</h1>
+    <div className='min-h-screen max-w-6xl mx-auto py-8 px-6 flex flex-row justify-center -mb-[5rem]'>
+  {cardData.map((card, index) => (
+    <InfoCards key={index} {...card} />
+  ))}
+</div>
+  </div>
+</div>
+
+    
+    
     </div>
   );
 };
+
+
+
 
 export default Clubs;
 
