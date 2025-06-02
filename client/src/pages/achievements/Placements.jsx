@@ -138,7 +138,7 @@ const Placements = () => {
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
               Placement Rate
             </h3>
-            <p className="text-3xl font-bold text-[#DDA853]">95%+</p>
+            <p className="text-3xl font-bold text-[#DDA853]">94%+</p>
             <p className="text-sm text-gray-500">
               Average placement rate across departments
             </p>
@@ -158,7 +158,7 @@ const Placements = () => {
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
               Alumni Network
             </h3>
-            <p className="text-3xl font-bold text-[#DDA853]">10K+</p>
+            <p className="text-3xl font-bold text-[#DDA853]">25K+</p>
             <p className="text-sm text-gray-500">
               Strong alumni network worldwide
             </p>
