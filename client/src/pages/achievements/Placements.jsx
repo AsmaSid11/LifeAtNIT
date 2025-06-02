@@ -174,10 +174,12 @@ const Placements = () => {
             Stay updated with placement and internship announcements from our
             T&P Cell:
           </p>
-          <div
-            className="elfsight-app-aac1a6f9-377a-4ba6-8bd2-e0625c1d8888"
-            data-elfsight-app-lazy
-          ></div>
+          <div className="relative overflow-hidden" style={{ height: '400px' }}> {/* Adjust height as needed */}
+            <div
+              className="elfsight-app-aac1a6f9-377a-4ba6-8bd2-e0625c1d8888"
+              data-elfsight-app-lazy
+            ></div>
+          </div>
         </section>
 
         {/* Internship Statistics */}
