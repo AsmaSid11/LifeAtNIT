@@ -5,6 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [accommodationOpen, setAccommodationOpen] = useState(false);
   const [achievementsOpen, setAchievementsOpen] = useState(false);
+  const [gymkhanaOpen, setGymkhanaOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
@@ -21,8 +22,7 @@ const Navbar = () => {
   }, [isHomePage]);
 
   const navLinks = [
-    { name: 'Clubs', path: '/clubs' },
-    { name: 'Fests', path: '/fests' },
+    { name: 'Alumni', path: '/alumni' },
     { name: 'Amenities', path: '/amenities' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Contact Us', path: '/contact' },
@@ -69,6 +69,41 @@ const Navbar = () => {
               <span className="relative z-10">Home</span>
               <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
             </Link>
+
+            {/* Gymkhana Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setGymkhanaOpen(!gymkhanaOpen)}
+                className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
+              >
+                <span className="relative z-10">Gymkhana</span>
+                <svg className="w-4 h-4 relative z-10 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
+              </button>
+
+              {gymkhanaOpen && (
+                <div className="absolute left-0 mt-2 w-48 rounded-lg shadow-lg bg-dark/95 backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50">
+                  <div className="py-1">
+                    <Link
+                      to="/clubs"
+                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                      onClick={() => setGymkhanaOpen(false)}
+                    >
+                      Clubs
+                    </Link>
+                    <Link
+                      to="/fests"
+                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                      onClick={() => setGymkhanaOpen(false)}
+                    >
+                      Fests
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Achievements Dropdown */}
             <div className="relative">
@@ -200,6 +235,44 @@ const Navbar = () => {
             >
               Home
             </Link>
+
+            {/* Mobile Gymkhana */}
+            <div className="relative">
+              <button
+                onClick={() => setGymkhanaOpen(!gymkhanaOpen)}
+                className="w-full text-left px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center justify-between"
+              >
+                Gymkhana
+                <svg className="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {gymkhanaOpen && (
+                <div className="pl-4">
+                  <Link
+                    to="/clubs"
+                    className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={() => {
+                      setIsOpen(false);
+                      setGymkhanaOpen(false);
+                    }}
+                  >
+                    Clubs
+                  </Link>
+                  <Link
+                    to="/fests"
+                    className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={() => {
+                      setIsOpen(false);
+                      setGymkhanaOpen(false);
+                    }}
+                  >
+                    Fests
+                  </Link>
+                </div>
+              )}
+            </div>
 
             {/* Mobile Achievements */}
             <div className="relative">
