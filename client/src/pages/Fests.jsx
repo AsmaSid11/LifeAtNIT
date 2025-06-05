@@ -5,19 +5,19 @@ const events = [
   {
     title: "Techvaganza",
     
-    details: "Techvaganza is a vibrant celebration of technology, innovation, and youthful energy. The fest brings  together tech enthusiasts, gamers, entrepreneurs, and thinkers from across the region. With an engaging mix of technical workshops, spirited competitions, and inspiring talks, Techvaganza offers a platform for ideas to flourish and talents to shine.The event pulses with creativity and collaboration. ",
+    details:"Techvaganza is a national level technical festival held anually at National Institute of Technology Srinagar. It is the first Techno-Management festival in the region. With the initiation of Techvaganza in 2009, it has emerged as one of the biggest technical carnival among all. The main aim is to uplift the technical level of the region and provide a platform for technical tender buds to innovate and gain experience in the field of technology and management. Students showcase their technical prowess through robotics challenges, coding competitions, workshops, and guest lectures. It's a platform for budding engineers to network, learn, and push the boundaries of technology.",
     images: ["/Clubs/DSC07966.webp", "/Clubs/DSC08125 (1).webp", "/Clubs/DSC02146.webp","/Clubs/DSC08048.webp","/Clubs/DSC08217.webp","/Clubs/DSC08217.webp"],
   },
   {
     title: "TedX",
     
-    details: "TedX NIT Srinagar is a platform that ignites ideas and inspires change. Bringing together thought leaders, innovators, and changemakers from diverse fields, TedX sparks meaningful conversations and celebrates the power of storytelling. From cutting-edge technology to personal journeys of resilience, each talk is a window into ideas worth spreading. The event fosters curiosity, challenges perspectives, and encourages the campus community to think beyond boundaries.",
+    details:"TEDxNITSrinagar isn't your typical college event. It's a vibrant platform that ignites minds and fosters innovation within the walls of NIT Srinagar and beyond. Modeled after the globally renowned TED Talks, TEDxNITSrinagar brings together a diverse range of inspiring speakers. From pioneering scientists and innovative entrepreneurs to passionate artists and dedicated social activists, these indivisuals take the stage to share their unique ideas and experiences. In the heart of Kashmir, TEDxNITSrinagar stands as a beacon of intellectual curiousity and progress of ideas to bridge divides, inspire action, and shape a brighter future.",
     images: ["/Clubs/DSC_0453.webp", "/Clubs/DSC_0529.webp", "/Clubs/DSC_0599 (1).webp","/Clubs/DSC_0569.webp","/Clubs/DSC_0538.webp","/Clubs/DSC_0586.webp"],
   },
   {
     title: "Rang-e-chinar",
 
-    details: "Rang-e-Chinar is a vibrant celebration of culture and creativity at NIT Srinagar. This fest brings together the essence of Kashmir’s rich heritage through captivating performances, art displays, music, and storytelling. It is a space where tradition meets youthful expression, where colors, rhythms, and voices echo the spirit of the valley. Rang-e-Chinar offers students a soulful platform to embrace and showcase their cultural roots with pride and passion.",
+  details:"Rang-e-Chinar is a two-day annual cultural festival organized by the National Institute of Technology Srinagar. The festival is a celebration of Indian culture that showcases student activity and talent through art exhibitions, installations and performances. It also aims to inspire culinary experiences that reflect India's diversity. This vibrant cultural festival celebrates the rich tapestry of Kashmiri heritage and Indian diversity. It features music,dance,drama,literary events, and a platform for students to express their creativity and cultural identities.",
     images: ["/Clubs/DSC_0960.webp", "/Clubs/DSC_1265.webp", "/Clubs/DSC02196 (1).webp"],
   },
   {
@@ -110,7 +110,7 @@ const Fests = () => {
 
 
           return (
-            <div key={i} className="flex flex-col md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl space-y-6 md:space-y-0 transition-transform hover:scale-[1.01] duration-300">
+            <div key={i} className="flex flex-col border-t-8 border-[#1F2647] md:flex-row items-center bg-snow p-8 shadow-lg rounded-xl space-y-6 md:space-y-0 transition-transform hover:scale-[1.01] duration-300">
               {isEven ? (
                 <>
                   <div className="w-full md:w-1/2 space-y-4">
