@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import heroWave from '../assets/hero-wave.svg'; // Adjust the path as necessary
 
 const oldGuestHouseImages = [
+  '/Amenities/old-guest-house.webp',
   '/Amenities/old-guest-house1.webp',
   '/Amenities/old-guest-house2.webp',
   '/Amenities/old-guest-house3.webp',
@@ -12,6 +13,7 @@ const oldGuestHouseImages = [
 
 const newGuestHouseImages = [
   '/Amenities/new-guest-house.webp',
+  '/Amenities/new-guest-house1.webp',
   '/Amenities/new-guest-house2.webp',
   '/Amenities/new-guest-house3.webp',
   '/Amenities/new-guest-house4.webp',
