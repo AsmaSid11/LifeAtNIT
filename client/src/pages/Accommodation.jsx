@@ -4,12 +4,17 @@ import heroWave from '../assets/hero-wave.svg'; // Adjust the path as necessary
 
 const oldGuestHouseImages = [
   '/Amenities/old-guest-house1.webp',
-  '/Amenities/new-guest-house2.webp',
+  '/Amenities/old-guest-house2.webp',
   '/Amenities/old-guest-house3.webp',
+  '/Amenities/old-guest-house6.webp',
+  '/Amenities/old-guest-house5.webp',
 ];
 
 const newGuestHouseImages = [
   '/Amenities/new-guest-house.webp',
+  '/Amenities/new-guest-house2.webp',
+  '/Amenities/new-guest-house3.webp',
+  '/Amenities/new-guest-house4.webp',
   '/Amenities/old-guest-house4.webp',
 ];
 

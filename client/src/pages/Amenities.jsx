@@ -76,7 +76,6 @@ const amenitiesData = [
       "/Amenities/medical.webp",
       "/Amenities/medical2.webp",
       "/Amenities/medical3.webp",
-      "/Amenities/medical4.webp",
     ],
     brief:
       "Information about the health center and medical services available on campus.",
@@ -136,7 +135,7 @@ const amenitiesData = [
     photos: [
       "/Amenities/transportation.webp",
       "/Amenities/transportation2.webp",
-      "/Amenities/transportation3.webp",
+      "/Amenities/transportation1.webp",
     ],
     brief: "Details about campus transportation and connectivity.",
     details:
@@ -162,11 +161,12 @@ const amenitiesData = [
   },
   {
     name: "Banking",
-    image: "/Amenities/banking.webp",
+    image: "/Amenities/bank.webp",
     photos: [
-      "/Amenities/banking.webp",
-      "/Amenities/banking2.webp",
-      "/Amenities/banking3.webp",
+      "/Amenities/bank.webp",
+      "/Amenities/bank1.webp",
+      "/Amenities/bank3.webp",
+      "/Amenities/bank2.webp",
     ],
     brief: "Information about banking facilities and ATMs on campus.",
     details:
