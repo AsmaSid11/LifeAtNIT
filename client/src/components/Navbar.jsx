@@ -71,7 +71,8 @@ const Navbar = () => {
             </Link>
 
             {/* Achievements Dropdown */}
-            <div className="relative">
+            <div className="relative" onMouseEnter={() => setAchievementsOpen(true)}
+  onMouseLeave={() => setAchievementsOpen(false)}>
               <button
                 onClick={() => setAchievementsOpen(!achievementsOpen)}
                 className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
@@ -120,7 +121,8 @@ const Navbar = () => {
             </div>
 
             {/* Accommodation Dropdown */}
-            <div className="relative">
+            <div className="relative" onMouseEnter={() => setAccommodationOpen(true)}
+  onMouseLeave={() => setAccommodationOpen(false)}>
               <button
                 onClick={() => setAccommodationOpen(!accommodationOpen)}
                 className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
