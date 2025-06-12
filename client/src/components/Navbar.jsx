@@ -71,39 +71,43 @@ const Navbar = () => {
             </Link>
 
             {/* Gymkhana Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setGymkhanaOpen(!gymkhanaOpen)}
-                className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
-              >
-                <span className="relative z-10">Gymkhana</span>
-                <svg className="w-4 h-4 relative z-10 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
-              </button>
+<div
+  className="relative"
+  onMouseEnter={() => setGymkhanaOpen(true)}
+  onMouseLeave={() => setGymkhanaOpen(false)}
+>
+  <button
+    onClick={() => setGymkhanaOpen(!gymkhanaOpen)}
+    className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
+  >
+    <span className="relative z-10">Gymkhana</span>
+    <svg className="w-4 h-4 relative z-10 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+    </svg>
+    <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
+  </button>
 
-              {gymkhanaOpen && (
-                <div className="absolute left-0 mt-2 w-48 rounded-lg shadow-lg bg-dark/95 backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50">
-                  <div className="py-1">
-                    <Link
-                      to="/clubs"
-                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                      onClick={() => setGymkhanaOpen(false)}
-                    >
-                      Clubs
-                    </Link>
-                    <Link
-                      to="/fests"
-                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                      onClick={() => setGymkhanaOpen(false)}
-                    >
-                      Fests
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
+  {gymkhanaOpen && (
+    <div className="absolute left-0 mt-2 w-48 rounded-lg shadow-lg bg-dark/95 backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50">
+      <div className="py-1">
+        <Link
+          to="/clubs"
+          className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+          onClick={() => setGymkhanaOpen(false)}
+        >
+          Clubs
+        </Link>
+        <Link
+          to="/fests"
+          className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+          onClick={() => setGymkhanaOpen(false)}
+        >
+          Fests
+        </Link>
+      </div>
+    </div>
+  )}
+</div>
 
             {/* Achievements Dropdown */}
             <div className="relative" onMouseEnter={() => setAchievementsOpen(true)}
