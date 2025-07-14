@@ -71,15 +71,15 @@ const FacultyRecognition = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <span className="text-yellow">•</span>
-                <p className="text-dark">3 faculty members of NIT Srinagar are among world's top 2% scientists</p>
+                <p className="text-dark">3 NIT Srinagar faculty among world's top 2% scientists</p>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-yellow">•</span>
-                <p className="text-dark">Dr. M. A. Rather received Senior Researcher Award at ICEE-2021</p>
+                <p className="text-dark">Dr. M. A. Rather: Senior Researcher Award, ICEE-2021</p>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-yellow">•</span>
-                <p className="text-dark">Dr. Kurella Swamy received Second Best Paper Award at ATIPC-2020</p>
+                <p className="text-dark">Dr. Kurella Swamy: 2nd Best Paper Award, ATIPC-2020</p>
               </li>
             </ul>
           </div>
@@ -101,26 +101,16 @@ const FacultyRecognition = () => {
           </div>
           <div className="bg-white/80 rounded-xl p-8 backdrop-blur-sm shadow-lg">
             <ul className="space-y-4">
-              {/* Prof. Bashir Ahmed Mir Awards */}
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. (Dr.) Bashir Ahmed Mir</b> and his leading Research Group published latest Design Patent on "SOILSLURRY MIXING AND SAMPLE PREPARATION APPARATUS" for Reconstituted Soil Samples for high end Research in Critical State Soil Mechanics. The Patent Office Design No. 416513-001 Dated 27/12/2024.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. (Dr.) Bashir Ahmed Mir</b>, a Distinguished Professor and Foremost Authority in Geotechnical Engineering, has been conferred with the prestigious "GANTANTRA DIWAS PURASKAR 2025" for his exceptional and enduring contributions in the field of Geotechnical Engineering on the eve of 76th Republic Day (26/01/2025) by IMRF Institute of Higher Education and Research Vijayawada (AP) India.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. (Dr.) Bashir Ahmed Mir</b> has been awarded "INTERNATIONAL RESEARCH EXCELLENCE AWARD 2023" in recognition of the consistent superior performance in Geotechnical Engineering on the eve of World Teachers' Day Awards 2023 by International Multidisciplinary Research Foundation (IMRF), Institute of Higher Education & Research, INDIA.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. (Dr.) B. A. Mir</b> has been conferred the KEYNOTE PAPER AWARD during The Twelfth International Conference on Geotechnique, Construction Materials and Environment, GEOMATE 2022, held in Bangkok, Thailand, Nov. 22-24, 2022.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Dr. Bashir Ahmed Mir</b> has been conferred the award of Distinguished Researcher in Geotechnical Engineering by the Board of Management of the Venus International Foundation during 7th Annual Science & Technology Meet (ASTM-2021).</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. Bashir Ahmed Mir</b> received the Indo Asian - Distinguished Professor Award 2021 in Geotechnical Engineering by the World Teachers Day Excellence Awards Committee.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. Bashir Ahmed Mir</b> was awarded the Wall of Fame Award as one of the Top 20 Expert Faculties in Civil Engineering by the Academic Council of uLektz for the Year 2020-21.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. Bashir Ahmed Mir</b> received the Best Paper Award from SRMIST Chennai, India during the 1st International Conference on "Advances in Construction Materials and Management (ACMM 2021)" held on 25th & 26th of March 2021.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. Bashir Ahmed Mir</b> was honoured with the OUTSTANDING SCIENTIST AWARD in the 8th International Scientist Awards on Engineering, Science and Medicine, held on 21 & 22-Aug-2020, Madurai, India.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. Bashir Ahmed Mir</b> was honoured with Esteemed Grade of Fellowship by Open Association of Research Society (USA) for exceptional achievements in research (2019).</p></li>
-              {/* Other Faculty Awards */}
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Dr. Farhad Ilahi Bakhsh</b> was awarded "Best Paper Award" in "International Conference on Renewable Power-2020" during July 13 & 14, 2020.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Dr. Farhad Ilahi Bakhsh</b> won "10 for 10 Typhoon HIL Award" from Typhoon HIL GmbH, Switzerland, Europe on April 08, 2019.</p></li>
-              {/* Institute and Director Awards */}
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Outstanding Engineering Institute (North) Award by ABP News in 2014.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Outstanding Engineering Institute (North) Award by Dhanik Bhaskar in 2013.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Education Leadership Award to Prof. Rajat Gupta, Director, N.I.T Srinagar by Headlines Today.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Rajiv Gandhi Education Excellence Award to Prof. Rajat Gupta, Director, N.I.T Srinagar by Indian Solidarity Council.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Best Educationist Award to Prof. Rajat Gupta, Director, N.I.T Srinagar by International Institute of Education and Management Delhi.</p></li>
+              {/* Prof. Bashir Ahmed Mir Awards (clubbed) */}
+              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. (Dr.) Bashir Ahmed Mir</b>: Design Patent (2024), Gantantra Diwas Puraskar (2025), International Research Excellence Award (2023), Keynote Paper Award GEOMATE (2022), Distinguished Researcher Venus International Foundation (2021), Indo Asian Distinguished Professor Award (2021), Wall of Fame Top 20 Civil Engineering Faculties (2020-21), Best Paper Award ACMM (2021), Outstanding Scientist Award (2020), Fellowship Open Association of Research Society (2019)</p></li>
+              {/* Dr. Farhad Ilahi Bakhsh Awards (clubbed) */}
+              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Dr. Farhad Ilahi Bakhsh</b>: Best Paper Award Int. Conf. on Renewable Power (2020), 10 for 10 Typhoon HIL Award (2019)</p></li>
+              {/* Institute and Director Awards (already concise) */}
+              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Outstanding Engineering Institute (North), ABP News (2014)</p></li>
+              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Outstanding Engineering Institute (North), Dhanik Bhaskar (2013)</p></li>
+              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Education Leadership Award: Prof. Rajat Gupta, Headlines Today</p></li>
+              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Rajiv Gandhi Education Excellence Award: Prof. Rajat Gupta, Indian Solidarity Council</p></li>
+              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Best Educationist Award: Prof. Rajat Gupta, Int. Inst. of Education & Management Delhi</p></li>
               {/* Show More Link */}
               <li className="mt-6">
                 <a 
