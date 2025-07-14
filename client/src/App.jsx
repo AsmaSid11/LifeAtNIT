@@ -15,7 +15,7 @@ import Startups from './pages/achievements/Startups';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import ScrollToTop from "./components/ScrollToTop"; 
-import Alumni from './pages/alumni';
+import Alumni from './pages/Alumni';
 
 function App() {
   return (
