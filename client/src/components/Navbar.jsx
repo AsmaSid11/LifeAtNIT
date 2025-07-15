@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +8,8 @@ const Navbar = () => {
   const [gymkhanaOpen, setGymkhanaOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === '/';
+  const navRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,23 +18,72 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [isHomePage]);
 
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setAccommodationOpen(false);
+        setAchievementsOpen(false);
+        setGymkhanaOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Helper function to close all dropdowns
+  const closeAllDropdowns = () => {
+    setAccommodationOpen(false);
+    setAchievementsOpen(false);
+    setGymkhanaOpen(false);
+  };
+
+  // Helper function to toggle dropdown (closes others)
+  const toggleDropdown = (dropdownName) => {
+    closeAllDropdowns();
+    
+    switch(dropdownName) {
+      case 'accommodation':
+        setAccommodationOpen(true);
+        break;
+      case 'achievements':
+        setAchievementsOpen(true);
+        break;
+      case 'gymkhana':
+        setGymkhanaOpen(true);
+        break;
+      default:
+        break;
+    }
+  };
+
   const navLinks = [
-    { name: "Alumni", path: "/alumni" },
-    { name: "Amenities", path: "/amenities" },
-    { name: "FAQ", path: "/faq" },
-    { name: "Contact Us", path: "/contact" },
+    { name: 'Alumni', path: '/alumni' },
+    { name: 'Amenities', path: '/amenities' },
+    { name: 'FAQ', path: '/faq' },
+    { name: 'Contact Us', path: '/contact' },
   ];
+
+  // Get dropdown background color that matches navbar
+  const getDropdownBgColor = () => {
+    if (isHomePage && !isScrolled) {
+      return 'bg-black/95';
+    }
+    return 'bg-dark/95';
+  };
 
   return (
     <nav
+      ref={navRef}
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isHomePage && !isScrolled
-          ? "bg-black text-snow"
-          : "bg-dark/95 shadow-lg backdrop-blur-sm text-snow"
+          ? 'bg-black text-snow'
+          : 'bg-dark/95 shadow-lg backdrop-blur-sm text-snow'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,238 +115,131 @@ const Navbar = () => {
             <Link
               to="/"
               className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 relative group"
+              onClick={closeAllDropdowns}
             >
               <span className="relative z-10">Home</span>
               <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
             </Link>
 
             {/* Gymkhana Dropdown */}
-            {/* <div
-              className="relative"
-              onMouseEnter={() => setGymkhanaOpen(true)}
-              onMouseLeave={() => setGymkhanaOpen(false)}
-            >
+            <div className="relative">
               <button
-                onClick={() => setGymkhanaOpen(!gymkhanaOpen)}
+                onClick={() => gymkhanaOpen ? closeAllDropdowns() : toggleDropdown('gymkhana')}
                 className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
               >
                 <span className="relative z-10">Gymkhana</span>
-                <svg
-                  className="w-4 h-4 relative z-10 transition-transform duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className={`w-4 h-4 relative z-10 transition-transform duration-300 ${gymkhanaOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
               </button>
 
               {gymkhanaOpen && (
-                <div className="absolute left-0 mt-2 w-48 rounded-lg shadow-lg bg-dark/95 backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50">
+                <div className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg ${getDropdownBgColor()} backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50`}>
                   <div className="py-1">
                     <Link
                       to="/clubs"
                       className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                      onClick={() => setGymkhanaOpen(false)}
+                      onClick={closeAllDropdowns}
                     >
                       Clubs
                     </Link>
                     <Link
                       to="/fests"
                       className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                      onClick={() => setGymkhanaOpen(false)}
+                      onClick={closeAllDropdowns}
                     >
                       Fests
                     </Link>
                   </div>
                 </div>
               )}
-            </div> */}
-            <div
-              className="relative"
-              onMouseEnter={() => setGymkhanaOpen(true)}
-              onMouseLeave={() => setGymkhanaOpen(false)}
-            >
-              <button
-                onClick={() => setGymkhanaOpen((prev) => !prev)}
-                className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
-              >
-                <span className="relative z-10">Gymkhana</span>
-                <svg
-                  className={`w-4 h-4 relative z-10 transition-transform duration-300 ${
-                    gymkhanaOpen ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
-              </button>
-
-              {/* Dropdown */}
-              <div
-                className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg bg-dark/95 backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50 transition-all duration-300 ${
-                  gymkhanaOpen
-                    ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible -translate-y-2"
-                }`}
-              >
-                <div className="py-1">
-                  <Link
-                    to="/clubs"
-                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                    onClick={() => setGymkhanaOpen(false)}
-                  >
-                    Clubs
-                  </Link>
-                  <Link
-                    to="/fests"
-                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                    onClick={() => setGymkhanaOpen(false)}
-                  >
-                    Fests
-                  </Link>
-                </div>
-              </div>
             </div>
 
             {/* Achievements Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setAchievementsOpen(true)}
-              onMouseLeave={() => setAchievementsOpen(false)}
-            >
+            <div className="relative">
               <button
-                onClick={() => setAchievementsOpen(!achievementsOpen)}
+                onClick={() => achievementsOpen ? closeAllDropdowns() : toggleDropdown('achievements')}
                 className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
               >
                 <span className="relative z-10">Achievements</span>
-                <svg
-                  className={`w-4 h-4 relative z-10 transition-transform duration-300 ${
-                    achievementsOpen ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className={`w-4 h-4 relative z-10 transition-transform duration-300 ${achievementsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
               </button>
 
-              <div
-                className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg bg-dark/95 backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50 transition-all duration-300 ${
-                  achievementsOpen
-                    ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible -translate-y-2"
-                }`}
-              >
-                <div className="py-1">
-                  <Link
-                    to="/achievements/student"
-                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                    onClick={() => setAchievementsOpen(false)}
-                  >
-                    Student Achievements
-                  </Link>
-                  <Link
-                    to="/achievements/faculty"
-                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                    onClick={() => setAchievementsOpen(false)}
-                  >
-                    Faculty Recognition
-                  </Link>
-                  <Link
-                    to="/achievements/placements"
-                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                    onClick={() => setAchievementsOpen(false)}
-                  >
-                    Placements
-                  </Link>
-                  <Link
-                    to="/achievements/startups"
-                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                    onClick={() => setAchievementsOpen(false)}
-                  >
-                    Startups
-                  </Link>
+              {achievementsOpen && (
+                <div className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg ${getDropdownBgColor()} backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50`}>
+                  <div className="py-1">
+                    <Link
+                      to="/achievements/student"
+                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                      onClick={closeAllDropdowns}
+                    >
+                      Student Achievements
+                    </Link>
+                    <Link
+                      to="/achievements/faculty"
+                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                      onClick={closeAllDropdowns}
+                    >
+                      Faculty Recognition
+                    </Link>
+                    <Link
+                      to="/achievements/placements"
+                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                      onClick={closeAllDropdowns}
+                    >
+                      Placements
+                    </Link>
+                    <Link
+                      to="/achievements/startups"
+                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                      onClick={closeAllDropdowns}
+                    >
+                      Startups
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Accommodation Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setAccommodationOpen(true)}
-              onMouseLeave={() => setAccommodationOpen(false)}
-            >
+            <div className="relative">
               <button
-                onClick={() => setAccommodationOpen(!accommodationOpen)}
+                onClick={() => accommodationOpen ? closeAllDropdowns() : toggleDropdown('accommodation')}
                 className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
               >
                 <span className="relative z-10">Accommodation</span>
-                <svg
-                  className={`w-4 h-4 relative z-10 transition-transform duration-300 ${
-                    accommodationOpen ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className={`w-4 h-4 relative z-10 transition-transform duration-300 ${accommodationOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
               </button>
 
-              <div
-                className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg bg-dark/95 backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50 transition-all duration-300 ${
-                  accommodationOpen
-                    ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible -translate-y-2"
-                }`}
-              >
-                <div className="py-1">
-                  <Link
-                    to="/accommodation"
-                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                    onClick={() => setAccommodationOpen(false)}
-                  >
-                    Guest House
-                  </Link>
-                  <a
-                    href="https://hostel-page-module-nit-sgr.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                    onClick={() => setAccommodationOpen(false)}
-                  >
-                    Hostel
-                  </a>
+              {accommodationOpen && (
+                <div className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg ${getDropdownBgColor()} backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50`}>
+                  <div className="py-1">
+                    <Link
+                      to="/accommodation"
+                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                      onClick={closeAllDropdowns}
+                    >
+                      Guest House
+                    </Link>
+                    <a
+                      href="https://hostel-page-module-nit-sgr.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                      onClick={closeAllDropdowns}
+                    >
+                      Hostel
+                    </a>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Other Links */}
@@ -305,6 +248,7 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 relative group"
+                onClick={closeAllDropdowns}
               >
                 <span className="relative z-10">{link.name}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
@@ -315,36 +259,19 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => {
+                setIsOpen(!isOpen);
+                closeAllDropdowns();
+              }}
               className="inline-flex items-center justify-center p-2 rounded-lg hover:text-yellow hover:bg-lightblue/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-yellow transition-all duration-300"
             >
               {!isOpen ? (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               ) : (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               )}
             </button>
@@ -359,7 +286,10 @@ const Navbar = () => {
             <Link
               to="/"
               className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false);
+                closeAllDropdowns();
+              }}
             >
               Home
             </Link>
@@ -367,22 +297,12 @@ const Navbar = () => {
             {/* Mobile Gymkhana */}
             <div className="relative">
               <button
-                onClick={() => setGymkhanaOpen(!gymkhanaOpen)}
+                onClick={() => gymkhanaOpen ? closeAllDropdowns() : toggleDropdown('gymkhana')}
                 className="w-full text-left px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center justify-between"
               >
                 Gymkhana
-                <svg
-                  className="w-4 h-4 transition-transform duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className={`w-4 h-4 transition-transform duration-300 ${gymkhanaOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
@@ -393,7 +313,7 @@ const Navbar = () => {
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                     onClick={() => {
                       setIsOpen(false);
-                      setGymkhanaOpen(false);
+                      closeAllDropdowns();
                     }}
                   >
                     Clubs
@@ -403,7 +323,7 @@ const Navbar = () => {
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                     onClick={() => {
                       setIsOpen(false);
-                      setGymkhanaOpen(false);
+                      closeAllDropdowns();
                     }}
                   >
                     Fests
@@ -415,22 +335,12 @@ const Navbar = () => {
             {/* Mobile Achievements */}
             <div className="relative">
               <button
-                onClick={() => setAchievementsOpen(!achievementsOpen)}
+                onClick={() => achievementsOpen ? closeAllDropdowns() : toggleDropdown('achievements')}
                 className="w-full text-left px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center justify-between"
               >
                 Achievements
-                <svg
-                  className="w-4 h-4 transition-transform duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className={`w-4 h-4 transition-transform duration-300 ${achievementsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
@@ -441,7 +351,7 @@ const Navbar = () => {
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                     onClick={() => {
                       setIsOpen(false);
-                      setAchievementsOpen(false);
+                      closeAllDropdowns();
                     }}
                   >
                     Student Achievements
@@ -451,7 +361,7 @@ const Navbar = () => {
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                     onClick={() => {
                       setIsOpen(false);
-                      setAchievementsOpen(false);
+                      closeAllDropdowns();
                     }}
                   >
                     Faculty Recognition
@@ -461,7 +371,7 @@ const Navbar = () => {
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                     onClick={() => {
                       setIsOpen(false);
-                      setAchievementsOpen(false);
+                      closeAllDropdowns();
                     }}
                   >
                     Placements
@@ -471,7 +381,7 @@ const Navbar = () => {
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                     onClick={() => {
                       setIsOpen(false);
-                      setAchievementsOpen(false);
+                      closeAllDropdowns();
                     }}
                   >
                     Startups
@@ -483,22 +393,12 @@ const Navbar = () => {
             {/* Mobile Accommodation */}
             <div className="relative">
               <button
-                onClick={() => setAccommodationOpen(!accommodationOpen)}
+                onClick={() => accommodationOpen ? closeAllDropdowns() : toggleDropdown('accommodation')}
                 className="w-full text-left px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center justify-between"
               >
                 Accommodation
-                <svg
-                  className="w-4 h-4 transition-transform duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className={`w-4 h-4 transition-transform duration-300 ${accommodationOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
@@ -509,7 +409,7 @@ const Navbar = () => {
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                     onClick={() => {
                       setIsOpen(false);
-                      setAccommodationOpen(false);
+                      closeAllDropdowns();
                     }}
                   >
                     Guest House
@@ -521,7 +421,7 @@ const Navbar = () => {
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                     onClick={() => {
                       setIsOpen(false);
-                      setAccommodationOpen(false);
+                      closeAllDropdowns();
                     }}
                   >
                     Hostel
@@ -536,7 +436,10 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  closeAllDropdowns();
+                }}
               >
                 {link.name}
               </Link>
