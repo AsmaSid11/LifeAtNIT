@@ -26,6 +26,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage]);
 
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -39,12 +40,14 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  
   const closeAllDropdowns = () => {
     setAccommodationOpen(false);
     setAchievementsOpen(false);
     setGymkhanaOpen(false);
   };
 
+  
   const toggleDropdown = (dropdownName) => {
     closeAllDropdowns();
     
@@ -70,9 +73,11 @@ const Navbar = () => {
     { name: "Contact Us", path: "/contact" },
   ];
 
-
   const getDropdownBgColor = () => {
-    return 'bg-black/95';
+    if (isHomePage && !isScrolled) {
+      return 'bg-black/95';
+    }
+    return 'bg-dark/95';
   };
 
   return (
