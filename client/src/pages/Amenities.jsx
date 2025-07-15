@@ -268,7 +268,7 @@ const Amenities = () => {
                 "group cursor-pointer bg-white rounded-3xl shadow-2xl transition-all duration-500 " +
                 "hover:shadow-yellow/60 hover:scale-105 perspective-800 " +
                 (expanded === idx
-                  ? "col-span-1 sm:col-span-2 lg:col-span-3 z-20 scale-105 ring-4 ring-lightblue"
+                  ? "col-span-1 sm:col-span-2 lg:col-span-3 z-20 scale-105 ring-4 ring-lightblue px-2 xs:px-4 md:px-0 py-2 xs:py-4 md:py-0 mx-2 xs:mx-4 md:mx-0"
                   : "")
               }
               style={{
@@ -278,182 +278,195 @@ const Amenities = () => {
                     ? "0 10px 40px 0 rgba(13, 148, 136, 0.15)"
                     : "0 4px 20px 0 rgba(13, 148, 136, 0.08)",
                 perspective: "800px",
+                maxWidth: expanded === idx ? '100%' : undefined,
+                margin: expanded === idx ? 'auto' : undefined,
               }}
             >
               {/* Expanded: Carousel left, details right */}
               {expanded === idx ? (
-                <div
-                  className="flex flex-col md:flex-row w-full h-auto transition-all duration-500"
-                  style={{
-                    perspective: "1200px",
-                  }}
-                >
-                  {/* Carousel */}
+                // Responsive wrapper for expanded card
+                <div className="w-full flex justify-center">
                   <div
-                    className="flex items-center justify-center relative bg-gradient-to-br from-lightblue/30 to-snow/80 rounded-3xl overflow-hidden p-2 xs:p-4 shadow-2xl"
+                    className="w-full max-w-xl sm:max-w-2xl md:max-w-4xl bg-white rounded-3xl shadow-2xl p-2 xs:p-4 md:p-6 mx-2 xs:mx-4 my-4 transition-all duration-500"
                     style={{
-                      width: "100%",
-                      maxWidth: "350px",
-                      minWidth: "220px",
-                      height: "auto",
-                      minHeight: "220px",
-                      maxHeight: "320px",
-                      margin: "0 auto",
-                      transform: "rotateY(-10deg) scale(1.04)",
-                      boxShadow:
-                        "0 16px 48px 0 rgba(13, 148, 136, 0.18), 0 2px 8px 0 rgba(0,0,0,0.10)",
-                      perspective: "1200px",
+                      boxShadow: "0 10px 40px 0 rgba(13, 148, 136, 0.15)",
+                      margin: "auto",
                     }}
                   >
-                    <button
-                      className="absolute left-2 xs:left-4 top-1/2 -translate-y-1/2 bg-snow/90 rounded-full p-1 xs:p-2 shadow-lg hover:bg-lightblue transition"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handlePrev(amenity.photos);
-                      }}
-                      style={{ zIndex: 2 }}
-                    >
-                      <span className="text-xl xs:text-2xl text-dark">
-                        &#8592;
-                      </span>
-                    </button>
-                    <img
-                      src={amenity.photos[carouselIdx]}
-                      alt={amenity.name}
-                      className="w-full h-full object-cover rounded-3xl transition-all duration-500 shadow-xl"
+                    <div
+                      className="flex flex-col md:flex-row w-full h-auto transition-all duration-500 gap-4 md:gap-0"
                       style={{
-                        objectFit: "cover",
-                        width: "100%",
-                        height: "100%",
-                        minWidth: "0",
-                        minHeight: "0",
-                        transform: "rotateY(8deg) scale(1.01)",
-                        display: "block",
+                        perspective: "1200px",
                       }}
-                    />
-                    <button
-                      className="absolute right-2 xs:right-4 top-1/2 -translate-y-1/2 bg-snow/90 rounded-full p-1 xs:p-2 shadow-lg hover:bg-lightblue transition"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleNext(amenity.photos);
-                      }}
-                      style={{ zIndex: 2 }}
                     >
-                      <span className="text-xl xs:text-2xl text-dark">
-                        &#8594;
-                      </span>
-                    </button>
-                    {/* Dots */}
-                    <div className="absolute bottom-2 xs:bottom-3 left-1/2 -translate-x-1/2 flex gap-1 xs:gap-2">
-                      {amenity.photos.map((_, i) => (
-                        <span
-                          key={i}
-                          className={`w-2 h-2 rounded-full ${
-                            i === carouselIdx ? "bg-teal" : "bg-dark/30"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  {/* Right: Details with 3D pop, no border */}
-                  <div
-                    className="flex-1 p-3 xs:p-6 md:p-8 flex flex-col justify-center bg-snow/90 rounded-2xl shadow-xl ml-0 md:ml-8 mt-4 md:mt-0 transition-all duration-500 overflow-y-auto"
-                    style={{
-                      transform: "rotateY(6deg) scale(1.01)",
-                      boxShadow: "0 8px 32px 0 rgba(13, 148, 136, 0.13)",
-                      maxHeight: "80vh",
-                    }}
-                  >
-                    <button
-                      className="absolute top-2 right-2 bg-snow/90 rounded-full p-1 shadow-lg hover:bg-gray-200 transition"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleExpand(idx);
-                      }}
-                      style={{ zIndex: 3 }}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="2.5"
-                        stroke="currentColor"
-                        className="w-6 h-6 text-gray-500"
+                      {/* Carousel */}
+                      <div
+                        className="flex items-center justify-center relative bg-gradient-to-br from-lightblue/30 to-snow/80 rounded-3xl overflow-hidden p-2 xs:p-4 shadow-2xl mx-auto w-full max-w-xs sm:max-w-sm md:max-w-xs lg:max-w-sm min-w-0"
+                        style={{
+                          width: "100%",
+                          maxWidth: "350px",
+                          minWidth: "180px",
+                          height: "auto",
+                          minHeight: "180px",
+                          maxHeight: "320px",
+                          margin: "0 auto",
+                          transform: "rotateY(-10deg) scale(1.04)",
+                          boxShadow:
+                            "0 16px 48px 0 rgba(13, 148, 136, 0.18), 0 2px 8px 0 rgba(0,0,0,0.10)",
+                          perspective: "1200px",
+                        }}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
-                    </button>
-                    <h2 className="text-xl xs:text-2xl md:text-3xl font-bold text-dark mb-4">
-                      {amenity.name}
-                    </h2>
-
-                    {/* Introduction */}
-                    <div className="mb-4">
-                    
-                      <p className="text-dark/80 text-sm xs:text-base">
-                        {amenity.details}
-                      </p>
-                    </div>
-
-                    {/* Important People */}
-                    {amenity.incharges.length > 0 && (
-                      <div className="mb-4">
-                        <ul className="list-disc list-inside text-dark/80 text-sm xs:text-base">
-                          {amenity.incharges.map((person, index) => (
-                            <li key={index}>{renderWithLineBreaks(person)}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* Contact Details */}
-                    {amenity.contactInfo.length > 0 && (
-                      <div className="mb-4">
-                        <h3 className="text-lg font-semibold text-teal mb-2">
-                          Contact Details
-                        </h3>
-                        <ul className="list-disc list-inside text-dark/80 text-sm xs:text-base">
-                          {amenity.contactInfo.map((contact, index) => (
-                            <li key={index}>{contact}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* Show More / Website Link */}
-                    {amenity.websiteLink && (
-                      <div className="mt-auto pt-4">
-                        <a
-                          href={amenity.websiteLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center text-teal hover:text-teal/80 transition-colors"
-                          onClick={(e) => e.stopPropagation()}
+                        <button
+                          className="absolute left-2 xs:left-4 top-1/2 -translate-y-1/2 bg-snow/90 rounded-full p-1 xs:p-2 shadow-lg hover:bg-lightblue transition"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handlePrev(amenity.photos);
+                          }}
+                          style={{ zIndex: 2 }}
                         >
-                          <span className="text-sm xs:text-base font-medium">
-                            Show More
+                          <span className="text-xl xs:text-2xl text-dark">
+                            &#8592;
                           </span>
+                        </button>
+                        <img
+                          src={amenity.photos[carouselIdx]}
+                          alt={amenity.name}
+                          className="w-full h-full object-cover rounded-3xl transition-all duration-500 shadow-xl"
+                          style={{
+                            objectFit: "cover",
+                            width: "100%",
+                            height: "100%",
+                            minWidth: "0",
+                            minHeight: "0",
+                            transform: "rotateY(8deg) scale(1.01)",
+                            display: "block",
+                          }}
+                        />
+                        <button
+                          className="absolute right-2 xs:right-4 top-1/2 -translate-y-1/2 bg-snow/90 rounded-full p-1 xs:p-2 shadow-lg hover:bg-lightblue transition"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleNext(amenity.photos);
+                          }}
+                          style={{ zIndex: 2 }}
+                        >
+                          <span className="text-xl xs:text-2xl text-dark">
+                            &#8594;
+                          </span>
+                        </button>
+                        {/* Dots */}
+                        <div className="absolute bottom-2 xs:bottom-3 left-1/2 -translate-x-1/2 flex gap-1 xs:gap-2">
+                          {amenity.photos.map((_, i) => (
+                            <span
+                              key={i}
+                              className={`w-2 h-2 rounded-full ${
+                                i === carouselIdx ? "bg-teal" : "bg-dark/30"
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      {/* Right: Details with 3D pop, no border */}
+                      <div
+                        className="flex-1 p-3 xs:p-4 md:p-8 flex flex-col justify-center bg-snow/90 rounded-2xl shadow-xl ml-0 md:ml-8 mt-4 md:mt-0 transition-all duration-500 overflow-y-auto w-full"
+                        style={{
+                          transform: "rotateY(6deg) scale(1.01)",
+                          boxShadow: "0 8px 32px 0 rgba(13, 148, 136, 0.13)",
+                          maxHeight: "80vh",
+                        }}
+                      >
+                        <button
+                          className="absolute top-2 right-2 bg-snow/90 rounded-full p-1 shadow-lg hover:bg-gray-200 transition"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleExpand(idx);
+                          }}
+                          style={{ zIndex: 3 }}
+                        >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-4 w-4 ml-1"
                             fill="none"
                             viewBox="0 0 24 24"
+                            strokeWidth="2.5"
                             stroke="currentColor"
+                            className="w-6 h-6 text-gray-500"
                           >
                             <path
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                              d="M6 18L18 6M6 6l12 12"
                             />
                           </svg>
-                        </a>
+                        </button>
+                        <h2 className="text-xl xs:text-2xl md:text-3xl font-bold text-dark mb-4">
+                          {amenity.name}
+                        </h2>
+
+                        {/* Introduction */}
+                        <div className="mb-4">
+                        
+                          <p className="text-dark/80 text-sm xs:text-base">
+                            {amenity.details}
+                          </p>
+                        </div>
+
+                        {/* Important People */}
+                        {amenity.incharges.length > 0 && (
+                          <div className="mb-4">
+                            <ul className="list-disc list-inside text-dark/80 text-sm xs:text-base">
+                              {amenity.incharges.map((person, index) => (
+                                <li key={index}>{renderWithLineBreaks(person)}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* Contact Details */}
+                        {amenity.contactInfo.length > 0 && (
+                          <div className="mb-4">
+                            <h3 className="text-lg font-semibold text-teal mb-2">
+                              Contact Details
+                            </h3>
+                            <ul className="list-disc list-inside text-dark/80 text-sm xs:text-base">
+                              {amenity.contactInfo.map((contact, index) => (
+                                <li key={index}>{contact}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* Show More / Website Link */}
+                        {amenity.websiteLink && (
+                          <div className="mt-auto pt-4">
+                            <a
+                              href={amenity.websiteLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-teal hover:text-teal/80 transition-colors"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <span className="text-sm xs:text-base font-medium">
+                                Show More
+                              </span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-4 w-4 ml-1"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                />
+                              </svg>
+                            </a>
+                          </div>
+                        )}
                       </div>
-                    )}
+                    </div>
                   </div>
                 </div>
               ) : (
