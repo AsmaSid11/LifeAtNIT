@@ -124,7 +124,7 @@ const Navbar = () => {
             {/* Gymkhana Dropdown */}
             <div className="relative">
               <button
-                onClick={() => gymkhanaOpen ? closeAllDropdowns() : toggleDropdown('gymkhana')}
+                onMouseEnter={() => gymkhanaOpen ? closeAllDropdowns() : toggleDropdown('gymkhana')}
                 className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
               >
                 <span className="relative z-10">Gymkhana</span>
@@ -159,7 +159,7 @@ const Navbar = () => {
             {/* Achievements Dropdown */}
             <div className="relative">
               <button
-                onClick={() => achievementsOpen ? closeAllDropdowns() : toggleDropdown('achievements')}
+                onMouseEnter={() => achievementsOpen ? closeAllDropdowns() : toggleDropdown('achievements')}
                 className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
               >
                 <span className="relative z-10">Achievements</span>
@@ -208,7 +208,7 @@ const Navbar = () => {
             {/* Accommodation Dropdown */}
             <div className="relative">
               <button
-                onClick={() => accommodationOpen ? closeAllDropdowns() : toggleDropdown('accommodation')}
+                onMouseEnter={() => accommodationOpen ? closeAllDropdowns() : toggleDropdown('accommodation')}
                 className="px-4 py-2 rounded-lg text-sm font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300 flex items-center gap-1 relative group"
               >
                 <span className="relative z-10">Accommodation</span>

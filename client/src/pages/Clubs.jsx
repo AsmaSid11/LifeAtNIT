@@ -276,14 +276,14 @@ const Clubs = () => {
       </div>
     {/* Section Content */}
     <div className="py-12 sm:py-16 mb-[3rem]" style={{ backgroundColor: '#88DADA' }}>
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
     <h1 className='font-bold font-serif text-4xl text-[#1F2647] justify-items-center text-center mb-[1rem]'>Activities</h1>
     <div className="overflow-x-auto py-8">
   <div className="flex gap-4 px-4">
     {cardsData.map((card, index) => (
       <motion.div
       key={index}
-      className={`min-w-[320px] w-[22rem] h-[23rem] border-t-8 border-[#0D9488] flex-shrink-0 p-4 rounded-xl shadow-md ${card.bgColor} flex flex-col items-center text-center`}
+      className={`min-w-[300px] w-[22rem] h-[23rem] border-t-8 border-[#0D9488] flex-shrink-0 p-4 rounded-xl shadow-md ${card.bgColor} flex flex-col items-center text-center`}
       style={{ backgroundColor: card.bgColor }}
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 50 }}
@@ -331,10 +331,10 @@ const Clubs = () => {
         </svg>
       </div>
     {/* Section Content */}
-    <div className="py-12 sm:py-16 h-[45rem] mb-[3rem]" style={{ backgroundColor: '#DDA853' }}>
+    <div className="py-12 sm:py-16" style={{ backgroundColor: '#DDA853' }}>
     <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center"></div>
     <h1 className='font-bold font-serif text-4xl text-[#1F2647] justify-items-center text-center mt-[2rem]'>Why join Clubs?</h1>
-    <div className='min-h-screen max-w-6xl mx-auto py-8 px-6 flex flex-row justify-center -mb-[5rem] '>
+    <div className='min-h-screen max-w-6xl mx-auto py-8 px-6 flex flex-col sm:flex-row  justify-center -mb-[5rem] '>
   {cardData.map((card, index) => (
     <InfoCards key={index} {...card} />
   ))}
