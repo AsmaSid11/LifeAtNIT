@@ -14,6 +14,29 @@ const departments = [
   { name: 'CHEMISTRY', color: 'bg-yellow', patentUrl: '', publicationUrl: 'https://nitsri.ac.in/Department/CHEMISTRY/Last_3_years_publications_(2021-2023).pdf' },
 ];
 
+// Achievements: Only major faculty/departmental recognitions, research, and institutional milestones
+const achievements = [
+  { text: <> <span className="font-semibold text-teal">3 NIT Srinagar faculty</span> among <span className="font-semibold">world's top 2% scientists</span>. </> },
+  { text: <> <span className="font-semibold text-teal">Dr. Fatima Jalid</span> (Chemical Engineering) featured in <span className="font-semibold">“She Is – Women in Chemistry”</span> book celebrating trailblazing women. </> },
+  { text: <> <span className="font-semibold text-teal">Dr. Majid Hussain</span> (Civil Engineering) received funding from <span className="font-semibold">ISRO</span> for research under its prestigious <span className="font-semibold">RESPOND Programme</span>. </> },
+];
+
+const achievementsLink = "https://nitsri.ac.in/Pages/DisplayPages.aspx?page=caaqq&ItemID=eaeqa";
+const awardsLink = "https://nitsri.ac.in/Pages/DisplayPages.aspx?page=es&ItemID=cacok";
+
+// Awards: Only individual awards, honors, and best paper recognitions
+const awards = [
+  { text: <> <span className="font-semibold text-teal">Rajiv Gandhi Excellence Award</span> to director, NIT Srinagar - Indian Solidarity Council. </> },
+  { text: <> <span className="font-semibold text-teal">Best Educationist Award</span> to director, NIT Srinagar - International Institute of Education and Management, Delhi. </> },
+  { text: <> <span className="font-semibold text-teal">Dr. M. A. Rather:</span> Senior Researcher Award, <span className="font-semibold">ICEE-2021</span>. </> },
+  { text: <> <span className="font-semibold text-teal">Dr. Kurella Swamy:</span> 2nd Best Paper Award, <span className="font-semibold">ATIPC-2020</span>. </> },
+  { text: <> <span className="font-semibold text-teal">Dr. Farhad Ilahi Bakhsh:</span> Best Paper Award Int. Conf. on Renewable Power (<span className="font-semibold">2020</span>), 10 for 10 Typhoon HIL Award (<span className="font-semibold">2019</span>). </> },
+  { text: <> <span className="font-semibold text-teal">Prof. (Dr.) Bashir Ahmed Mir:</span> Design Patent (<span className="font-semibold">2024</span>), Gantantra Diwas Puraskar (<span className="font-semibold">2025</span>), International Research Excellence Award (<span className="font-semibold">2023</span>), Keynote Paper Award GEOMATE (<span className="font-semibold">2022</span>), Distinguished Researcher Venus International Foundation (<span className="font-semibold">2021</span>), Indo Asian Distinguished Professor Award (<span className="font-semibold">2021</span>), Wall of Fame Top 20 Civil Engineering Faculties (<span className="font-semibold">2020-21</span>), Best Paper Award ACMM (<span className="font-semibold">2021</span>), Outstanding Scientist Award (<span className="font-semibold">2020</span>), Fellowship Open Association of Research Society (<span className="font-semibold">2019</span>). </> },
+  { text: <> <span className="font-semibold text-teal">Outstanding Engineering Institute (North)</span>, ABP News (<span className="font-semibold">2014</span>). </> },
+  { text: <> <span className="font-semibold text-teal">Rajiv Gandhi Education Excellence Award:</span> Prof. Rajat Gupta, Indian Solidarity Council. </> },
+  { text: <> <span className="font-semibold text-teal">Best Educationist Award:</span> Prof. Rajat Gupta, Int. Inst. of Education & Management Delhi. </> },
+];
+
 const FacultyRecognition = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -69,19 +92,23 @@ const FacultyRecognition = () => {
           </div>
           <div className="bg-white/80 rounded-xl p-8 backdrop-blur-sm shadow-lg">
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <span className="text-yellow">•</span>
-                <p className="text-dark">3 NIT Srinagar faculty among world's top 2% scientists</p>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-yellow">•</span>
-                <p className="text-dark">Dr. M. A. Rather: Senior Researcher Award, ICEE-2021</p>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-yellow">•</span>
-                <p className="text-dark">Dr. Kurella Swamy: 2nd Best Paper Award, ATIPC-2020</p>
-              </li>
+              {achievements.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <span className="text-yellow">•</span>
+                  <p className="text-dark">{item.text}</p>
+                </li>
+              ))}
             </ul>
+            <div className="mt-6 text-right">
+              <a
+                href={achievementsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal font-semibold underline hover:text-yellow transition-colors"
+              >
+                Show more achievements &rarr;
+              </a>
+            </div>
           </div>
         </motion.section>
 
@@ -101,31 +128,23 @@ const FacultyRecognition = () => {
           </div>
           <div className="bg-white/80 rounded-xl p-8 backdrop-blur-sm shadow-lg">
             <ul className="space-y-4">
-              {/* Prof. Bashir Ahmed Mir Awards (clubbed) */}
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. (Dr.) Bashir Ahmed Mir</b>: Design Patent (2024), Gantantra Diwas Puraskar (2025), International Research Excellence Award (2023), Keynote Paper Award GEOMATE (2022), Distinguished Researcher Venus International Foundation (2021), Indo Asian Distinguished Professor Award (2021), Wall of Fame Top 20 Civil Engineering Faculties (2020-21), Best Paper Award ACMM (2021), Outstanding Scientist Award (2020), Fellowship Open Association of Research Society (2019)</p></li>
-              {/* Dr. Farhad Ilahi Bakhsh Awards (clubbed) */}
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Dr. Farhad Ilahi Bakhsh</b>: Best Paper Award Int. Conf. on Renewable Power (2020), 10 for 10 Typhoon HIL Award (2019)</p></li>
-              {/* Institute and Director Awards (already concise) */}
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Outstanding Engineering Institute (North), ABP News (2014)</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Outstanding Engineering Institute (North), Dhanik Bhaskar (2013)</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Education Leadership Award: Prof. Rajat Gupta, Headlines Today</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Rajiv Gandhi Education Excellence Award: Prof. Rajat Gupta, Indian Solidarity Council</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Best Educationist Award: Prof. Rajat Gupta, Int. Inst. of Education & Management Delhi</p></li>
-              {/* Show More Link */}
-              <li className="mt-6">
-                <a 
-                  href="https://nitsri.ac.in/Pages/DisplayPages.aspx?page=es&ItemID=cacok" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-teal hover:text-yellow transition-colors duration-300 font-medium"
-                >
-                  Show More Awards
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </a>
-              </li>
+              {awards.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <span className="text-yellow">•</span>
+                  <p className="text-dark">{item.text}</p>
+                </li>
+              ))}
             </ul>
+            <div className="mt-6 text-right">
+              <a
+                href={awardsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal font-semibold underline hover:text-yellow transition-colors"
+              >
+                Show more awards &rarr;
+              </a>
+            </div>
           </div>
         </motion.section>
 
@@ -200,4 +219,4 @@ const FacultyRecognition = () => {
   );
 };
 
-export default FacultyRecognition; 
+export default FacultyRecognition;
