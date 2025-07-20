@@ -24,25 +24,25 @@ import {
 import heroWave from "../../assets/hero-wave.svg";
 
 const internshipStats = [
-  { dept: "CHE", value: "97.5%" },
-  { dept: "CIV", value: "98.1%" },
-  { dept: "CSE", value: "97.5%" },
-  { dept: "ELE", value: "98.1%" },
-  { dept: "ECE", value: "96.1%" },
-  { dept: "IT", value: "97.6%" },
-  { dept: "MEC", value: "99.0%" },
-  { dept: "MME", value: "92.6%" },
+  { dept: "CHE", value: "81.6%" },
+  { dept: "CIV", value: "91.8%" },
+  { dept: "CSE", value: "98.7%" },
+  { dept: "ELE", value: "95.2%" },
+  { dept: "ECE", value: "96.9%" },
+  { dept: "ITE", value: "100%" },
+  { dept: "MEC", value: "89.7%" },
+  { dept: "MME", value: "98.8%" },
 ];
 
 const placementStats = [
-  { dept: "CSE", avg: "10 LPA", high: "39 LPA", med: "8 LPA" },
-  { dept: "IT", avg: "9 LPA", high: "19.1 LPA", med: "10.6 LPA" },
-  { dept: "ECE", avg: "8.5 LPA", high: "15.5 LPA", med: "8.9 LPA" },
-  { dept: "ELE", avg: "8.61 LPA", high: "15.5 LPA", med: "7.5 LPA" },
-  { dept: "MEC", avg: "8 LPA", high: "13.9 LPA", med: "8.5 LPA" },
-  { dept: "CHE", avg: "8.5 LPA", high: "9.32 LPA", med: "13.9 LPA" },
-  { dept: "CIV", avg: "7.92 LPA", high: "13.9 LPA", med: "7.6 LPA" },
-  { dept: "MME", avg: "8 LPA", high: "16.6 LPA", med: "9.23 LPA" },
+  { dept: "CSE", avg: "11 LPA", high: "19.2 LPA", med: "11 LPA" },
+  { dept: "IT", avg: "10.4 LPA", high: "35.5 LPA", med: "8 LPA" },
+  { dept: "ECE", avg: "8.6 LPA", high: "19.2 LPA", med: "8 LPA" },
+  { dept: "ELE", avg: "8 LPA", high: "18 LPA", med: "6.5 LPA" },
+  { dept: "MEC", avg: "8.6 LPA", high: "18 LPA", med: "7 LPA" },
+  { dept: "CHE", avg: "8.4 LPA", high: "14 LPA", med: "6 LPA" },
+  { dept: "CIV", avg: "8 LPA", high: "20.3 LPA", med: "6.5 LPA" },
+  { dept: "MME", avg: "8 LPA", high: "14 LPA", med: "6.5 LPA" },
 ];
 
 const Placements = () => {
