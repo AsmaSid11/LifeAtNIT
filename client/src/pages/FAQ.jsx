@@ -46,6 +46,10 @@ const faqs = [
 				answer:
 					"Yes, with prior approval from the Dean of Students Welfare (DSW) and a faculty advisor. You'll also need a core team and a proposal.",
 			},
+			{
+				question: "Is there a dress code on campus?",
+				answer: "There is no strict dress code, but students are expected to dress decently and appropriately for academic and official events.",
+			},
 		],
 	},
 	{
@@ -216,6 +220,14 @@ const faqs = [
 		category: "Transport",
 		questions: [
 			{
+				question: "How do I reach NIT Srinagar?",
+				answer: (
+					<>
+						You can find detailed directions and travel options in our <a href="/getting-here" className="text-teal underline hover:text-teal-700">Getting Here</a> section.
+					</>
+				),
+			},
+			{
 				question: "Is there any transport facility for students?",
 				answer:
 					"Yes, NIT Srinagar provides institute buses for official travel. For day-to-day travel, local autos and cabs are available.",
@@ -224,6 +236,10 @@ const faqs = [
 				question: "How do I reach NIT Srinagar from the railway station or airport?",
 				answer:
 					"From Srinagar Airport, you can take a taxi to Hazratbal (approx. 45 mins). From Nowgam Railway Station, auto-rickshaws or shared cabs are available.",
+			},
+			{
+				question: "Can I bring my own vehicle to campus?",
+				answer: "Yes, students can bring their own vehicles, but must register them with the security office and follow campus traffic rules.",
 			},
 		],
 	},

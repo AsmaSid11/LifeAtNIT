@@ -34,10 +34,10 @@ function App() {
               <Route path="/faq" element={<FAQ />} />
               <Route path="/alumni" element={<Alumni />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/achievements/student" element={<StudentAchievements />} />
+              {/* <Route path="/achievements/student" element={<StudentAchievements />} /> */}
               <Route path="/achievements/faculty" element={<FacultyRecognition />} />
               <Route path="/achievements/placements" element={<Placements />} />
-              <Route path="/achievements/startups" element={<Startups />} />
+              {/* <Route path="/achievements/startups" element={<Startups />} /> */}
             </Routes>
           </main>
         </div>
