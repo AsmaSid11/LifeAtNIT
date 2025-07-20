@@ -269,12 +269,12 @@ const Clubs = () => {
         <div className="max-w-6xl mx-auto px-2 sm:px-6 text-center">
           <h1 className='font-bold font-serif text-2xl sm:text-4xl text-[#1F2647] text-center mb-4 sm:mb-[1rem]'>Activities</h1>
           <div className="relative">
-            <div className="overflow-x-auto py-4 sm:py-8 hide-scrollbar">
+            <div className="overflow-x-auto py-4 sm:py-8 hide-scrollbar snap-x snap-mandatory">
               <div className="flex gap-4 px-2 sm:px-4">
                 {cardsData.map((card, index) => (
                   <motion.div
                     key={index}
-                    className={`min-w-[85vw] max-w-[95vw] sm:min-w-[300px] sm:w-[22rem] lg:min-w-[31%] lg:w-[31%] h-auto min-h-[18rem] sm:h-[23rem] border-t-8 border-[#0D9488] flex-shrink-0 p-4 sm:p-4 rounded-2xl shadow-xl ${card.bgColor} flex flex-col items-center text-center mx-2 relative overflow-hidden`}
+                    className={`min-w-[85vw] max-w-[95vw] sm:min-w-[300px] sm:w-[22rem] lg:min-w-[31%] lg:w-[31%] h-auto min-h-[18rem] sm:h-[23rem] border-t-8 border-[#0D9488] flex-shrink-0 p-4 sm:p-4 rounded-2xl shadow-xl ${card.bgColor} flex flex-col items-center text-center mx-2 relative overflow-hidden snap-center`}
                     style={{ background: 'linear-gradient(135deg, #f8fafc 60%, #88DADA 100%)' }}
                     whileInView={{ opacity: 1, y: 0 }}
                     initial={{ opacity: 0, y: 50 }}

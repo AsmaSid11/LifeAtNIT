@@ -265,14 +265,14 @@ const Amenities = () => {
               ref={(el) => (cardRefs.current[idx] = el)}
               onClick={() => handleExpand(idx)}
               className={
-                "group cursor-pointer bg-white rounded-3xl shadow-2xl transition-all duration-500 " +
+                "group cursor-pointer bg-white rounded-3xl shadow-2xl transition-all duration-700 ease-in-out " +
                 "hover:shadow-yellow/60 hover:scale-105 perspective-800 " +
                 (expanded === idx
                   ? "col-span-1 sm:col-span-2 lg:col-span-3 z-20 scale-105 ring-4 ring-lightblue px-2 xs:px-4 md:px-0 py-2 xs:py-4 md:py-0 mx-2 xs:mx-4 md:mx-0"
-                  : "")
+                  : "p-2 xs:p-3 md:p-0 mx-1 xs:mx-2 md:mx-0 min-h-[140px] xs:min-h-[170px] md:min-h-[220px]")
               }
               style={{
-                minHeight: expanded === idx ? 400 : 220,
+                minHeight: expanded === idx ? 400 : 140,
                 boxShadow:
                   expanded === idx
                     ? "0 10px 40px 0 rgba(13, 148, 136, 0.15)"
@@ -280,6 +280,7 @@ const Amenities = () => {
                 perspective: "800px",
                 maxWidth: expanded === idx ? '100%' : undefined,
                 margin: expanded === idx ? 'auto' : undefined,
+                transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
               }}
             >
               {/* Expanded: Carousel left, details right */}
@@ -287,16 +288,18 @@ const Amenities = () => {
                 // Responsive wrapper for expanded card
                 <div className="w-full flex justify-center">
                   <div
-                    className="w-full max-w-xl sm:max-w-2xl md:max-w-4xl bg-white rounded-3xl shadow-2xl p-2 xs:p-4 md:p-6 mx-2 xs:mx-4 my-4 transition-all duration-500"
+                    className="w-full max-w-xl sm:max-w-2xl md:max-w-4xl bg-white rounded-3xl shadow-2xl p-2 xs:p-4 md:p-6 mx-2 xs:mx-4 my-4 transition-all duration-700 ease-in-out"
                     style={{
                       boxShadow: "0 10px 40px 0 rgba(13, 148, 136, 0.15)",
                       margin: "auto",
+                      transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
                     }}
                   >
                     <div
-                      className="flex flex-col md:flex-row w-full h-auto transition-all duration-500 gap-4 md:gap-0"
+                      className="flex flex-col md:flex-row w-full h-auto transition-all duration-700 ease-in-out gap-4 md:gap-0"
                       style={{
                         perspective: "1200px",
+                        transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
                       }}
                     >
                       {/* Carousel */}
@@ -476,7 +479,8 @@ const Amenities = () => {
                     <img
                       src={amenity.image}
                       alt={amenity.name}
-                      className="w-full h-40 md:h-48 object-cover"
+                      className="w-full h-40 md:h-48 object-cover transition-transform duration-500"
+                      style={{ transform: expanded === idx ? undefined : 'rotate(0deg)' }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent opacity-80 group-hover:opacity-60 transition-all duration-500" />
                   </div>
