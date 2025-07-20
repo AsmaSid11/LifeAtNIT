@@ -8,6 +8,27 @@
   }
 }
 
+@keyframes wiggle-right {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(4px); }
+  40% { transform: translateX(0); }
+  60% { transform: translateX(4px); }
+  80% { transform: translateX(0); }
+}
+.animate-wiggle-right {
+  animation: wiggle-right 1.2s infinite;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /*
 @layer components {
   .bg-alt {

@@ -126,8 +126,9 @@ export default function Home() {
           playsInline
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
+          onEnded={e => { e.target.currentTime = 0; e.target.play(); }}
         >
-          <source src="/videos/hero3.mp4" type="video/mp4" />
+          <source src="/videos/hero4.mp4" type="video/mp4" />
           {/* Fallback image in case video doesn't load */}
           <img
             src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80"
