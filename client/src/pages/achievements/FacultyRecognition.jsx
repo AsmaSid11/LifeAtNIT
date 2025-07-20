@@ -14,6 +14,29 @@ const departments = [
   { name: 'CHEMISTRY', color: 'bg-yellow', patentUrl: '', publicationUrl: 'https://nitsri.ac.in/Department/CHEMISTRY/Last_3_years_publications_(2021-2023).pdf' },
 ];
 
+// Achievements: Only major faculty/departmental recognitions, research, and institutional milestones
+const achievements = [
+  { text: <> <span className="font-semibold text-teal">3 NIT Srinagar faculty</span> among <span className="font-semibold">world's top 2% scientists</span>. </> },
+  { text: <> <span className="font-semibold text-teal">Dr. Fatima Jalid</span> (Chemical Engineering) featured in <span className="font-semibold">“She Is – Women in Chemistry”</span> book celebrating trailblazing women. </> },
+  { text: <> <span className="font-semibold text-teal">Dr. Majid Hussain</span> (Civil Engineering) received funding from <span className="font-semibold">ISRO</span> for research under its prestigious <span className="font-semibold">RESPOND Programme</span>. </> },
+];
+
+const achievementsLink = "https://nitsri.ac.in/Pages/DisplayPages.aspx?page=caaqq&ItemID=eaeqa";
+const awardsLink = "https://nitsri.ac.in/Pages/DisplayPages.aspx?page=es&ItemID=cacok";
+
+// Awards: Only individual awards, honors, and best paper recognitions
+const awards = [
+  { text: <> <span className="font-semibold text-teal">Rajiv Gandhi Excellence Award</span> to director, NIT Srinagar - Indian Solidarity Council. </> },
+  { text: <> <span className="font-semibold text-teal">Best Educationist Award</span> to director, NIT Srinagar - International Institute of Education and Management, Delhi. </> },
+  { text: <> <span className="font-semibold text-teal">Dr. M. A. Rather:</span> Senior Researcher Award, <span className="font-semibold">ICEE-2021</span>. </> },
+  { text: <> <span className="font-semibold text-teal">Dr. Kurella Swamy:</span> 2nd Best Paper Award, <span className="font-semibold">ATIPC-2020</span>. </> },
+  { text: <> <span className="font-semibold text-teal">Dr. Farhad Ilahi Bakhsh:</span> Best Paper Award Int. Conf. on Renewable Power (<span className="font-semibold">2020</span>), 10 for 10 Typhoon HIL Award (<span className="font-semibold">2019</span>). </> },
+  { text: <> <span className="font-semibold text-teal">Prof. (Dr.) Bashir Ahmed Mir:</span> Design Patent (<span className="font-semibold">2024</span>), Gantantra Diwas Puraskar (<span className="font-semibold">2025</span>), International Research Excellence Award (<span className="font-semibold">2023</span>), Keynote Paper Award GEOMATE (<span className="font-semibold">2022</span>), Distinguished Researcher Venus International Foundation (<span className="font-semibold">2021</span>), Indo Asian Distinguished Professor Award (<span className="font-semibold">2021</span>), Wall of Fame Top 20 Civil Engineering Faculties (<span className="font-semibold">2020-21</span>), Best Paper Award ACMM (<span className="font-semibold">2021</span>), Outstanding Scientist Award (<span className="font-semibold">2020</span>), Fellowship Open Association of Research Society (<span className="font-semibold">2019</span>). </> },
+  { text: <> <span className="font-semibold text-teal">Outstanding Engineering Institute (North)</span>, ABP News (<span className="font-semibold">2014</span>). </> },
+  { text: <> <span className="font-semibold text-teal">Rajiv Gandhi Education Excellence Award:</span> Prof. Rajat Gupta, Indian Solidarity Council. </> },
+  { text: <> <span className="font-semibold text-teal">Best Educationist Award:</span> Prof. Rajat Gupta, Int. Inst. of Education & Management Delhi. </> },
+];
+
 const FacultyRecognition = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -69,19 +92,23 @@ const FacultyRecognition = () => {
           </div>
           <div className="bg-white/80 rounded-xl p-8 backdrop-blur-sm shadow-lg">
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <span className="text-yellow">•</span>
-                <p className="text-dark">3 faculty members of NIT Srinagar are among world's top 2% scientists</p>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-yellow">•</span>
-                <p className="text-dark">Dr. M. A. Rather received Senior Researcher Award at ICEE-2021</p>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-yellow">•</span>
-                <p className="text-dark">Dr. Kurella Swamy received Second Best Paper Award at ATIPC-2020</p>
-              </li>
+              {achievements.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <span className="text-yellow">•</span>
+                  <p className="text-dark">{item.text}</p>
+                </li>
+              ))}
             </ul>
+            <div className="mt-6 text-right">
+              <a
+                href={achievementsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal font-semibold underline hover:text-yellow transition-colors"
+              >
+                Show more achievements &rarr;
+              </a>
+            </div>
           </div>
         </motion.section>
 
@@ -101,41 +128,23 @@ const FacultyRecognition = () => {
           </div>
           <div className="bg-white/80 rounded-xl p-8 backdrop-blur-sm shadow-lg">
             <ul className="space-y-4">
-              {/* Prof. Bashir Ahmed Mir Awards */}
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. (Dr.) Bashir Ahmed Mir</b> and his leading Research Group published latest Design Patent on "SOILSLURRY MIXING AND SAMPLE PREPARATION APPARATUS" for Reconstituted Soil Samples for high end Research in Critical State Soil Mechanics. The Patent Office Design No. 416513-001 Dated 27/12/2024.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. (Dr.) Bashir Ahmed Mir</b>, a Distinguished Professor and Foremost Authority in Geotechnical Engineering, has been conferred with the prestigious "GANTANTRA DIWAS PURASKAR 2025" for his exceptional and enduring contributions in the field of Geotechnical Engineering on the eve of 76th Republic Day (26/01/2025) by IMRF Institute of Higher Education and Research Vijayawada (AP) India.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. (Dr.) Bashir Ahmed Mir</b> has been awarded "INTERNATIONAL RESEARCH EXCELLENCE AWARD 2023" in recognition of the consistent superior performance in Geotechnical Engineering on the eve of World Teachers' Day Awards 2023 by International Multidisciplinary Research Foundation (IMRF), Institute of Higher Education & Research, INDIA.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. (Dr.) B. A. Mir</b> has been conferred the KEYNOTE PAPER AWARD during The Twelfth International Conference on Geotechnique, Construction Materials and Environment, GEOMATE 2022, held in Bangkok, Thailand, Nov. 22-24, 2022.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Dr. Bashir Ahmed Mir</b> has been conferred the award of Distinguished Researcher in Geotechnical Engineering by the Board of Management of the Venus International Foundation during 7th Annual Science & Technology Meet (ASTM-2021).</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. Bashir Ahmed Mir</b> received the Indo Asian - Distinguished Professor Award 2021 in Geotechnical Engineering by the World Teachers Day Excellence Awards Committee.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. Bashir Ahmed Mir</b> was awarded the Wall of Fame Award as one of the Top 20 Expert Faculties in Civil Engineering by the Academic Council of uLektz for the Year 2020-21.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. Bashir Ahmed Mir</b> received the Best Paper Award from SRMIST Chennai, India during the 1st International Conference on "Advances in Construction Materials and Management (ACMM 2021)" held on 25th & 26th of March 2021.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. Bashir Ahmed Mir</b> was honoured with the OUTSTANDING SCIENTIST AWARD in the 8th International Scientist Awards on Engineering, Science and Medicine, held on 21 & 22-Aug-2020, Madurai, India.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Prof. Bashir Ahmed Mir</b> was honoured with Esteemed Grade of Fellowship by Open Association of Research Society (USA) for exceptional achievements in research (2019).</p></li>
-              {/* Other Faculty Awards */}
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Dr. Farhad Ilahi Bakhsh</b> was awarded "Best Paper Award" in "International Conference on Renewable Power-2020" during July 13 & 14, 2020.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark"><b>Dr. Farhad Ilahi Bakhsh</b> won "10 for 10 Typhoon HIL Award" from Typhoon HIL GmbH, Switzerland, Europe on April 08, 2019.</p></li>
-              {/* Institute and Director Awards */}
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Outstanding Engineering Institute (North) Award by ABP News in 2014.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Outstanding Engineering Institute (North) Award by Dhanik Bhaskar in 2013.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Education Leadership Award to Prof. Rajat Gupta, Director, N.I.T Srinagar by Headlines Today.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Rajiv Gandhi Education Excellence Award to Prof. Rajat Gupta, Director, N.I.T Srinagar by Indian Solidarity Council.</p></li>
-              <li className="flex items-start gap-3"><span className="text-yellow">•</span><p className="text-dark">Best Educationist Award to Prof. Rajat Gupta, Director, N.I.T Srinagar by International Institute of Education and Management Delhi.</p></li>
-              {/* Show More Link */}
-              <li className="mt-6">
-                <a 
-                  href="https://nitsri.ac.in/Pages/DisplayPages.aspx?page=es&ItemID=cacok" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-teal hover:text-yellow transition-colors duration-300 font-medium"
-                >
-                  Show More Awards
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </a>
-              </li>
+              {awards.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <span className="text-yellow">•</span>
+                  <p className="text-dark">{item.text}</p>
+                </li>
+              ))}
             </ul>
+            <div className="mt-6 text-right">
+              <a
+                href={awardsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal font-semibold underline hover:text-yellow transition-colors"
+              >
+                Show more awards &rarr;
+              </a>
+            </div>
           </div>
         </motion.section>
 
@@ -210,4 +219,4 @@ const FacultyRecognition = () => {
   );
 };
 
-export default FacultyRecognition; 
+export default FacultyRecognition;

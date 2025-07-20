@@ -1,303 +1,224 @@
 import { FaLinkedin, FaTwitter, FaGlobe, FaMapMarkerAlt, FaBriefcase, FaGraduationCap, FaStar } from "react-icons/fa";
+import heroWave from "../assets/hero-wave.svg";
 import { useState } from "react";
 
 const alumni = [
 	{
-		id: 1,
-		name: "Dr. Rajesh Kumar Sharma",
-		batch: "2008",
-		branch: "Computer Science",
-		position: "Senior Software Architect",
-		company: "Google",
-		location: "California, USA",
-		image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-		description: "Leading AI research initiatives at Google with focus on machine learning algorithms.",
-		linkedin: "https://linkedin.com/in/rajesh-sharma",
-		twitter: "https://twitter.com/rajesh_sharma",
-		website: "https://rajesh-sharma.dev",
-		achievements: ["Published 15+ research papers", "Google AI Excellence Award 2023", "TEDx Speaker"]
-	},
+  "id": 1,
+  "name": "Sonam Wangchuk",
+  "batch": "1987",
+  "branch": "Mechanical Engineering",
+  "position": "Engineer, Innovator & Education Reformist",
+  "company": "SECMOL & HIAL (founder/director)",
+  "location": "Ladakh, India",
+  "description": "Indian engineer, innovator and education reformist; inventor of the Ice Stupa",
+  "linkedin": "https://www.linkedin.com/in/wangchuksworld/",
+  "twitter": "https://twitter.com/Wangchuk66",
+  "website": "https://icestupa.org/",
+  
+},
+
 	{
-		id: 2,
-		name: "Priya Malhotra",
-		batch: "2010",
-		branch: "Electronics & Communication",
-		position: "VP of Engineering",
-		company: "Microsoft",
-		location: "Seattle, USA",
-		image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-		description: "Pioneering cloud infrastructure solutions and leading diverse engineering teams.",
-		linkedin: "https://linkedin.com/in/priya-malhotra",
-		achievements: ["Microsoft Excellence Award", "Women in Tech Leader 2022", "40 Under 40 Technology"]
-	},
+  "id": 2,
+  "name": "S. S. Bajaj",
+  "batch": "Unknown",
+  "branch": "Mechanical/Chemical Engineering",
+  "position": "Chairman (former)",
+  "company": "Atomic Energy Regulatory Board (AERB)",
+  "location": "Mumbai, India",
+  "description": "Former Chairman of the Atomic Energy Regulatory Board, Nuclear-safety regulator under the Dept. of Atomic Energy.",
+  "linkedin": "",
+  "twitter": "",
+  "website": "https://www.aerb.gov.in/",
+  "achievements": [
+    "Led AERB during post-Fukushima safety reviews (2010–2015)",
+    "Advocated regulatory independence from DAE",
+    "Oversaw safety clearance for Kudankulam reactors",
+    "Authorized web-based tracking of radiation sources",
+    "Facilitated IAEA review recommending statutory backing for AERB"
+  ]
+}
+,
 	{
-		id: 3,
-		name: "Arjun Singh Thakur",
-		batch: "2009",
-		branch: "Mechanical Engineering",
-		position: "Chief Technology Officer",
-		company: "Tesla",
-		location: "Austin, USA",
-		image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-		description: "Revolutionizing automotive technology with sustainable engineering solutions.",
-		linkedin: "https://linkedin.com/in/arjun-thakur",
-		website: "https://arjun-thakur.com",
-		achievements: ["Tesla Innovation Award", "Automotive Engineer of the Year", "15+ Patents in EV Technology"]
-	},
+  "id": 3,
+  "name": "Davoud Danesh-Jafari",
+  "batch": "Unknown",
+  "branch": "Civil Engineering",
+  "position": "Minister of Economic Affairs and Finance (2005–2008)",
+  "company": "Government of Iran",
+  "location": "Tehran, Iran",
+  "description": "Former Minister of Economic Affairs and Finance of Iran (2005–2008), member of Iran’s Expediency Discernment Council, alumnus of NIT Srinagar",
+  "linkedin": "",
+  "twitter": "",
+  "website": ""
+}
+,
 	{
-		id: 4,
-		name: "Dr. Sneha Agarwal",
-		batch: "2007",
-		branch: "Chemical Engineering",
-		position: "Research Director",
-		company: "Johnson & Johnson",
-		location: "New Jersey, USA",
-		image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-		description: "Leading pharmaceutical research in drug discovery and development.",
-		linkedin: "https://linkedin.com/in/sneha-agarwal",
-		achievements: ["FDA Drug Approval Lead", "Nature Publication Author", "Pharmaceutical Innovation Award"]
-	},
+  "id": 4,
+  "name": "R. K. Wanchoo",
+  "batch": "Unknown",
+  "branch": "Chemical Engineering",
+  "position": "Executive Director",
+  "company": "Bharat Heavy Electricals Limited (BHEL)",
+  "location": "Hyderabad, India",
+  "description": "Executive Director at BHEL; former Director of NIT Srinagar",
+  "linkedin": "",
+  "twitter": "",
+  "website": "https://www.bhel.com/"
+}
+,
 	{
-		id: 5,
-		name: "Vikram Chauhan",
-		batch: "2011",
-		branch: "Civil Engineering",
-		position: "Partner",
-		company: "McKinsey & Company",
-		location: "London, UK",
-		image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face",
-		description: "Strategic consulting for infrastructure and urban development projects.",
-		linkedin: "https://linkedin.com/in/vikram-chauhan",
-		achievements: ["McKinsey Excellence Award", "Infrastructure Consultant of the Year", "Smart Cities Initiative Lead"]
-	},
+  "id": 5,
+  "name": "Anjum Ahmad Gilani",
+  "batch": "Unknown",
+  "branch": "Chemical Engineering",
+  "position": "Chief Manager – Engineering & OHS",
+  "company": "Hindustan Petroleum Corporation Limited (HPCL)",
+  "location": "Mumbai, Maharashtra, India",
+  "description": "Engineering & OHS professional with over 20 years in oil & gas operations at HPCL",
+  "linkedin": "",
+  "twitter": "",
+  "website": "https://www.hindustanpetroleum.com/"
+}
+,
 	{
-		id: 6,
-		name: "Ananya Reddy",
-		batch: "2012",
-		branch: "Information Technology",
-		position: "Founder & CEO",
-		company: "TechNova Solutions",
-		location: "Bangalore, India",
-		image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
-		description: "Building next-generation fintech solutions and empowering startups.",
-		linkedin: "https://linkedin.com/in/ananya-reddy",
-		website: "https://technova.in",
-		achievements: ["Forbes 30 Under 30", "Startup India Recognition", "Women Entrepreneur Award"]
-	},
+  "id": 6,
+  "name": "Prof. I. K. Bhat",
+  "batch": "Unknown",
+  "branch": "Mechanical Engineering",
+  "position": "Vice Chancellor",
+  "company": "Manav Rachna University",
+  "location": "Faridabad, Haryana, India",
+  "description": "Vice Chancellor of Manav Rachna University; former Director of MNIT Jaipur, NIT Hamirpur, NIT Delhi, and NIT Jalandhar.",
+  "linkedin": "",
+  "twitter": "",
+  "website": "https://mru.edu.in/"
+}
+,
 	{
-		id: 7,
-		name: "Rohit Verma",
-		batch: "2006",
-		branch: "Electrical Engineering",
-		position: "Principal Engineer",
-		company: "SpaceX",
-		location: "California, USA",
-		image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
-		description: "Developing advanced propulsion systems and satellite technology.",
-		linkedin: "https://linkedin.com/in/rohit-verma",
-		achievements: ["SpaceX Mission Success Award", "Aerospace Engineer of Excellence", "NASA Collaboration Lead"]
-	},
+  "id": 7,
+  "name": "Shafat Sultan",
+  "batch": "Unknown",
+  "branch": "Unknown",
+  "position": "Managing Director",
+  "company": "Jammu & Kashmir Financial Corporation (JKFC)",
+  "location": "Jammu & Kashmir, India",
+  "description": "Posted as Managing Director of J&K Financial Corporation in an administrative reshuffle; previously held various roles in J&K government service.",
+  "linkedin": "",
+  "twitter": "",
+  "website": ""
+}
+,
 	{
-		id: 8,
-		name: "Dr. Kavya Nair",
-		batch: "2013",
-		branch: "Biotechnology",
-		position: "Senior Research Scientist",
-		company: "Pfizer",
-		location: "Cambridge, UK",
-		image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
-		description: "Pioneering gene therapy research and developing breakthrough treatments.",
-		linkedin: "https://linkedin.com/in/kavya-nair",
-		achievements: ["Breakthrough Research Award", "Gene Therapy Pioneer", "10+ International Publications"]
-	},
+  "id": 8,
+  "name": "Romesh Kaul",
+  "batch": "Unknown",
+  "branch": "Mechanical Engineering",
+  "position": "Executive Director (former)",
+  "company": "Mahindra CIE Automotive Ltd.",
+  "location": "Mumbai, Maharashtra, India",
+  "description": "Served as Executive Director & CEO for Forgings, Stampings & Composites divisions at Mahindra CIE; ",
+  "linkedin": "",
+  "twitter": "",
+  "website": "https://www.mahindra.com/"
+}
+,
 	{
-		id: 9,
-		name: "Aditya Gupta",
-		batch: "2014",
-		branch: "Computer Science",
-		position: "Tech Lead",
-		company: "Meta",
-		location: "Menlo Park, USA",
-		image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-		description: "Leading virtual reality development and metaverse infrastructure projects.",
-		linkedin: "https://linkedin.com/in/aditya-gupta",
-		twitter: "https://twitter.com/aditya_codes",
-		achievements: ["Meta Innovation Award", "VR/AR Technology Lead", "Open Source Contributor"]
-	},
+  "id": 9,
+  "name": "Vijay Vaishnavi",
+  "batch": "1964",
+  "branch": "Electrical Engineering",
+  "position": "Professor Emeritus",
+  "company": "Georgia State University",
+  "location": "Atlanta, Georgia, USA",
+  "description": "Noted researcher and scholar in Computer Information Systems; major contributions in design science, software engineering and data structures; Professor Emeritus at GSU",
+  "linkedin": "",
+  "twitter": "",
+  "website": "https://vijayvaishnavi.wordpress.com",
+  "achievements": [
+    "IEEE Fellow (2002)",
+    "Fulbright Scholar (2004, 2010)",
+    "Lifetime Achievement Award at DESRIST (2007)"
+  ]
+},
+
 	{
-		id: 10,
-		name: "Ishita Sharma",
-		batch: "2015",
-		branch: "Mathematics & Computing",
-		position: "Quantitative Analyst",
-		company: "Goldman Sachs",
-		location: "New York, USA",
-		image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=face",
-		description: "Developing algorithmic trading strategies and risk management systems.",
-		linkedin: "https://linkedin.com/in/ishita-sharma",
-		achievements: ["Goldman Sachs Excellence Award", "Quantitative Finance Expert", "Risk Management Innovation"]
-	},
+  "id": 10,
+  "name": "Rakesh Misri",
+  "batch": "Unknown",
+  "branch": "Civil Engineering",
+  "position": "Director – Marketing (former)",
+  "company": "Hindustan Petroleum Corporation Limited (HPCL)",
+  "location": "Mumbai, Maharashtra, India",
+  "description": "Gold‑medalist engineer with 36+ years at HPCL; held top marketing, HR, retail, corporate strategy and LPG leadership roles.",
+  "linkedin": "",
+  "twitter": "",
+  "website": "https://www.hindustanpetroleum.com/"
+}
+,
 	{
-		id: 11,
-		name: "Karan Malhotra",
-		batch: "2005",
-		branch: "Mechanical Engineering",
-		position: "Director of Operations",
-		company: "Boeing",
-		location: "Chicago, USA",
-		image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
-		description: "Overseeing aircraft manufacturing processes and implementing lean manufacturing.",
-		linkedin: "https://linkedin.com/in/karan-malhotra",
-		achievements: ["Boeing Leadership Excellence", "Lean Manufacturing Champion", "Aerospace Innovation Award"]
-	},
+  "id": 11,
+  "name": "Sameer Khera",
+  "batch": "1985",
+  "branch": "Electrical/Computer Engineering",
+  "position": "Chief Information Officer",
+  "company": "NortonLifeLock (formerly Symantec & its IT arm)",
+  "location": "Pleasant Hill, California, USA",
+  "description": "Global IT leader with 39 years of experience; CIO at NortonLifeLock since July 2019; ex‑Senior Director at Cisco.com.",
+  "linkedin": "https://www.linkedin.com/in/sameer-khera-544b055",
+  "twitter": "https://twitter.com/skhera",
+  "website": ""
+},
 	{
-		id: 12,
-		name: "Deepika Rajput",
-		batch: "2016",
-		branch: "Electronics & Communication",
-		position: "Product Manager",
-		company: "Apple",
-		location: "Cupertino, USA",
-		image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face",
-		description: "Leading product development for next-generation consumer electronics.",
-		linkedin: "https://linkedin.com/in/deepika-rajput",
-		achievements: ["Apple Product Excellence", "Consumer Tech Innovation", "Design Thinking Leader"]
-	},
+  "id": 12,
+  "name": "Chewang Phunsog",
+  "batch": "1968",
+  "branch": "Mechanical Engineering",
+  "position": "Chairman",
+  "company": "Public Enterprises Selection Board (PESB), Government of India",
+  "location": "New Delhi, India",
+  "description": "Padma Shri‑awardee IAS officer; former Chief Secretary of Jammu & Kashmir; Chairman of the Public Enterprises Selection Board",
+  "linkedin": "",
+  "twitter": "",
+  "website": ""
+},
 	{
-		id: 13,
-		name: "Amit Singh",
-		batch: "2017",
-		branch: "Computer Science",
-		position: "Senior Data Scientist",
-		company: "Netflix",
-		location: "Los Angeles, USA",
-		image: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=400&fit=crop&crop=face",
-		description: "Building recommendation algorithms and content optimization systems.",
-		linkedin: "https://linkedin.com/in/amit-singh",
-		achievements: ["Netflix Innovation Award", "ML Engineering Excellence", "Data Science Pioneer"]
-	},
-	{
-		id: 14,
-		name: "Neha Patel",
-		batch: "2018",
-		branch: "Civil Engineering",
-		position: "Project Manager",
-		company: "Bechtel Corporation",
-		location: "Dubai, UAE",
-		image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
-		description: "Managing large-scale infrastructure projects across the Middle East.",
-		linkedin: "https://linkedin.com/in/neha-patel",
-		achievements: ["Project Excellence Award", "Infrastructure Innovation", "Women in Engineering Leader"]
-	},
-	{
-		id: 15,
-		name: "Rahul Joshi",
-		batch: "2019",
-		branch: "Electronics & Communication",
-		position: "Hardware Engineer",
-		company: "Qualcomm",
-		location: "San Diego, USA",
-		image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=400&h=400&fit=crop&crop=face",
-		description: "Developing next-generation 5G and wireless communication technologies.",
-		linkedin: "https://linkedin.com/in/rahul-joshi",
-		achievements: ["5G Innovation Award", "Wireless Technology Pioneer", "Patent Holder"]
-	},
-	{
-		id: 16,
-		name: "Pooja Kumari",
-		batch: "2020",
-		branch: "Information Technology",
-		position: "Cloud Architect",
-		company: "Amazon Web Services",
-		location: "Virginia, USA",
-		image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-		description: "Designing scalable cloud solutions for enterprise clients.",
-		linkedin: "https://linkedin.com/in/pooja-kumari",
-		achievements: ["AWS Certified Solutions Architect", "Cloud Innovation Award", "Tech Excellence"]
-	},
-	{
-		id: 17,
-		name: "Suresh Kumar",
-		batch: "2004",
-		branch: "Mechanical Engineering",
-		position: "Vice President",
-		company: "General Electric",
-		location: "Boston, USA",
-		image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-		description: "Leading renewable energy initiatives and sustainable manufacturing.",
-		linkedin: "https://linkedin.com/in/suresh-kumar",
-		achievements: ["GE Leadership Award", "Renewable Energy Pioneer", "Sustainability Champion"]
-	},
-	{
-		id: 18,
-		name: "Maya Gupta",
-		batch: "2021",
-		branch: "Chemical Engineering",
-		position: "Process Engineer",
-		company: "ExxonMobil",
-		location: "Houston, USA",
-		image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
-		description: "Optimizing petrochemical processes and developing green technologies.",
-		linkedin: "https://linkedin.com/in/maya-gupta",
-		achievements: ["Process Optimization Award", "Green Chemistry Innovation", "Young Engineer Excellence"]
-	},
-	{
-		id: 19,
-		name: "Sanjay Rao",
-		batch: "2003",
-		branch: "Electrical Engineering",
-		position: "Chief Engineer",
-		company: "Siemens",
-		location: "Munich, Germany",
-		image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-		description: "Leading automation and digitalization projects in manufacturing.",
-		linkedin: "https://linkedin.com/in/sanjay-rao",
-		achievements: ["Siemens Excellence Award", "Automation Pioneer", "Industry 4.0 Leader"]
-	},
-	{
-		id: 20,
-		name: "Ritika Sharma",
-		batch: "2022",
-		branch: "Biotechnology",
-		position: "Research Associate",
-		company: "Moderna",
-		location: "Cambridge, USA",
-		image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-		description: "Contributing to mRNA technology development and vaccine research.",
-		linkedin: "https://linkedin.com/in/ritika-sharma",
-		achievements: ["mRNA Research Excellence", "Biotech Innovation", "Rising Star Award"]
-	},
-	{
-		id: 21,
-		name: "Manish Agarwal",
-		batch: "2002",
-		branch: "Computer Science",
-		position: "Founder & CTO",
-		company: "Zomato",
-		location: "Gurgaon, India",
-		image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face",
-		description: "Building India's largest food delivery and restaurant discovery platform.",
-		linkedin: "https://linkedin.com/in/manish-agarwal",
-		twitter: "https://twitter.com/manish_zomato",
-		achievements: ["Entrepreneur of the Year", "Food Tech Pioneer", "Unicorn Startup Founder"]
-	}
+  "id": 13,
+  "name": "Sanjay Purohit",
+  "batch": "2000",
+  "branch": "Mechanical Engineering",
+  "position": "Chief Strategy Officer / Chair – Infosys Consulting (former)",
+  "company": "Centre for Exponential Change (CEO & Chief Curator)",
+  "location": "India/Global",
+  "description": "Global strategy and digital platforms leader; former EVP Corporate Strategy, Founder‑CEO EdgeVerve, and Chair & MD Infosys Consulting; now building Societal Platform thinking.",
+  "linkedin": "",
+  "twitter": "",
+  "website": ""
+},
 ];
 
 const Alumni = () => {
 	const [hoveredCard, setHoveredCard] = useState(null);
 
 	return (
-		<div className="min-h-screen ">
+		<div className="min-h-screen bg-gradient-to-br from-lightblue/10 to-teal/10 ">
 			{/* Hero Section */}
-			<div className="relative  text-gray-800 py-20 overflow-hidden">
+			<div className="relative  text-gray-800 py-20 overflow-hidden ">
+				{/* Animated wave SVG */}
+						<img
+						  src={heroWave}
+						  alt="wave"
+						  className="absolute bottom-0 left-0 w-full h-16 sm:h-20 md:h-24 object-cover animate-pulse"
+						  style={{ zIndex: 1 }}
+						/>
 				<div className="absolute inset-0 bg-white/30"></div>
 				
 				<div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 					<div className="inline-flex items-center justify-center p-2 bg-white/60 backdrop-blur-sm rounded-full mb-6">
-						<FaGraduationCap className="text-3xl text-orange-500 mr-3" />
-						<span className="text-orange-600 font-semibold">Alumni Network</span>
+						<FaGraduationCap className="text-3xl text-yellow mr-3" />
+						<span className="text-yellow font-semibold">Alumni Network</span>
 					</div>
-					<h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-800 to-sky-700 bg-clip-text text-transparent">
+					<h1 className="text-4xl md:text-6xl font-bold mb-6 text-dark">
 						Our Distinguished Alumni
 					</h1>
 					<p className="text-xl md:text-2xl text-gray-700 font-light max-w-3xl mx-auto mb-8">
@@ -305,15 +226,15 @@ const Alumni = () => {
 					</p>
 					<div className="flex justify-center space-x-8 text-center">
 						<div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-sm">
-							<div className="text-2xl font-bold text-orange-600">500+</div>
+							<div className="text-2xl font-bold text-yellow">500+</div>
 							<div className="text-sm text-gray-600">Global Alumni</div>
 						</div>
 						<div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-sm">
-							<div className="text-2xl font-bold text-orange-600">25+</div>
+							<div className="text-2xl font-bold text-yellow">25+</div>
 							<div className="text-sm text-gray-600">Countries</div>
 						</div>
 						<div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-sm">
-							<div className="text-2xl font-bold text-orange-600">100+</div>
+							<div className="text-2xl font-bold text-yellow">100+</div>
 							<div className="text-sm text-gray-600">Top Companies</div>
 						</div>
 					</div>
@@ -323,11 +244,11 @@ const Alumni = () => {
 			{/* Featured Alumni Section */}
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 				<div className="text-center mb-12">
-					<div className="inline-flex items-center justify-center p-2 bg-sky-100 rounded-full mb-4">
-						<FaStar className="text-sky-600 mr-2" />
-						<span className="text-sky-700 font-semibold">Featured Achievers</span>
+					<div className="inline-flex items-center justify-center p-2 bg-dark rounded-full mb-4">
+						<FaStar className="text-snow mr-2" />
+						<span className="text-snow font-semibold">Featured Achievers</span>
 					</div>
-					<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+					<h2 className="text-3xl md:text-4xl font-bold text-dark mb-4 ">
 						Making Their Mark Worldwide
 					</h2>
 					<p className="text-gray-600 max-w-2xl mx-auto">
@@ -353,7 +274,7 @@ const Alumni = () => {
 										className="w-20 h-20 rounded-full border-3 border-white object-cover shadow-md group-hover:scale-105 transition-transform duration-300"
 									/>
 									<div className="absolute -bottom-1 -right-1 bg-orange-100 rounded-full p-1">
-										<FaGraduationCap className="text-orange-500 text-sm" />
+										<FaGraduationCap className="text-yellow text-sm" />
 									</div>
 								</div>
 
@@ -369,7 +290,7 @@ const Alumni = () => {
 												<span className="text-sm text-sky-600 font-medium bg-sky-50 px-3 py-1 rounded-full">
 													{alum.branch}
 												</span>
-												<span className="text-sm text-orange-600 font-medium bg-orange-50 px-3 py-1 rounded-full">
+												<span className="text-sm text-yellow font-medium bg-orange-50 px-3 py-1 rounded-full">
 													Batch {alum.batch}
 												</span>
 											</div>
