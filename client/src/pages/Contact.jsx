@@ -175,15 +175,19 @@ const Contact = () => {
       </div>
 
       {/* Getting Here Section */}
-      <div className="relative py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+        <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-8 sm:mb-12 text-center">
+          <span className="bg-dark bg-clip-text text-transparent">
+            Getting Here
+          </span>
+        </h2>
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
-          <div className="bg-snow/90 rounded-2xl shadow-2xl p-6 sm:p-10 border border-yellow/30 flex flex-col md:flex-row items-center gap-8 md:gap-10 animate-fade-in-up" style={{ backdropFilter: 'blur(2px)' }}>
+          <div className="bg-snow/90 rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 border border-yellow/30 flex flex-col md:flex-row items-center gap-8 md:gap-10 animate-fade-in-up" style={{ backdropFilter: 'blur(2px)' }}>
             {/* Left - Text Content */}
             <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
               <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow/20 mb-2">
                 <FaMapMarkerAlt className="text-yellow text-2xl" />
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-1">Getting Here</h2>
               <p className="text-teal text-base sm:text-lg font-medium mb-2">How to reach NIT Srinagar</p>
               <p className="text-dark/80 mb-4 text-sm sm:text-base max-w-md">
                 NIT Srinagar is well-connected by road, rail, and air. The city is famous for its nine old bridges, connecting the two parts of the city. You can reach here via Srinagar International Airport (18km), Nowgam Railway Station, or by road.
