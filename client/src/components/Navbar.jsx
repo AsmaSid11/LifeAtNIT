@@ -281,7 +281,7 @@ const Navbar = () => {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden bg-dark/95 backdrop-blur-sm border-t border-lightblue/20 text-snow">
+        <div className={`md:hidden ${isHomePage && !isScrolled ? 'bg-black' : 'bg-dark/95'} backdrop-blur-sm border-t border-lightblue/20 text-snow`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               to="/"
