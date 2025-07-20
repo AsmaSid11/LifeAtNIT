@@ -10,7 +10,8 @@ import {
   Presentation,
   Video,
   Trophy,
-  ListChecks
+  ListChecks,
+  ChevronRight
 } from "lucide-react"; // or swap with any icon set you like
 
 const cardsData = [
@@ -85,23 +86,24 @@ const cardData = [
   },
 ];
 
-const InfoCards = ({ icon, title, description, bgColor }) => {
+const InfoCards = ({ icon, title, description, bgColor, className = "" }) => {
   return (
-
     <motion.div
-    className="flex flex-col items-center text-center rounded-lg p-6 shadow-md m-4 h-[23rem] w-[22rem] border-t-8 border-[#0D9488] overflow-scroll"
-    style={{ backgroundColor: bgColor }}
-    whileInView={{ opacity: 1, y: 0 }}
-    initial={{ opacity: 0, y: 50 }}
-    whileHover={{ scale: 1.05 }}
-    viewport={{ once: true, amount: 0.3 }}
-    transition={{ type: 'spring', stiffness: 200 }}
-  >
-      <div className="mb-4">{icon}</div>
-      <h3 className="text-2xl font-bold text-[#1F2647] mb-2 font-serif">{title}</h3>
-      <p className="text-[#1F2647] text-sm font-serif leading-relaxed p-[1rem]">{description}</p>
+      className={`flex flex-col items-center text-center rounded-2xl p-4 sm:p-6 shadow-xl w-full max-w-md mx-auto md:max-w-none md:mx-0 md:flex-1 border-t-8 border-[#0D9488] bg-white ${className} my-2 relative overflow-hidden min-w-[60vw] min-h-[60vw] sm:min-w-0 sm:min-h-0`}
+      style={{ background: 'linear-gradient(135deg, #f8fafc 60%, #88DADA 100%)' }}
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.97, rotate: '-2deg' }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ type: 'spring', stiffness: 200 }}
+    >
+      <div className="mb-4 mt-2 drop-shadow-lg">{icon}</div>
+      <h3 className="text-xl sm:text-2xl font-bold text-[#1F2647] mb-2 font-serif drop-shadow">{title}</h3>
+      <div className="flex-1 flex items-center justify-center w-full">
+        <p className="text-[#1F2647] text-xs sm:text-sm font-serif leading-relaxed px-2 py-2 sm:p-[1rem]">{description}</p>
+      </div>
     </motion.div>
-    
   );
 };
 
@@ -112,9 +114,7 @@ const InfoCards = ({ icon, title, description, bgColor }) => {
 const ClubCard = ({ title, description, image, reverse }) => {
   return (
     <motion.div
-      className={`flex flex-col md:flex-row items-center border-t-8 border-[#1F2647] bg-snow p-8 shadow-lg rounded-xl mb-5 ${
-        reverse ? 'md:flex-row-reverse' : ''
-      }`}
+      className={`flex flex-col md:flex-row items-center border-t-8 border-[#1F2647] bg-snow p-4 sm:p-8 shadow-lg rounded-xl mb-5 ${reverse ? 'md:flex-row-reverse' : ''}`}
       whileHover={{
         scale: 1.02,
         boxShadow:
@@ -124,14 +124,13 @@ const ClubCard = ({ title, description, image, reverse }) => {
       style={{
         perspective: 1000,
         transformStyle: "preserve-3d",
-        
       }}
     >
-      <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8">
+      <div className="w-full md:w-1/2 mb-4 md:mb-0 md:mr-8 flex-shrink-0">
         <motion.img
           src={image}
           alt={title}
-          className="rounded-lg shadow-md object-cover w-full h-auto"
+          className="rounded-lg shadow-md object-cover w-full h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96"
           whileHover={{
             scale: 1.06,
             boxShadow:
@@ -142,9 +141,9 @@ const ClubCard = ({ title, description, image, reverse }) => {
           transition={{ type: "spring", stiffness: 300, damping: 18 }}
         />
       </div>
-      <div className="w-full md:w-1/2">
-        <div className="font-bold font-serif text-3xl text-[#DDA853] mb-4">{title}</div>
-        <p className="text-[#1F2647] leading-relaxed">{description}</p>
+      <div className="w-full md:w-1/2 mt-2 md:mt-0">
+        <div className="font-bold font-serif text-2xl sm:text-3xl text-[#DDA853] mb-2 sm:mb-4">{title}</div>
+        <p className="text-[#1F2647] text-sm sm:text-base leading-relaxed">{description}</p>
       </div>
     </motion.div>
   );
@@ -219,41 +218,40 @@ const Clubs = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-lightblue/10 to-teal/10">
       {/* Animated Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-yellow-100/60 via-lightblue/30 to-snow/80 py-10 sm:py-14 md:py-16 mb-6 sm:mb-10">
+      <div className="relative overflow-hidden bg-gradient-to-br from-yellow-100/60 via-lightblue/30 to-snow/80 py-8 sm:py-14 md:py-16 mb-4 sm:mb-10">
         {/* Animated wave SVG */}
         <img
           src={heroWave}
           alt="wave"
-          className="absolute bottom-0 left-0 w-full h-16 sm:h-20 md:h-24 object-cover animate-pulse"
+          className="absolute bottom-0 left-0 w-full h-10 sm:h-16 md:h-24 object-cover animate-pulse"
           style={{ zIndex: 1 }}
         />
         <div className="relative z-10 flex flex-col items-center justify-center px-2">
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold text-dark drop-shadow-lg animate-fade-in-up mb-2 sm:mb-4 text-center">
+          <h1 className="text-2xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold text-dark drop-shadow-lg animate-fade-in-up mb-2 sm:mb-4 text-center">
             Student Clubs
           </h1>
-          <p className="text-base xs:text-lg md:text-xl text-teal font-medium animate-fade-in-up delay-200 text-center px-2">
+          <p className="text-sm xs:text-lg md:text-xl text-teal font-medium animate-fade-in-up delay-200 text-center px-2">
             Connect.Collaborate.Create
           </p>
         </div>
       </div>
-      <div className="bg-snow border-t-2 border-[#1F2647] text-[#1F2647] rounded-2xl md:w-3/4 mx-auto p-12 shadow-lg">
-  <h2 className="text-2xl font-extrabold mb-3 pb-2 text-center font-serif">
-    About NIT SGR Gymkhana
-  </h2>
-  <p className="text-sm md:text-base leading-loose italic">
-    NIT Srinagar has launched the Student's Gymkhana, a student-led platform aimed at promoting holistic development, leadership, and active participation in co-curricular and extracurricular activities. It includes various clubs and societies spanning cultural, technical, sports, and social domains. Managed by students with faculty guidance, the Gymkhana enables students to explore interests, organize events, and build key skills beyond academics. This initiative reflects the institute’s dedication to fostering well-rounded individuals and enriching the overall campus experience.
-  </p>
-</div>
-
+      <div className="bg-snow border-t-2 border-[#1F2647] text-[#1F2647] rounded-2xl w-full md:w-3/4 mx-auto p-4 sm:p-8 md:p-12 shadow-lg">
+        <h2 className="text-xl sm:text-2xl font-extrabold mb-2 sm:mb-3 pb-2 text-center font-serif">
+          About NIT SGR Gymkhana
+        </h2>
+        <p className="text-xs sm:text-sm md:text-base leading-loose italic">
+          NIT Srinagar has launched the Student's Gymkhana, a student-led platform aimed at promoting holistic development, leadership, and active participation in co-curricular and extracurricular activities. It includes various clubs and societies spanning cultural, technical, sports, and social domains. Managed by students with faculty guidance, the Gymkhana enables students to explore interests, organize events, and build key skills beyond academics. This initiative reflects the institute’s dedication to fostering well-rounded individuals and enriching the overall campus experience.
+        </p>
+      </div>
       {/* Clubs Section */}
-      <div className="min-h-screen max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 mb-[5rem]">
+      <div className="w-full max-w-7xl mx-auto py-8 sm:py-12 px-2 sm:px-4 lg:px-8 mb-8 sm:mb-[5rem]">
         {clubsData.map((club, index) => (
           <ClubCard key={index} {...club} />
         ))}
       </div>
-    {/*What we do*/}
-    {/* Wavy Top Border */}
-    <div className="h-8" style={{ backgroundColor: '#88DADA' }}>
+      {/*What we do*/}
+      {/* Wavy Top Border */}
+      <div className="h-6 sm:h-8" style={{ backgroundColor: '#88DADA' }}>
         <svg
           className="w-full h-full"
           viewBox="0 0 1200 32"
@@ -266,49 +264,48 @@ const Clubs = () => {
           />
         </svg>
       </div>
-    {/* Section Content */}
-    <div className="py-12 sm:py-16 mb-[3rem]" style={{ backgroundColor: '#88DADA' }}>
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-    <h1 className='font-bold font-serif text-4xl text-[#1F2647] justify-items-center text-center mb-[1rem]'>Activities</h1>
-    <div className="overflow-x-auto py-8">
-  <div className="flex gap-4 px-4">
-    {cardsData.map((card, index) => (
-      <motion.div
-      key={index}
-      className={`min-w-[300px] w-[22rem] h-[23rem] border-t-8 border-[#0D9488] flex-shrink-0 p-4 rounded-xl shadow-md ${card.bgColor} flex flex-col items-center text-center`}
-      style={{ backgroundColor: card.bgColor }}
-      whileInView={{ opacity: 1, y: 0 }}
-      initial={{ opacity: 0, y: 50 }}
-      whileHover={{ scale: 1.05 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ type: 'spring', stiffness: 200 }}
-    >
-      <div className="flex justify-center items-center text-5xl">
-        {card.icon}
+      {/* Section Content */}
+      <div className="py-8 sm:py-12 mb-8 sm:mb-[3rem]" style={{ backgroundColor: '#88DADA' }}>
+        <div className="max-w-6xl mx-auto px-2 sm:px-6 text-center">
+          <h1 className='font-bold font-serif text-2xl sm:text-4xl text-[#1F2647] text-center mb-4 sm:mb-[1rem]'>Activities</h1>
+          <div className="relative">
+            <div className="overflow-x-auto py-4 sm:py-8 hide-scrollbar">
+              <div className="flex gap-4 px-2 sm:px-4">
+                {cardsData.map((card, index) => (
+                  <motion.div
+                    key={index}
+                    className={`min-w-[85vw] max-w-[95vw] sm:min-w-[300px] sm:w-[22rem] lg:min-w-[31%] lg:w-[31%] h-auto min-h-[18rem] sm:h-[23rem] border-t-8 border-[#0D9488] flex-shrink-0 p-4 sm:p-4 rounded-2xl shadow-xl ${card.bgColor} flex flex-col items-center text-center mx-2 relative overflow-hidden`}
+                    style={{ background: 'linear-gradient(135deg, #f8fafc 60%, #88DADA 100%)' }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97, rotate: '-2deg' }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ type: 'spring', stiffness: 200 }}
+                  >
+                    <div className="flex justify-center items-center text-4xl sm:text-5xl mb-2 mt-2 drop-shadow-lg">
+                      {card.icon}
+                    </div>
+                    <h3 className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4 font-serif text-[#DDA853] drop-shadow mb-2">{card.title}</h3>
+                    <div className="flex-1 flex items-center justify-center w-full">
+                      <p className="text-xs sm:text-sm font-serif leading-relaxed px-2 py-2 sm:p-[1rem]" style={{ color: "#1F2647" }}>
+                        {card.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+            {/* Right arrow indicator for scrollable cards on all screens */}
+            <div className="absolute top-1/2 right-2 -translate-y-1/2 z-20 pointer-events-none">
+              <ChevronRight size={22} className="text-[#1F2647] opacity-30 animate-wiggle-right" />
+            </div>
+          </div>
+        </div>
       </div>
-      <h3 className="text-2xl font-bold mt-4 font-serif text-[#DDA853]">{card.title}</h3>
-      <p className="text-sm font-serif leading-relaxed p-[1rem]" style={{ color: "#1F2647" }}>
-        {card.description}
-      </p>
-    </motion.div>
-    
-    ))}
-  </div>
-</div>
-
-
-</div>
-</div>
-
-    
-
-
-    
-
-    {/*Why join us */}
-
-    {/* Wavy Top Border */}
-    <div className="h-8 "style={{ backgroundColor: '#DDA853' }}>
+      {/*Why join us */}
+      {/* Wavy Top Border */}
+      <div className="h-6 sm:h-8" style={{ backgroundColor: '#DDA853' }}>
         <svg
           className="w-full h-full"
           viewBox="0 0 1200 32"
@@ -322,21 +319,18 @@ const Clubs = () => {
           />
         </svg>
       </div>
-    {/* Section Content */}
-    <div className="py-12 sm:py-16" style={{ backgroundColor: '#DDA853' }}>
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center"></div>
-    <h1 className='font-bold font-serif text-4xl text-[#1F2647] justify-items-center text-center mt-[2rem]'>Why join Clubs?</h1>
-    <div className='min-h-screen max-w-6xl mx-auto py-8 px-6 flex flex-col sm:flex-row  justify-center -mb-[5rem] '>
-  {cardData.map((card, index) => (
-    <InfoCards key={index} {...card} />
-  ))}
-</div>
-  </div>
-
-
-    
-    
-</div>
+      {/* Section Content */}
+      <div className="py-8 sm:py-12 px-2 sm:px-6" style={{ backgroundColor: '#DDA853' }}>
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className='font-bold font-serif text-2xl sm:text-4xl text-[#1F2647] text-center mt-4 sm:mt-[2rem] mb-8'>Why join Clubs?</h1>
+          <div className='w-full flex flex-col md:flex-row justify-center items-stretch gap-6 md:gap-x-8'>
+            {cardData.map((card, index) => (
+              <InfoCards key={index} {...card} className={index !== cardData.length - 1 ? 'mb-0' : ''} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
