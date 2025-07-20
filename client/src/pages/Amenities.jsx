@@ -304,7 +304,7 @@ const Amenities = () => {
                     >
                       {/* Carousel */}
                       <div
-                        className="flex items-center justify-center relative bg-gradient-to-br from-lightblue/30 to-snow/80 rounded-3xl overflow-hidden p-2 xs:p-4 shadow-2xl mx-auto w-full max-w-xs sm:max-w-sm md:max-w-xs lg:max-w-sm min-w-0"
+                        className="flex items-center justify-center relative bg-gradient-to-br from-lightblue/30 to-snow/80 rounded-3xl overflow-hidden p-2 xs:p-4 shadow-2xl mx-auto w-full max-w-xs sm:max-w-sm md:max-w-xs lg:max-w-sm min-w-0 md:[transform:rotateY(-10deg)_scale(1.04)]"
                         style={{
                           width: "100%",
                           maxWidth: "350px",
@@ -313,7 +313,7 @@ const Amenities = () => {
                           minHeight: "180px",
                           maxHeight: "320px",
                           margin: "0 auto",
-                          transform: "rotateY(-10deg) scale(1.04)",
+                          // Only apply transform for md and above (handled by Tailwind class)
                           boxShadow:
                             "0 16px 48px 0 rgba(13, 148, 136, 0.18), 0 2px 8px 0 rgba(0,0,0,0.10)",
                           perspective: "1200px",
@@ -334,14 +334,14 @@ const Amenities = () => {
                         <img
                           src={amenity.photos[carouselIdx]}
                           alt={amenity.name}
-                          className="w-full h-full object-cover rounded-3xl transition-all duration-500 shadow-xl"
+                          className="w-full h-full object-cover rounded-3xl transition-all duration-500 shadow-xl md:[transform:rotateY(8deg)_scale(1.01)]"
                           style={{
                             objectFit: "cover",
                             width: "100%",
                             height: "100%",
                             minWidth: "0",
                             minHeight: "0",
-                            transform: "rotateY(8deg) scale(1.01)",
+                            // Only apply transform for md and above (handled by Tailwind class)
                             display: "block",
                           }}
                         />
@@ -371,9 +371,9 @@ const Amenities = () => {
                       </div>
                       {/* Right: Details with 3D pop, no border */}
                       <div
-                        className="flex-1 p-3 xs:p-4 md:p-8 flex flex-col justify-center bg-snow/90 rounded-2xl shadow-xl ml-0 md:ml-8 mt-4 md:mt-0 transition-all duration-500 overflow-y-auto w-full"
+                        className="flex-1 p-3 xs:p-4 md:p-8 flex flex-col justify-center bg-snow/90 rounded-2xl shadow-xl ml-0 md:ml-8 mt-4 md:mt-0 transition-all duration-500 overflow-y-auto w-full md:[transform:rotateY(6deg)_scale(1.01)]"
                         style={{
-                          transform: "rotateY(6deg) scale(1.01)",
+                          // Only apply transform for md and above (handled by Tailwind class)
                           boxShadow: "0 8px 32px 0 rgba(13, 148, 136, 0.13)",
                           maxHeight: "80vh",
                         }}
