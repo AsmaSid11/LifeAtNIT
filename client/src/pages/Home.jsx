@@ -11,14 +11,14 @@ const features = [
   {
     title: "World-Class Amenities",
     desc: "Enjoy modern hostels, sports complexes, libraries, and more for a holistic experience.",
-    img: "/Amenities/library2.webp", 
+    img: "/Amenities/library2.webp",
     link: "/amenities",
     icon: "🏛️"
   },
   {
     title: "Unforgettable Fests",
     desc: "Experience the thrill of our cultural and technical fests, where talent meets celebration.",
-    img: "/Clubs/DSC08125 (1).webp", 
+    img: "/Clubs/DSC08125 (1).webp",
     link: "/fests",
     icon: "🎪"
   },
@@ -39,22 +39,22 @@ const achievements = [
 
 const testimonials = [
   {
-    name: "Diyim Sajad",
+    name: "Dayim Sajad",
     role: "B Tech (MECH) - 2025",
     text: "I am grateful to the Department of Training and Placement for their consistent support in facilitating my placement at Aditya Birla Group. Their dedication played an important role in this achievement.",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQHX0OnRMMFTNw/profile-displayphoto-shrink_400_400/B56ZeXopXVHoAk-/0/1750595705584?e=1755734400&v=beta&t=-WTUOTf7Cw-yGvFYHVezwmXsioJ0VzEjFO-ciWpAXm4"
+    image: "images/dayim_sajad.webp"
   },
   {
     name: "Palak Sharma",
     role: "B Tech (CSE) - 2025",
     text: "I'm happy to share that I've been placed at PwC. Many thanks to the Training and Placement Department and team for their clear communication, smooth coordination, and constant support throughout the placement process.",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQFEyNGqCDGahQ/profile-displayphoto-shrink_400_400/B56ZZh87TNGQAk-/0/1745400085184?e=1755734400&v=beta&t=-zZ7msBv3tQkE3BntHC5MN4hgsILzdFiQti-9cBBrvE"
+    image: "images/palak_sharma.webp"
   },
   {
     name: "Sanjay",
     role: "B Tech (ELE) - 2025",
     text: "I'm thrilled to be placed at Tata Power DDL. Grateful to the Training and Placement Department for their support. Looking forward to contributing to urban power infrastructure and gaining valuable experience in this dynamic sector.",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQGJqLizPDM1YA/profile-displayphoto-shrink_400_400/B56ZZwMxe8HgAk-/0/1745639121133?e=1755734400&v=beta&t=i66yQiXjE81iLl3VLibxDPpTAYojluN2G_kRUuAPoBg"
+    image: "images/sanjay.webp"
   }
 ];
 
@@ -440,7 +440,7 @@ export default function Home() {
                 color: '#1F2647',
                 borderColor: '#1F2647'
               }}
-              onClick={() => window.open('https://youtu.be/xEkUrqU3yCs?feature=shared', '_blank')} // Added onClick handler to open video in new tab
+              onClick={() => window.open('http://www.youtube.com/watch?v=xEkUrqU3yCs', '_blank')} // Corrected URL
             >
               <span>Campus Tour</span>
               <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
