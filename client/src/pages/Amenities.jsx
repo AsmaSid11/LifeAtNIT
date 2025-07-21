@@ -304,7 +304,10 @@ const Amenities = () => {
                     >
                       {/* Carousel */}
                       <div
-                        className="flex items-center justify-center relative bg-gradient-to-br from-lightblue/30 to-snow/80 rounded-3xl overflow-hidden p-2 xs:p-4 shadow-2xl mx-auto w-full max-w-xs sm:max-w-sm md:max-w-xs lg:max-w-sm min-w-0 md:[transform:rotateY(-10deg)_scale(1.04)]"
+                        className={
+                          "flex items-center justify-center relative bg-gradient-to-br from-lightblue/30 to-snow/80 rounded-3xl overflow-hidden p-2 xs:p-4 shadow-2xl mx-auto w-full max-w-xs sm:max-w-sm md:max-w-xs lg:max-w-sm min-w-0" +
+                          (window.innerWidth >= 768 ? " md:[transform:rotateY(-10deg)_scale(1.04)]" : "")
+                        }
                         style={{
                           width: "100%",
                           maxWidth: "350px",
@@ -313,10 +316,12 @@ const Amenities = () => {
                           minHeight: "180px",
                           maxHeight: "320px",
                           margin: "0 auto",
-                          // Only apply transform for md and above (handled by Tailwind class)
                           boxShadow:
                             "0 16px 48px 0 rgba(13, 148, 136, 0.18), 0 2px 8px 0 rgba(0,0,0,0.10)",
                           perspective: "1200px",
+                          // Remove transform for mobile
+                          transform: window.innerWidth < 768 ? "none" : undefined,
+                          transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
                         }}
                       >
                         <button
@@ -371,11 +376,16 @@ const Amenities = () => {
                       </div>
                       {/* Right: Details with 3D pop, no border */}
                       <div
-                        className="flex-1 p-3 xs:p-4 md:p-8 flex flex-col justify-center bg-snow/90 rounded-2xl shadow-xl ml-0 md:ml-8 mt-4 md:mt-0 transition-all duration-500 overflow-y-auto w-full md:[transform:rotateY(6deg)_scale(1.01)]"
+                        className={
+                          "flex-1 p-3 xs:p-4 md:p-8 flex flex-col justify-center bg-snow/90 rounded-2xl shadow-xl ml-0 md:ml-8 mt-4 md:mt-0 transition-all duration-500 overflow-y-auto w-full" +
+                          (window.innerWidth >= 768 ? " md:[transform:rotateY(6deg)_scale(1.01)]" : "")
+                        }
                         style={{
-                          // Only apply transform for md and above (handled by Tailwind class)
                           boxShadow: "0 8px 32px 0 rgba(13, 148, 136, 0.13)",
                           maxHeight: "80vh",
+                          // Remove transform for mobile
+                          transform: window.innerWidth < 768 ? "none" : undefined,
+                          transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
                         }}
                       >
                         <button
@@ -475,7 +485,7 @@ const Amenities = () => {
               ) : (
                 // Collapsed: Home-style card
                 <>
-                  <div className="relative overflow-hidden rounded-2xl group-hover:rotate-[-3deg] group-hover:scale-110 transition-all duration-500">
+                  <div className="relative overflow-hidden rounded-2xl transition-all duration-500 md:group-hover:rotate-[-3deg] md:group-hover:scale-110">
                     <img
                       src={amenity.image}
                       alt={amenity.name}

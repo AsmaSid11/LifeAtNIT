@@ -87,7 +87,7 @@ const Accommodation = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="max-w-5xl mx-auto bg-white/95 rounded-3xl shadow-2xl p-8 sm:p-12 mb-12 text-[#1F2647] mx-4 sm:mx-auto"
+        className="max-w-5xl mx-4 sm:mx-auto bg-white/95 rounded-3xl shadow-2xl p-6 sm:p-12 mb-12"
       >
         <h2 className="text-3xl sm:text-4xl font-bold text-[#0D9488] mb-4 text-center">
           About NIT Srinagar Guest Houses
@@ -246,7 +246,7 @@ const Accommodation = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="max-w-5xl mx-auto bg-white/95 rounded-3xl shadow-2xl p-8 sm:p-12 mb-16 mx-4 sm:mx-auto"
+        className="max-w-5xl mx-4 sm:mx-auto bg-white/95 rounded-3xl shadow-2xl p-6 sm:p-12 mb-16"
       >
         <h3 className="text-2xl sm:text-3xl font-bold text-[#0D9488] mb-6 text-center">Quick Info & Booking</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
