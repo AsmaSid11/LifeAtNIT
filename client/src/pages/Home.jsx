@@ -4,21 +4,21 @@ const features = [
   {
     title: "Vibrant Student Life",
     desc: "Join a diverse range of clubs, fests, and activities that make every day exciting.",
-    img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+    img: "/Clubs/DSC_1248.webp",
     link: "/clubs",
     icon: "🎭"
   },
   {
     title: "World-Class Amenities",
     desc: "Enjoy modern hostels, sports complexes, libraries, and more for a holistic experience.",
-    img: "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=600&q=80",
+    img: "/Amenities/library2.webp", 
     link: "/amenities",
     icon: "🏛️"
   },
   {
     title: "Unforgettable Fests",
     desc: "Experience the thrill of our cultural and technical fests, where talent meets celebration.",
-    img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+    img: "/Clubs/DSC08125 (1).webp", 
     link: "/fests",
     icon: "🎪"
   },
@@ -39,22 +39,22 @@ const achievements = [
 
 const testimonials = [
   {
-    name: "Arjun Sharma",
-    role: "Computer Science, 2023",
-    text: "NIT Srinagar shaped my career and gave me lifelong friendships. The technical fests and coding culture here are unmatched.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+    name: "Diyim Sajad",
+    role: "B Tech (MECH) - 2025",
+    text: "I am grateful to the Department of Training and Placement for their consistent support in facilitating my placement at Aditya Birla Group. Their dedication played an important role in this achievement.",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQHX0OnRMMFTNw/profile-displayphoto-shrink_400_400/B56ZeXopXVHoAk-/0/1750595705584?e=1755734400&v=beta&t=-WTUOTf7Cw-yGvFYHVezwmXsioJ0VzEjFO-ciWpAXm4"
   },
   {
-    name: "Priya Mehta",
-    role: "Electronics & Communication, 2022",
-    text: "The research opportunities and faculty support helped me secure my dream job. NIT Srinagar truly delivers excellence.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b332c371?auto=format&fit=crop&w=150&q=80"
+    name: "Palak Sharma",
+    role: "B Tech (CSE) - 2025",
+    text: "I'm happy to share that I've been placed at PwC. Many thanks to the Training and Placement Department and team for their clear communication, smooth coordination, and constant support throughout the placement process.",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQFEyNGqCDGahQ/profile-displayphoto-shrink_400_400/B56ZZh87TNGQAk-/0/1745400085184?e=1755734400&v=beta&t=-zZ7msBv3tQkE3BntHC5MN4hgsILzdFiQti-9cBBrvE"
   },
   {
-    name: "Rohit Kumar",
-    role: "Mechanical Engineering, 2024",
-    text: "From hackathons to cultural events, every moment at NIT Srinagar contributed to my personal and professional growth.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80"
+    name: "Sanjay",
+    role: "B Tech (ELE) - 2025",
+    text: "I'm thrilled to be placed at Tata Power DDL. Grateful to the Training and Placement Department for their support. Looking forward to contributing to urban power infrastructure and gaining valuable experience in this dynamic sector.",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQGJqLizPDM1YA/profile-displayphoto-shrink_400_400/B56ZZwMxe8HgAk-/0/1745639121133?e=1755734400&v=beta&t=i66yQiXjE81iLl3VLibxDPpTAYojluN2G_kRUuAPoBg"
   }
 ];
 
@@ -113,6 +113,11 @@ export default function Home() {
 
   const scrollToFeatures = () => {
     document.querySelector('.features-section').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Function to handle feature card click and navigate
+  const handleFeatureClick = (link) => {
+    window.location.href = link;
   };
 
   return (
@@ -193,68 +198,74 @@ export default function Home() {
 
 
       {/* Refined Features Section - Already responsive */}
-<div className="features-section bg-gray-50 py-12 sm:py-16">
-  <div className="max-w-6xl mx-auto px-4 sm:px-6">
-    <div className="text-center mb-12 sm:mb-16">
-      <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#DDA853', color: '#1F2647' }}>
-        <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#1F2647' }}></span>
-        Why Choose Us?
-      </div>
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1F2647' }}>
-        Your Gateway to Success
-      </h2>
-      <p className="text-base sm:text-lg text-gray-500 max-w-1xl mx-auto px-4">
-        Discover what makes NIT Srinagar the premier destination for academic and personal growth
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
-      {features.map((feature, index) => (
-        <div
-          key={feature.title}
-          className="reveal opacity-0 group h-full"
-          style={{ transitionDelay: `${index * 200}ms` }}
-        >
-          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-t-4 flex flex-col h-full" style={{ borderTopColor: '#DDA853' }}>
-            <div className="relative overflow-hidden">
-              <img
-                src={feature.img}
-                alt={feature.title}
-                className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/10"></div>
-              <div className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-xl transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: 'rgba(221, 168, 83, 0.9)' }}>
-                {feature.icon}
-              </div>
+      <div className="features-section bg-gray-50 py-12 sm:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#DDA853', color: '#1F2647' }}>
+              <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#1F2647' }}></span>
+              Why Choose Us?
             </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1F2647' }}>
+              Your Gateway to Success
+            </h2>
+            <p className="text-base sm:text-lg text-gray-500 max-w-1xl mx-auto px-4">
+              Discover what makes NIT Srinagar the premier destination for academic and personal growth
+            </p>
+          </div>
 
-            {/* Content area updated */}
-            <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-xl font-bold mb-3" style={{ color: '#1F2647' }}>
-                {feature.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-4 flex-grow">
-                {feature.desc}
-              </p>
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+            {features.map((feature, index) => (
+              <div
+                key={feature.title}
+                className="reveal opacity-0 group h-full"
+                style={{ transitionDelay: `${index * 200}ms` }}
+              >
+                {/* Made the entire card clickable */}
+                <div
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-t-4 flex flex-col h-full cursor-pointer"
+                  style={{ borderTopColor: '#DDA853' }}
+                  onClick={() => handleFeatureClick(feature.link)} // Added onClick handler
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={feature.img} // Now correctly points to the public folder
+                      alt={feature.title}
+                      className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/10"></div>
+                    <div className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-xl transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: 'rgba(221, 168, 83, 0.9)' }}>
+                      {feature.icon}
+                    </div>
+                  </div>
 
-              <div className="flex items-center group/link cursor-pointer mt-auto">
-                <span className="font-medium mr-2 transition-colors duration-300" style={{ color: '#0D9488' }}>
-                  Explore More
-                </span>
-                <div className="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 group-hover/link:translate-x-1" style={{ backgroundColor: '#0D9488' }}>
-                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  {/* Content area updated */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold mb-3" style={{ color: '#1F2647' }}>
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-4 flex-grow">
+                      {feature.desc}
+                    </p>
+
+                    {/* This "Explore More" div itself now triggers the click as the parent div is clickable */}
+                    <div className="flex items-center group/link mt-auto">
+                      <span className="font-medium mr-2 transition-colors duration-300" style={{ color: '#0D9488' }}>
+                        Explore More
+                      </span>
+                      <div className="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 group-hover/link:translate-x-1" style={{ backgroundColor: '#0D9488' }}>
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  {/* End content area */}
                 </div>
               </div>
-            </div>
-            {/* End content area */}
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
+      </div>
 
 
       {/* Connecting Bridge */}
@@ -289,37 +300,38 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 max-w-3xl mx-auto border-t-4" style={{ borderTopColor: '#DDA853' }}>
-              <div className="relative h-56 sm:h-48 flex items-center justify-center">
+            {/* Added pt-4 for padding top */}
+            <div className="bg-white rounded-2xl shadow-lg pt-4 pb-6 sm:p-8 max-w-3xl mx-auto border-t-4" style={{ borderTopColor: '#DDA853' }}>
+              <div className="relative h-56 sm:h-48 flex items-center justify-center flex-col">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
                     className={`absolute inset-0 transition-all duration-1000 ${index === currentTestimonial
                         ? 'opacity-100 scale-100'
                         : 'opacity-0 scale-95'
-                      }`}
+                      } flex flex-col items-center justify-center px-4`}
                   >
-                    <div className="flex flex-col items-center h-full justify-center px-4">
-                      <div className="relative mb-4">
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-16 h-16 rounded-full shadow-md border-3"
-                          style={{ borderColor: '#DDA853' }}
-                        />
+                    <div className="relative mb-1"> {/* Reduced mb from mb-4 to mb-1 for tighter spacing */}
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-16 h-16 rounded-full shadow-md border-3"
+                        style={{ borderColor: '#DDA853' }}
+                      />
+                    </div>
+                    {/* Adjusted text size and removed vertical margin to align */}
+                    <div className="text-center"> {/* Removed my-1 from here */}
+                      <div className="text-base sm:text-lg font-bold" style={{ color: '#1F2647' }}>
+                        {testimonial.name}
                       </div>
-                      <blockquote className="text-base sm:text-lg md:text-xl font-medium italic mb-4 max-w-2xl leading-relaxed" style={{ color: '#1F2647' }}>
-                        "{testimonial.text}"
-                      </blockquote>
-                      <div className="text-center">
-                        <div className="text-base sm:text-lg font-bold mb-1" style={{ color: '#1F2647' }}>
-                          {testimonial.name}
-                        </div>
-                        <div className="text-sm" style={{ color: '#0D9488' }}>
-                          {testimonial.role}
-                        </div>
+                      <div className="text-sm" style={{ color: '#0D9488' }}>
+                        {testimonial.role}
                       </div>
                     </div>
+                    {/* Made testimonial text smaller */}
+                    <blockquote className="text-sm sm:text-base font-medium italic mt-2 mb-4 max-w-2xl leading-relaxed" style={{ color: '#1F2647' }}> {/* Added mt-2 for slight separation from role */}
+                      "{testimonial.text}"
+                    </blockquote>
                   </div>
                 ))}
               </div>
@@ -428,7 +440,9 @@ export default function Home() {
                 backgroundColor: 'transparent',
                 color: '#1F2647',
                 borderColor: '#1F2647'
-              }}>
+              }}
+              onClick={() => window.open('https://youtu.be/xEkUrqU3yCs?feature=shared', '_blank')} // Added onClick handler to open video in new tab
+            >
               <span>Campus Tour</span>
               <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -470,7 +484,7 @@ export default function Home() {
             transform: translateY(0);
           }
         }
-        
+
         .animate-fade-in-up {
           animation: fadeInUp 0.8s ease-out forwards;
         }
