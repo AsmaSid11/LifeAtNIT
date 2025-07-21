@@ -6,6 +6,7 @@ import Accommodation from './pages/Accommodation';
 import Clubs from './pages/Clubs';
 import Fests from './pages/Fests';
 import Amenities from './pages/Amenities';
+import Alumni from './pages/Alumni';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import StudentAchievements from './pages/achievements/StudentAchievements';
@@ -15,7 +16,7 @@ import Startups from './pages/achievements/Startups';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import ScrollToTop from "./components/ScrollToTop"; 
-import Alumni from './pages/Alumni';
+
 
 function App() {
   return (
