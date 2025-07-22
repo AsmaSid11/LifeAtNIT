@@ -174,7 +174,9 @@ const Placements = () => {
             Stay updated with placement and internship announcements from our
             T&P Cell:
           </p>
-          <div className="relative overflow-hidden" style={{ height: '400px' }}> {/* Adjust height as needed */}
+          <div className="relative overflow-hidden" style={{ height: "400px" }}>
+            {" "}
+            {/* Adjust height as needed */}
             <div
               className="elfsight-app-aac1a6f9-377a-4ba6-8bd2-e0625c1d8888"
               data-elfsight-app-lazy
@@ -210,113 +212,34 @@ const Placements = () => {
           <h2 className="text-2xl font-semibold text-[#1F2647] mb-6 flex items-center">
             <FaChartLine className="mr-2 text-[#DDA853]" /> Placement Statistics
           </h2>
-
-          {/* Chart */}
-          <div className="h-96 mb-8 bg-gradient-to-br from-[#FFF8E7] to-[#FFE4B5] rounded-xl p-6 shadow-lg">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={placementStats}
-                margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {placementStats.map((stat, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col items-center bg-gray-50 rounded-xl p-5 text-center border border-gray-100 hover:border-[#DDA853] transition-all duration-300 hover:shadow-md"
               >
-                <defs>
-                  <linearGradient id="avgGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#DDA853" stopOpacity={0.9} />
-                    <stop offset="95%" stopColor="#DDA853" stopOpacity={0.6} />
-                  </linearGradient>
-                  <linearGradient id="highGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#1F2647" stopOpacity={0.9} />
-                    <stop offset="95%" stopColor="#1F2647" stopOpacity={0.6} />
-                  </linearGradient>
-                  <linearGradient id="medGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#88DADA" stopOpacity={0.9} />
-                    <stop offset="95%" stopColor="#88DADA" stopOpacity={0.6} />
-                  </linearGradient>
-                </defs>
-                <CartesianGrid
-                  strokeDasharray="3 3"
-                  stroke="#E6D5B8"
-                  vertical={false}
-                />
-                <XAxis
-                  dataKey="dept"
-                  stroke="#1F2647"
-                  tick={{ fill: "#1F2647", fontSize: 12, fontWeight: 500 }}
-                  axisLine={{ stroke: "#1F2647", strokeWidth: 1.5 }}
-                />
-                <YAxis
-                  stroke="#1F2647"
-                  tick={{ fill: "#1F2647", fontSize: 12, fontWeight: 500 }}
-                  axisLine={{ stroke: "#1F2647", strokeWidth: 1.5 }}
-                  tickFormatter={(value) => `${value} LPA`}
-                />
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: "rgba(255, 248, 231, 0.95)",
-                    border: "1px solid #DDA853",
-                    borderRadius: "0.5rem",
-                    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
-                    color: "#1F2647",
-                    backdropFilter: "blur(4px)",
-                  }}
-                  labelStyle={{ color: "#1F2647", fontWeight: "bold" }}
-                  formatter={(value) => [`${value} LPA`, ""]}
-                />
-                <Legend
-                  wrapperStyle={{
-                    paddingTop: "20px",
-                    fontSize: "12px",
-                    color: "#1F2647",
-                    fontWeight: 500,
-                  }}
-                />
-                <Bar
-                  dataKey="avg"
-                  name="Average Package"
-                  fill="url(#avgGradient)"
-                  radius={[4, 4, 0, 0]}
-                  maxBarSize={40}
-                />
-                <Bar
-                  dataKey="high"
-                  name="Highest Package"
-                  fill="url(#highGradient)"
-                  radius={[4, 4, 0, 0]}
-                  maxBarSize={40}
-                />
-                <Bar
-                  dataKey="med"
-                  name="Median Package"
-                  fill="url(#medGradient)"
-                  radius={[4, 4, 0, 0]}
-                  maxBarSize={40}
-                />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <FaGraduationCap className="text-[#1F2647] text-xl" />
+                  <span className="text-lg font-bold  bg-blue-50 px-3 py-1 rounded-full">
+                    {stat.dept}
+                  </span>
+                </div>
 
-          {/* Table */}
-          {/*<div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Department</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Average Package</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Highest Package</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Median Package</th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {placementStats.map((stat) => (
-                  <tr key={stat.dept} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#1F2647]">{stat.dept}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.avg}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.high}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.med}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div> */}
+                <div className="flex flex-col gap-2 w-full">
+                  <span className="bg-amber-0 px-3 py-2 rounded-lg text-base font-medium text-amber-700 flex items-center justify-center">
+                    <FaChartLine className="mr-2 text-[#DDA853]" /> Avg: {stat.avg}
+                  </span>
+                  <span className="bg-amber-50 px-3 py-2 rounded-lg text-base font-medium text-amber-800 flex items-center justify-center">
+                    <FaClock className="mr-2 text-[#DDA853]" /> Med: {stat.med}
+                  </span>
+                  <span className="bg-amber-100 px-3 py-2 rounded-lg text-base font-medium text-amber-900 flex items-center justify-center">
+                    <FaBriefcase className="mr-2 text-[#DDA853]" /> High:{" "}
+                    {stat.high}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Past Recruiters */}
@@ -395,9 +318,15 @@ const Placements = () => {
               <div className="flex-1 p-6 flex flex-col items-center">
                 <FaPhone className="text-[#DDA853] text-2xl mb-2" />
                 <p className="text-sm text-gray-500 mb-2">Phone</p>
-                <p className="text-base font-medium break-all">+91- 94192 26538</p>
-                <p className="text-base font-medium break-all">+91- 94192 26574</p>
-                <p className="text-base font-medium break-all">0194 - 2424809</p>
+                <p className="text-base font-medium break-all">
+                  +91- 94192 26538
+                </p>
+                <p className="text-base font-medium break-all">
+                  +91- 94192 26574
+                </p>
+                <p className="text-base font-medium break-all">
+                  0194 - 2424809
+                </p>
               </div>
             </div>
           </div>
