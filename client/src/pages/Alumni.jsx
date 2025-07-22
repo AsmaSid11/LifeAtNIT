@@ -11,11 +11,11 @@ const alumni = [
         "position": "Engineer, Innovator & Education Reformist",
         "company": "SECMOL & HIAL (founder/director)",
         "location": "Ladakh, India",
-        "description": "Award-winning Indian engineer, innovator, and education reformist; inventor of the Ice Stupa technique.", // Condensed
+        "description": "Award-winning Indian engineer, innovator, and education reformist; inventor of the Ice Stupa technique.", 
         "linkedin": "https://www.linkedin.com/in/wangchuksworld/",
         "twitter": "https://twitter.com/Wangchuk66",
         "website": "https://icestupa.org/",
-        "image": "/alumni-images/sonam-wangchuk.webp" // Placeholder, ensure actual image is here
+        "image": "images/download.webp" 
     },
     {
         "id": 2,
@@ -25,11 +25,11 @@ const alumni = [
         "position": "Former Minister of Economic Affairs and Finance",
         "company": "Government of Iran",
         "location": "Tehran, Iran",
-        "description": "Former Iranian Minister of Economic Affairs and Finance; member of Iran’s Expediency Discernment Council.", // Condensed
+        "description": "Former Iranian Minister of Economic Affairs and Finance; member of Iran’s Expediency Discernment Council.", 
         "linkedin": "",
         "twitter": "",
         "website": "https://en.wikipedia.org/wiki/Davoud_Danesh-Jafarie",
-        "image": "/alumni-images/davoud-danesh-jafari.webp" 
+        "image": "images/davoud.webp" 
     },
     {
         "id": 3,
@@ -39,11 +39,11 @@ const alumni = [
         "position": "CEO & Chief Curator",
         "company": "Centre for Exponential Change",
         "location": "India/Global",
-        "description": "Global strategy and digital transformation leader; former Infosys Consulting Chair and EVP Corporate Strategy.", // Condensed
+        "description": "Global strategy and digital transformation leader; former Infosys Consulting Chair and EVP Corporate Strategy.", 
         "linkedin": "https://www.linkedin.com/in/sanjay-purohit-3b40026/",
         "twitter": "",
         "website": "https://sanjaypurohit.com/",
-        "image": "/alumni-images/sanjay-purohit.webp" // Placeholder, ensure actual image is here
+        "image": "images/sanjay purohit.webp" 
     },
     {
         "id": 4,
@@ -53,11 +53,11 @@ const alumni = [
         "position": "Director",
         "company": "Morgan Stanley",
         "location": "Mumbai, India",
-        "description": "Currently a Director at Morgan Stanley. Hitesh Agarwal brings experience from previous roles at Accolite, Wipro Limited and National Institute of Technology, Srinagar.", // Condensed
+        "description": "Currently a Director at Morgan Stanley. Hitesh Agarwal brings experience from previous roles at Accolite, Wipro Limited and National Institute of Technology, Srinagar.", 
         "linkedin": "https://www.linkedin.com/in/hitesh-agarwal-nitsri/?originalSubdomain=in",
         "twitter": "",
         "website": "",
-        "image": "/alumni-images/hitesh-agarwal.webp" // Placeholder, ensure actual image is here
+        "image": "images/hitesh agarwal.webp" 
     },
     {
         "id": 5,
@@ -67,11 +67,11 @@ const alumni = [
         "position": "Retired Director – Marketing",
         "company": "Hindustan Petroleum Corporation Limited (HPCL)",
         "location": "Mumbai, Maharashtra, India",
-        "description": "Gold-medalist engineer with 36+ years at HPCL; held top marketing, HR, and retail leadership roles.", // Condensed
+        "description": "Gold-medalist engineer with 36+ years at HPCL; held top marketing, HR, and retail leadership roles.", 
         "linkedin": "https://www.linkedin.com/in/rakesh-misri-13149554/?originalSubdomain=in",
         "twitter": "",
         "website": "https://www.hindustanpetroleum.com/",
-        "image": "/alumni-images/rakesh-misri.webp" // Placeholder, ensure actual image is here
+        "image": "images/rakesh misri.webp" 
     },
     {
         "id": 6,
@@ -81,11 +81,11 @@ const alumni = [
         "position": "Former Executive Director & CEO",
         "company": "Mahindra CIE Automotive Ltd.",
         "location": "Mumbai, Maharashtra, India",
-        "description": "Formerly Executive Director & CEO for Forgings, Stampings & Composites divisions at Mahindra CIE.", // Condensed
+        "description": "Formerly Executive Director & CEO for Forgings, Stampings & Composites divisions at Mahindra CIE.", 
         "linkedin": "https://www.linkedin.com/in/romeshkaul/?originalSubdomain=in",
         "twitter": "",
         "website": "https://www.mamahindracie.com/",
-        "image": "/alumni-images/romesh-kaul.webp" // Placeholder, ensure actual image is here
+        "image": "images/romesh koul.webp"
     },
     {
         "id": 7,
@@ -95,11 +95,11 @@ const alumni = [
         "position": "Senior Risk Specialist",
         "company": "Shell",
         "location": "Houston, Texas, USA",
-        "description": "Risk management professional; Senior Risk Specialist at Shell with prior experience at Deloitte and L&T.", // Condensed
+        "description": "Risk management professional; Senior Risk Specialist at Shell with prior experience at Deloitte and L&T.", 
         "linkedin": "https://www.linkedin.com/in/supriya-sood-0806abb4/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in",
         "twitter": "",
         "website": "",
-        "image": "/alumni-images/supriya-sood.webp" // Placeholder, ensure actual image is here
+        "image": "images/supriya sood.webp" 
     },
     {
         "id": 8,
@@ -109,11 +109,11 @@ const alumni = [
         "position": "Senior Software Engineer",
         "company": "Microsoft",
         "location": "Hyderabad, India",
-        "description": "Senior Software Engineer at Microsoft, contributing to software development and innovation.", // Condensed
+        "description": "Senior Software Engineer at Microsoft, contributing to software development and innovation.",
         "linkedin": "https://www.linkedin.com/in/anubhav-guleria/?originalSubdomain=in",
         "twitter": "",
         "website": "",
-        "image": "/alumni-images/anubhav-guleria.webp" // Placeholder, ensure actual image is here
+        "image": "images/anubhav guleria.webp" 
     },
     {
         "id": 9,
@@ -123,25 +123,25 @@ const alumni = [
         "position": "Deputy High Commissioner",
         "company": "Government of India (GOI)",
         "location": "Mauritius",
-        "description": "Distinguished diplomat serving as Deputy High Commissioner for the Government of India.", // Condensed
+        "description": "Distinguished diplomat serving as Deputy High Commissioner for the Government of India.",
         "linkedin": "https://www.linkedin.com/in/vimarsh-aryan-37153470/?originalSubdomain=mu",
         "twitter": "https://twitter.com/VimarshAryan",
         "website": "",
-        "image": "/alumni-images/vimarsh-aryan.webp" // Placeholder, ensure actual image is here
+        "image": "images/vimarsh aryan.webp" 
     },
     {
         "id": 10,
         "name": "Sanjay Mujoo",
         "batch": "1987",
         "branch": "Electronics & Communications",
-        "position": "VP, Worldwide Technical Support & Engineering", // Condensed position title
+        "position": "VP, Worldwide Technical Support & Engineering", 
         "company": "Hewlett Pckard Enterprise",
         "location": "Bengaluru",
-        "description": "Seasoned executive leading global technical support and engineering operations.", // Condensed
+        "description": "Seasoned executive leading global technical support and engineering operations.", 
         "linkedin": "https://www.linkedin.com/in/sanjaymujoo/?originalSubdomain=in",
         "twitter": "",
         "website": "",
-        "image": "/alumni-images/sanjay-mujoo.webp" // Placeholder, ensure actual image is here
+        "image": "images/sanjay mujoo.webp" 
     },
     {
         "id": 11,
@@ -151,11 +151,11 @@ const alumni = [
         "position": "Chief Engineer",
         "company": "Australian Department of Defence",
         "location": "Canberra, Australia",
-        "description": "Key engineering leader serving as Chief Engineer at the Australian Department of Defence.", // Condensed
+        "description": "Key engineering leader serving as Chief Engineer at the Australian Department of Defence.", 
         "linkedin": "https://www.linkedin.com/in/raminder-bhrara/?originalSubdomain=au",
         "twitter": "",
         "website": "",
-        "image": "/alumni-images/raminder-bhrara.webp" // Placeholder, ensure actual image is here
+        "image": "images/raminder bhrara.webp" 
     },
     {
         "id": 12,
@@ -169,7 +169,7 @@ const alumni = [
         "linkedin": "https://www.linkedin.com/in/sanjaykhazanchi/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in",
         "twitter": "",
         "website": "",
-        "image": "/alumni-images/sanjay-khazanchi.webp" // Placeholder, ensure actual image is here
+        "image": "images/Sanjay Khazanchi.webp" 
     },
     {
         "id": 13,
@@ -188,7 +188,7 @@ const alumni = [
             "Fulbright Scholar (2004, 2010)",
             "Lifetime Achievement Award at DESRIST (2007)"
         ],
-        "image": "/alumni-images/vijay-vaishnavi.webp" // Placeholder, ensure actual image is here
+        "image": "images/Vijay Vaishnavi.webp" 
     },
     {
         "id": 14,
@@ -202,7 +202,7 @@ const alumni = [
         "linkedin": "https://www.linkedin.com/in/sameer-khera-544b055",
         "twitter": "https://twitter.com/skhera",
         "website": "",
-        "image": "/alumni-images/sameer-khera.webp" // Placeholder, ensure actual image is here
+        "image": "images/Sameer Khera.webp" 
     },
     {
         "id": 15,
@@ -212,11 +212,11 @@ const alumni = [
         "position": "Former Executive Director",
         "company": "Bharat Heavy Electricals Limited (BHEL)",
         "location": "Hyderabad, India",
-        "description": "Experienced executive at BHEL; former Director of NIT Srinagar.", // Condensed
+        "description": "Experienced executive at BHEL; former Director of NIT Srinagar.", 
         "linkedin": "",
         "twitter": "",
         "website": "https://www.bhel.com/",
-        "image": "/alumni-images/rk-wanchoo.webp" // Placeholder, ensure actual image is here
+        "image": "images/R.K. Wanchoo.webp" 
     },
     
 ];
