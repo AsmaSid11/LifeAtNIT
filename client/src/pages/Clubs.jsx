@@ -99,7 +99,7 @@ const InfoCards = ({ icon, title, description, bgColor }) => {
   >
       <div className="mb-4">{icon}</div>
       <h3 className="text-2xl font-bold text-[#1F2647] mb-2 font-serif">{title}</h3>
-      <p className="text-[#1F2647] text-sm font-serif leading-relaxed p-[1rem]">{description}</p>
+      <p className="text-[#1F2647] text-sm font-serif leading-relaxed p-[1rem] ">{description}</p>
     </motion.div>
     
   );
@@ -144,7 +144,7 @@ const ClubCard = ({ title, description, image, reverse }) => {
       </div>
       <div className="w-full md:w-1/2">
         <div className="font-bold font-serif text-3xl text-[#DDA853] mb-4">{title}</div>
-        <p className="text-[#1F2647] leading-relaxed">{description}</p>
+        <p className="text-[#1F2647] leading-relaxed max-w-3xl mx-auto px-4 text-justify">{description}</p>
       </div>
     </motion.div>
   );
@@ -240,7 +240,7 @@ const Clubs = () => {
   <h2 className="text-2xl font-extrabold mb-3 pb-2 text-center font-serif">
     About NIT SGR Gymkhana
   </h2>
-  <p className="text-sm md:text-base leading-loose italic">
+  <p className="text-sm md:text-base leading-loose italic mx-auto px-4 text-justify ">
     NIT Srinagar has launched the Student's Gymkhana, a student-led platform aimed at promoting holistic development, leadership, and active participation in co-curricular and extracurricular activities. It includes various clubs and societies spanning cultural, technical, sports, and social domains. Managed by students with faculty guidance, the Gymkhana enables students to explore interests, organize events, and build key skills beyond academics. This initiative reflects the institute’s dedication to fostering well-rounded individuals and enriching the overall campus experience.
   </p>
 </div>

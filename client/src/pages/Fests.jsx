@@ -5,7 +5,7 @@ const events = [
   {
     title: "Techvaganza",
     
-    details:"Techvaganza is a national level technical festival held anually at National Institute of Technology Srinagar. It is the first Techno-Management festival in the region. With the initiation of Techvaganza in 2009, it has emerged as one of the biggest technical carnival among all. The main aim is to uplift the technical level of the region and provide a platform for technical tender buds to innovate and gain experience in the field of technology and management. Students showcase their technical prowess through robotics challenges, coding competitions, workshops, and guest lectures. It's a platform for budding engineers to network, learn, and push the boundaries of technology.",
+    details:"Techvaganza is a national level technical festival held anually at National Institute of Technology Srinagar. It is the first Techno Management festival in the region. With the initiation of Techvaganza in 2009, it has emerged as one of the biggest technical carnival among all. The main aim is to uplift the technical level of the region and provide a platform for technical tender buds to innovate and gain experience in the field of technology and management. Students showcase their technical prowess through robotics challenges, coding competitions, workshops, and guest lectures. It's a platform for budding engineers to network, learn, and push the boundaries of technology.",
     images: ["/Clubs/DSC07966.webp", "/Clubs/DSC08125 (1).webp", "/Clubs/DSC02146.webp","/Clubs/DSC08048.webp","/Clubs/DSC08217.webp","/Clubs/DSC08217.webp"],
   },
   {
@@ -114,7 +114,7 @@ const Fests = () => {
                 <>
                   <div className="w-full md:w-1/2 space-y-4">
                     <h2 className="text-3xl font-bold font-serif text-[#1F2647]">{event.title}</h2>
-                    <p className="text-[#1F2647] leading-relaxed">{event.details} </p>
+                    <p className="text-[#1F2647] leading-relaxed max-w-3xl mx-auto px-4 text-justify">{event.details} </p>
                     
                       
                   </div>
@@ -129,7 +129,7 @@ const Fests = () => {
                   </div>
                   <div className="w-full md:w-1/2 space-y-4">
                     <h2 className="text-3xl font-bold font-serif text-[#1F2647] pl-8">{event.title}</h2>
-                    <p className="text-[#1F2647] leading-relaxed pl-8"> {event.details}</p>
+                    <p className="text-[#1F2647] leading-relaxed pl-8 max-w-3xl mx-auto px-4 text-justify"> {event.details}</p>
                     
 
 
