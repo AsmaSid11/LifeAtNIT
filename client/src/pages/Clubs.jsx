@@ -97,7 +97,7 @@ const InfoCards = ({ icon, title, description, bgColor, className = "" }) => {
     whileHover={{ scale: 1.05 }}
     viewport={{ once: true, amount: 0.3 }}
     transition={{ type: 'spring', stiffness: 200 }}
-  
+  >
       <div className="mb-4">{icon}</div>
       <h3 className="text-2xl font-bold text-[#1F2647] mb-2 font-serif">{title}</h3>
       <p className="text-[#1F2647] text-sm font-serif leading-relaxed p-[1rem] ">{description}</p>
