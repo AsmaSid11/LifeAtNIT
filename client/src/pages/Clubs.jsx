@@ -89,6 +89,19 @@ const cardData = [
 const InfoCards = ({ icon, title, description, bgColor, className = "" }) => {
   return (
     <motion.div
+
+    className="flex flex-col items-center text-center rounded-lg p-6 shadow-md m-4 h-[23rem] w-[22rem] border-t-8 border-[#0D9488] overflow-scroll"
+    style={{ backgroundColor: bgColor }}
+    whileInView={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0, y: 50 }}
+    whileHover={{ scale: 1.05 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ type: 'spring', stiffness: 200 }}
+  
+      <div className="mb-4">{icon}</div>
+      <h3 className="text-2xl font-bold text-[#1F2647] mb-2 font-serif">{title}</h3>
+      <p className="text-[#1F2647] text-sm font-serif leading-relaxed p-[1rem] ">{description}</p>
+
       className={`flex flex-col items-center text-center rounded-2xl p-4 sm:p-6 shadow-xl w-full max-w-md mx-auto md:max-w-none md:mx-0 md:flex-1 border-t-8 border-[#0D9488] bg-white ${className} my-2 relative overflow-hidden min-w-[60vw] min-h-[60vw] sm:min-w-0 sm:min-h-0`}
       style={{ background: 'linear-gradient(135deg, #f8fafc 60%, #88DADA 100%)' }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -97,12 +110,13 @@ const InfoCards = ({ icon, title, description, bgColor, className = "" }) => {
       whileTap={{ scale: 0.97, rotate: '-2deg' }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ type: 'spring', stiffness: 200 }}
-    >
+    
       <div className="mb-4 mt-2 drop-shadow-lg">{icon}</div>
       <h3 className="text-xl sm:text-2xl font-bold text-[#1F2647] mb-2 font-serif drop-shadow">{title}</h3>
       <div className="flex-1 flex items-center justify-center w-full">
         <p className="text-[#1F2647] text-xs sm:text-sm font-serif leading-relaxed px-2 py-2 sm:p-[1rem]">{description}</p>
       </div>
+
     </motion.div>
   );
 };
@@ -141,9 +155,15 @@ const ClubCard = ({ title, description, image, reverse }) => {
           transition={{ type: "spring", stiffness: 300, damping: 18 }}
         />
       </div>
+
+      <div className="w-full md:w-1/2">
+        <div className="font-bold font-serif text-3xl text-[#DDA853] mb-4">{title}</div>
+        <p className="text-[#1F2647] leading-relaxed max-w-3xl mx-auto px-4 text-justify">{description}</p>
+
       <div className="w-full md:w-1/2 mt-2 md:mt-0">
         <div className="font-bold font-serif text-2xl sm:text-3xl text-[#DDA853] mb-2 sm:mb-4">{title}</div>
         <p className="text-[#1F2647] text-sm sm:text-base leading-relaxed">{description}</p>
+
       </div>
     </motion.div>
   );
@@ -235,6 +255,17 @@ const Clubs = () => {
           </p>
         </div>
       </div>
+
+      <div className="bg-snow border-t-2 border-[#1F2647] text-[#1F2647] rounded-2xl md:w-3/4 mx-auto p-12 shadow-lg">
+  <h2 className="text-2xl font-extrabold mb-3 pb-2 text-center font-serif">
+    About NIT SGR Gymkhana
+  </h2>
+  <p className="text-sm md:text-base leading-loose italic mx-auto px-4 text-justify ">
+    NIT Srinagar has launched the Student's Gymkhana, a student-led platform aimed at promoting holistic development, leadership, and active participation in co-curricular and extracurricular activities. It includes various clubs and societies spanning cultural, technical, sports, and social domains. Managed by students with faculty guidance, the Gymkhana enables students to explore interests, organize events, and build key skills beyond academics. This initiative reflects the institute’s dedication to fostering well-rounded individuals and enriching the overall campus experience.
+  </p>
+</div>
+
+
       <div className="bg-snow border-t-2 border-[#1F2647] text-[#1F2647] rounded-2xl w-full md:w-3/4 mx-auto p-4 sm:p-8 md:p-12 shadow-lg">
         <h2 className="text-xl sm:text-2xl font-extrabold mb-2 sm:mb-3 pb-2 text-center font-serif">
           About NIT SGR Gymkhana
@@ -243,6 +274,7 @@ const Clubs = () => {
           NIT Srinagar has launched the Student's Gymkhana, a student-led platform aimed at promoting holistic development, leadership, and active participation in co-curricular and extracurricular activities. It includes various clubs and societies spanning cultural, technical, sports, and social domains. Managed by students with faculty guidance, the Gymkhana enables students to explore interests, organize events, and build key skills beyond academics. This initiative reflects the institute’s dedication to fostering well-rounded individuals and enriching the overall campus experience.
         </p>
       </div>
+
       {/* Clubs Section */}
       <div className="w-full max-w-7xl mx-auto py-8 sm:py-12 px-2 sm:px-4 lg:px-8 mb-8 sm:mb-[5rem]">
         {clubsData.map((club, index) => (
