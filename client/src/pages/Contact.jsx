@@ -174,6 +174,51 @@ const Contact = () => {
         </div>
       </div>
 
+      {/* Getting Here Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+        <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-8 sm:mb-12 text-center">
+          <span className="bg-dark bg-clip-text text-transparent">
+            Getting Here
+          </span>
+        </h2>
+        <div className="max-w-5xl mx-auto px-4 sm:px-8">
+          <div className="bg-snow/90 rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 border border-yellow/30 flex flex-col md:flex-row items-center gap-8 md:gap-10 animate-fade-in-up" style={{ backdropFilter: 'blur(2px)' }}>
+            {/* Left - Text Content */}
+            <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+              <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow/20 mb-2">
+                <FaMapMarkerAlt className="text-yellow text-2xl" />
+              </span>
+              <p className="text-teal text-base sm:text-lg font-medium mb-2">How to reach NIT Srinagar</p>
+              <p className="text-dark/80 mb-4 text-sm sm:text-base max-w-md">
+                NIT Srinagar is well-connected by road, rail, and air. The city is famous for its nine old bridges, connecting the two parts of the city. You can reach here via Srinagar International Airport (18km), Nowgam Railway Station, or by road.
+              </p>
+              <a
+                href="https://www.google.com/maps/place/National+Institute+of+Technology+(NIT),+Srinagar/@34.1251897,74.8375422,17z"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-2 px-5 py-2 rounded-full bg-yellow text-dark font-semibold shadow hover:bg-lightblue hover:text-snow transition-colors duration-200 text-sm sm:text-base"
+              >
+                Get Directions
+              </a>
+            </div>
+            {/* Right - Map */}
+            <div className="flex-1 w-full max-w-xl rounded-xl overflow-hidden shadow-lg border border-yellow/40">
+              <iframe
+                title="NIT Srinagar Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.234964295956!2d74.8375422!3d34.1251897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e185afae42b685%3A0xdf5ec84b1ac8f98d!2sNational%20Institute%20of%20Technology%20(NIT)%2C%20Srinagar!5e0!3m2!1sen!2sin!4v1685531234567!5m2!1sen!2sin"
+                width="100%"
+                height="320"
+                style={{ border: 0, borderRadius: '0.75rem', boxShadow: '0 10px 30px rgba(0,0,0,0.15)' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-64 md:h-80"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Connect With Us Section */}
       <div className="hidden md:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
         <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-8 sm:mb-12 text-center">

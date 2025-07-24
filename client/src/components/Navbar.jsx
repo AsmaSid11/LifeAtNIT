@@ -172,13 +172,13 @@ const Navbar = () => {
               {achievementsOpen && (
                 <div className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg ${getDropdownBgColor()} backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50`}>
                   <div className="py-1">
-                    <Link
+                    {/* <Link
                       to="/achievements/student"
                       className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                       onClick={closeAllDropdowns}
                     >
                       Student Achievements
-                    </Link>
+                    </Link> */}
                     <Link
                       to="/achievements/faculty"
                       className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
@@ -193,13 +193,13 @@ const Navbar = () => {
                     >
                       Placements
                     </Link>
-                    <Link
+                    {/* <Link
                       to="/achievements/startups"
                       className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                       onClick={closeAllDropdowns}
                     >
                       Startups
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               )}
@@ -281,7 +281,7 @@ const Navbar = () => {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden bg-dark/95 backdrop-blur-sm border-t border-lightblue/20 text-snow">
+        <div className={`md:hidden ${isHomePage && !isScrolled ? 'bg-black' : 'bg-dark/95'} backdrop-blur-sm border-t border-lightblue/20 text-snow`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               to="/"
@@ -346,7 +346,7 @@ const Navbar = () => {
 
               {achievementsOpen && (
                 <div className="pl-4">
-                  <Link
+                  {/* <Link
                     to="/achievements/student"
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                     onClick={() => {
@@ -355,7 +355,7 @@ const Navbar = () => {
                     }}
                   >
                     Student Achievements
-                  </Link>
+                  </Link> */}
                   <Link
                     to="/achievements/faculty"
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
@@ -376,7 +376,7 @@ const Navbar = () => {
                   >
                     Placements
                   </Link>
-                  <Link
+                  {/* <Link
                     to="/achievements/startups"
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
                     onClick={() => {
@@ -385,7 +385,7 @@ const Navbar = () => {
                     }}
                   >
                     Startups
-                  </Link>
+                  </Link> */}
                 </div>
               )}
             </div>
