@@ -34,7 +34,7 @@ const achievements = [
   { label: "NIRF Ranking", value: "#79", subtitle: "Engineering" },
   { label: "Placement Rate", value: "94%", subtitle: "Last Year" },
   { label: "Students", value: "4000+", subtitle: "Active" },
-  { label: "Alumni", value: "25K+", subtitle: "Worldwide" }
+  { label: "Alumni", value: "15K+", subtitle: "Worldwide" }
 ];
 
 const testimonials = [
@@ -123,7 +123,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Professional Hero Section - Made Responsive */}
-      <div className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <div className="relative h-[85vh] sm:h-[90vh] flex items-center justify-center overflow-hidden">
         <video
           autoPlay
           muted
@@ -146,11 +146,11 @@ export default function Home() {
         <div className="relative z-10 text-center max-w-7xl mx-auto px-4 sm:px-6">
           {/* Clean Hero Text - Responsive sizing with single line fix */}
 
-          <div className="relative h-20 sm:h-24 md:h-32 mb-2 sm:mb-4 flex items-center justify-center">
+          <div className="relative h-16 sm:h-20 md:h-24 lg:h-32 mb-2 sm:mb-4 flex items-center justify-center">
             {heroTexts.map((text, index) => (
               <h1
                 key={index}
-                className={`absolute text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight transition-all duration-1000 transform px-2 text-center whitespace-nowrap ${index === currentSlide
+                className={`absolute text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-6xl font-bold leading-tight transition-all duration-1000 transform px-2 text-center sm:whitespace-nowrap ${index === currentSlide
                     ? 'opacity-100 translate-y-0 scale-100'
                     : 'opacity-0 translate-y-8 scale-95'
                   }`}
@@ -166,11 +166,11 @@ export default function Home() {
           </p>
 
           {/* Enhanced Achievement Stats - Fixed box sizes */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto mb-16 sm:mb-20 md:mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 max-w-4xl mx-auto mb-12 sm:mb-16 md:mb-12 px-2">
             {achievements.map((stat, index) => (
               <div
                 key={stat.label}
-                className="bg-white/10 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 group h-24 sm:h-28 md:h-32 flex flex-col justify-center"
+                className="bg-white/10 backdrop-blur-md rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 lg:p-6 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 group h-20 sm:h-24 md:h-28 lg:h-32 flex flex-col justify-center"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300" style={{ color: '#DDA853' }}>
@@ -208,7 +208,7 @@ export default function Home() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1F2647' }}>
               Your Gateway to Success
             </h2>
-            <p className="text-base sm:text-lg text-gray-500 max-w-1xl mx-auto px-4">
+            <p className="text-base sm:text-lg text-gray-500 max-w-xl mx-auto px-4">
               Discover what makes NIT Srinagar the premier destination for academic and personal growth
             </p>
           </div>
@@ -301,8 +301,8 @@ export default function Home() {
 
           <div className="relative">
             {/* Added pt-4 for padding top */}
-            <div className="bg-white rounded-2xl shadow-lg pt-4 pb-6 sm:p-8 max-w-3xl mx-auto border-t-4" style={{ borderTopColor: '#DDA853' }}>
-              <div className="relative h-56 sm:h-48 flex items-center justify-center flex-col">
+            <div className="bg-white rounded-2xl shadow-lg pt-4 pb-6 sm:p-8 max-w-3xl mx-4 sm:mx-auto border-t-4" style={{ borderTopColor: '#DDA853' }}>
+              <div className="relative h-64 sm:h-48 flex items-center justify-center flex-col">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
@@ -422,26 +422,15 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-dark px-4">
               Your Future Starts Here
             </h2>
-            <p className="text-sm sm:text-base max-w-1xl mx-auto mb-8 sm:mb-10 px-4" style={{ color: 'white' }}>
+            <p className="text-sm sm:text-base max-w-xl mx-auto mb-8 sm:mb-10 px-4" style={{ color: 'white' }}>
               Join thousands of successful alumni who began their journey at NIT Srinagar.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-12 px-4">
-            <button className="group px-6 sm:px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
-              style={{ backgroundColor: ' #1F2647', color: '#DDA853' }}>
-              <span>Explore Student Life</span>
-              <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
-            <button className="group px-6 sm:px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 flex items-center justify-center hover:bg-white hover:text-gray-800"
-              style={{
-                backgroundColor: 'transparent',
-                color: '#1F2647',
-                borderColor: '#1F2647'
-              }}
-              onClick={() => window.open('http://www.youtube.com/watch?v=xEkUrqU3yCs', '_blank')} // Corrected URL
+          <div className="flex justify-center mb-8 sm:mb-12 px-4">
+            <button className="group px-4 sm:px-6 md:px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center w-full sm:w-auto max-w-xs"
+              style={{ backgroundColor: '#1F2647', color: '#DDA853' }}
+              onClick={() => window.open('http://www.youtube.com/watch?v=xEkUrqU3yCs', '_blank')}
             >
               <span>Campus Tour</span>
               <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">

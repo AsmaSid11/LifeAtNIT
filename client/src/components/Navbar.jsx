@@ -134,26 +134,24 @@ const Navbar = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
               </button>
 
-              {gymkhanaOpen && (
-                <div className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg ${getDropdownBgColor()} backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50`}>
-                  <div className="py-1">
-                    <Link
-                      to="/clubs"
-                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                      onClick={closeAllDropdowns}
-                    >
-                      Clubs
-                    </Link>
-                    <Link
-                      to="/fests"
-                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                      onClick={closeAllDropdowns}
-                    >
-                      Fests
-                    </Link>
-                  </div>
+              <div className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg ${getDropdownBgColor()} backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50 transition-all duration-300 transform ${gymkhanaOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}`}>
+                <div className="py-1">
+                  <Link
+                    to="/clubs"
+                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={closeAllDropdowns}
+                  >
+                    Clubs
+                  </Link>
+                  <Link
+                    to="/fests"
+                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={closeAllDropdowns}
+                  >
+                    Fests
+                  </Link>
                 </div>
-              )}
+              </div>
             </div>
 
             {/* Achievements Dropdown */}
@@ -169,40 +167,38 @@ const Navbar = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
               </button>
 
-              {achievementsOpen && (
-                <div className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg ${getDropdownBgColor()} backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50`}>
-                  <div className="py-1">
-                    {/* <Link
-                      to="/achievements/student"
-                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                      onClick={closeAllDropdowns}
-                    >
-                      Student Achievements
-                    </Link> */}
-                    <Link
-                      to="/achievements/faculty"
-                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                      onClick={closeAllDropdowns}
-                    >
-                      Faculty Recognition
-                    </Link>
-                    <Link
-                      to="/achievements/placements"
-                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                      onClick={closeAllDropdowns}
-                    >
-                      Placements
-                    </Link>
-                    {/* <Link
-                      to="/achievements/startups"
-                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                      onClick={closeAllDropdowns}
-                    >
-                      Startups
-                    </Link> */}
-                  </div>
+              <div className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg ${getDropdownBgColor()} backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50 transition-all duration-300 transform ${achievementsOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}`}>
+                <div className="py-1">
+                  {/* <Link
+                    to="/achievements/student"
+                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={closeAllDropdowns}
+                  >
+                    Student Achievements
+                  </Link> */}
+                  <Link
+                    to="/achievements/faculty"
+                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={closeAllDropdowns}
+                  >
+                    Faculty Recognition
+                  </Link>
+                  <Link
+                    to="/achievements/placements"
+                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={closeAllDropdowns}
+                  >
+                    Placements
+                  </Link>
+                  {/* <Link
+                    to="/achievements/startups"
+                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={closeAllDropdowns}
+                  >
+                    Startups
+                  </Link> */}
                 </div>
-              )}
+              </div>
             </div>
 
             {/* Accommodation Dropdown */}
@@ -218,28 +214,26 @@ const Navbar = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow/0 to-lightblue/0 group-hover:from-yellow/5 group-hover:to-lightblue/5 rounded-lg transition-all duration-300"></div>
               </button>
 
-              {accommodationOpen && (
-                <div className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg ${getDropdownBgColor()} backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50`}>
-                  <div className="py-1">
-                    <Link
-                      to="/accommodation"
-                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                      onClick={closeAllDropdowns}
-                    >
-                      Guest House
-                    </Link>
-                    <a
-                      href="https://hostel-page-module-nit-sgr.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
-                      onClick={closeAllDropdowns}
-                    >
-                      Hostel
-                    </a>
-                  </div>
+              <div className={`absolute left-0 mt-2 w-48 rounded-lg shadow-lg ${getDropdownBgColor()} backdrop-blur-sm ring-1 ring-lightblue/20 focus:outline-none z-50 transition-all duration-300 transform ${accommodationOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}`}>
+                <div className="py-1">
+                  <Link
+                    to="/accommodation"
+                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={closeAllDropdowns}
+                  >
+                    Guest House
+                  </Link>
+                  <a
+                    href="https://hostel-page-module-nit-sgr.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={closeAllDropdowns}
+                  >
+                    Hostel
+                  </a>
                 </div>
-              )}
+              </div>
             </div>
 
             {/* Other Links */}
@@ -280,8 +274,8 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Nav */}
-      {isOpen && (
-        <div className={`md:hidden ${isHomePage && !isScrolled ? 'bg-black' : 'bg-dark/95'} backdrop-blur-sm border-t border-lightblue/20 text-snow`}>
+      <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out transform ${isOpen ? 'max-h-96 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-4'}`}>
+        <div className={`${isHomePage && !isScrolled ? 'bg-black' : 'bg-dark/95'} backdrop-blur-sm border-t border-lightblue/20 text-snow transition-all duration-500`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               to="/"
@@ -306,8 +300,8 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {gymkhanaOpen && (
-                <div className="pl-4">
+              <div className={`overflow-hidden transition-all duration-400 ease-in-out transform ${gymkhanaOpen ? 'max-h-32 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'}`}>
+                <div className="pl-4 transition-all duration-400">
                   <Link
                     to="/clubs"
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
@@ -329,7 +323,7 @@ const Navbar = () => {
                     Fests
                   </Link>
                 </div>
-              )}
+              </div>
             </div>
 
             {/* Mobile Achievements */}
@@ -344,8 +338,8 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {achievementsOpen && (
-                <div className="pl-4">
+              <div className={`overflow-hidden transition-all duration-400 ease-in-out transform ${achievementsOpen ? 'max-h-32 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'}`}>
+                <div className="pl-4 transition-all duration-400">
                   {/* <Link
                     to="/achievements/student"
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
@@ -387,7 +381,7 @@ const Navbar = () => {
                     Startups
                   </Link> */}
                 </div>
-              )}
+              </div>
             </div>
 
             {/* Mobile Accommodation */}
@@ -402,8 +396,8 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {accommodationOpen && (
-                <div className="pl-4">
+              <div className={`overflow-hidden transition-all duration-400 ease-in-out transform ${accommodationOpen ? 'max-h-32 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'}`}>
+                <div className="pl-4 transition-all duration-400">
                   <Link
                     to="/accommodation"
                     className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
@@ -427,7 +421,7 @@ const Navbar = () => {
                     Hostel
                   </a>
                 </div>
-              )}
+              </div>
             </div>
 
             {/* Mobile other links */}
@@ -446,7 +440,7 @@ const Navbar = () => {
             ))}
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
