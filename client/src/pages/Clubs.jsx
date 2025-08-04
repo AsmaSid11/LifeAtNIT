@@ -11,7 +11,7 @@ import {
   Video,
   Trophy,
   ListChecks
-} from "lucide-react"; // or swap with any icon set you like
+} from "lucide-react";
 
 const cardsData = [
   {
@@ -87,21 +87,19 @@ const cardData = [
 
 const InfoCards = ({ icon, title, description, bgColor }) => {
   return (
-
     <motion.div
-    className="flex flex-col items-center text-center rounded-lg p-6 shadow-md m-4 h-[23rem] w-[22rem] border-t-8 border-[#0D9488] overflow-scroll"
-    style={{ backgroundColor: bgColor }}
-    whileInView={{ opacity: 1, y: 0 }}
-    initial={{ opacity: 0, y: 50 }}
-    whileHover={{ scale: 1.05 }}
-    viewport={{ once: true, amount: 0.3 }}
-    transition={{ type: 'spring', stiffness: 200 }}
-  >
-      <div className="mb-4">{icon}</div>
-      <h3 className="text-2xl font-bold text-[#1F2647] mb-2 font-serif">{title}</h3>
-      <p className="text-[#1F2647] text-sm font-serif leading-relaxed p-[1rem] ">{description}</p>
+      className="flex flex-col items-center text-center rounded-xl p-6 shadow-lg m-4 h-80 w-80 border-t-8 border-[#0D9488]"
+      style={{ backgroundColor: bgColor }}
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      whileHover={{ scale: 1.05 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ type: 'spring', stiffness: 200 }}
+    >
+      <div className="mb-6 mt-2">{icon}</div>
+      <h3 className="text-2xl font-bold text-[#1F2647] mb-4 font-serif">{title}</h3>
+      <p className="text-[#1F2647] text-sm font-serif leading-relaxed px-4 text-center">{description}</p>
     </motion.div>
-    
   );
 };
 
@@ -271,30 +269,29 @@ const Clubs = () => {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
     <h1 className='font-bold font-serif text-4xl text-[#1F2647] justify-items-center text-center mb-[1rem]'>Activities</h1>
     <div className="overflow-x-auto py-8">
-  <div className="flex gap-4 px-4">
-    {cardsData.map((card, index) => (
-      <motion.div
-      key={index}
-      className={`min-w-[300px] w-[22rem] h-[23rem] border-t-8 border-[#0D9488] flex-shrink-0 p-4 rounded-xl shadow-md ${card.bgColor} flex flex-col items-center text-center`}
-      style={{ backgroundColor: card.bgColor }}
-      whileInView={{ opacity: 1, y: 0 }}
-      initial={{ opacity: 0, y: 50 }}
-      whileHover={{ scale: 1.05 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ type: 'spring', stiffness: 200 }}
-    >
-      <div className="flex justify-center items-center text-5xl">
-        {card.icon}
+      <div className="flex gap-6 px-4">
+        {cardsData.map((card, index) => (
+          <motion.div
+            key={index}
+            className={`min-w-[320px] w-80 h-80 border-t-8 border-[#0D9488] flex-shrink-0 p-6 rounded-xl shadow-lg ${card.bgColor} flex flex-col items-center text-center`}
+            style={{ backgroundColor: card.bgColor }}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileHover={{ scale: 1.05 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ type: 'spring', stiffness: 200 }}
+          >
+            <div className="flex justify-center items-center mb-6 mt-2">
+              {card.icon}
+            </div>
+            <h3 className="text-2xl font-bold mb-4 font-serif text-[#DDA853]">{card.title}</h3>
+            <p className="text-sm font-serif leading-relaxed px-4 text-center" style={{ color: "#1F2647" }}>
+              {card.description}
+            </p>
+          </motion.div>
+        ))}
       </div>
-      <h3 className="text-2xl font-bold mt-4 font-serif text-[#DDA853]">{card.title}</h3>
-      <p className="text-sm font-serif leading-relaxed p-[1rem]" style={{ color: "#1F2647" }}>
-        {card.description}
-      </p>
-    </motion.div>
-    
-    ))}
-  </div>
-</div>
+    </div>
 
 
 </div>
@@ -326,11 +323,11 @@ const Clubs = () => {
     <div className="py-12 sm:py-16" style={{ backgroundColor: '#DDA853' }}>
     <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center"></div>
     <h1 className='font-bold font-serif text-4xl text-[#1F2647] justify-items-center text-center mt-[2rem]'>Why join Clubs?</h1>
-    <div className='min-h-screen max-w-6xl mx-auto py-8 px-6 flex flex-col sm:flex-row  justify-center -mb-[5rem] '>
-  {cardData.map((card, index) => (
-    <InfoCards key={index} {...card} />
-  ))}
-</div>
+    <div className='min-h-screen max-w-6xl mx-auto py-8 px-6 flex flex-col sm:flex-row justify-center gap-6 -mb-20'>
+      {cardData.map((card, index) => (
+        <InfoCards key={index} {...card} />
+      ))}
+    </div>
   </div>
 
 
