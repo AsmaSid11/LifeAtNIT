@@ -323,7 +323,7 @@ const Accommodation = () => {
             <div className="flex items-start gap-3">
               <span className="text-2xl">❗</span>
               <span>
-                <b>Complaints:</b> Write to Dr. Vivek (Dept. of Civil Engg.) at{' '}
+                <b>Complaints:</b> Write to Dr. Vijay (Dept. of Physics) at{' '}
                 <a href="mailto:guesthouse@nitsri.ac.in" className="text-[#0D9488] underline">
                   guesthouse@nitsri.ac.in
                 </a>

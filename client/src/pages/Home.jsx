@@ -31,7 +31,7 @@ const heroTexts = [
 ];
 
 const achievements = [
-  { label: "NIRF Ranking", value: "#79", subtitle: "Engineering" },
+  { label: "NIRF Ranking", value: "#73", subtitle: "Engineering" },
   { label: "Placement Rate", value: "94%", subtitle: "Last Year" },
   { label: "Students", value: "4000+", subtitle: "Active" },
   { label: "Alumni", value: "15K+", subtitle: "Worldwide" }
