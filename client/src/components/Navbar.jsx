@@ -150,6 +150,13 @@ const Navbar = () => {
                   >
                     Fests
                   </Link>
+                  <Link
+                    to="/events"
+                    className="block px-4 py-2 text-sm hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={closeAllDropdowns}
+                  >
+                    Events
+                  </Link>
                 </div>
               </div>
             </div>
@@ -300,7 +307,7 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              <div className={`overflow-hidden transition-all duration-400 ease-in-out transform ${gymkhanaOpen ? 'max-h-32 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'}`}>
+              <div className={`overflow-hidden transition-all duration-400 ease-in-out transform ${gymkhanaOpen ? 'max-h-48 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'}`}>
                 <div className="pl-4 transition-all duration-400">
                   <Link
                     to="/clubs"
@@ -321,6 +328,16 @@ const Navbar = () => {
                     }}
                   >
                     Fests
+                  </Link>
+                  <Link
+                    to="/events"
+                    className="block px-3 py-2 rounded-lg text-base font-medium hover:text-yellow hover:bg-lightblue/10 transition-all duration-300"
+                    onClick={() => {
+                      setIsOpen(false);
+                      closeAllDropdowns();
+                    }}
+                  >
+                    Events
                   </Link>
                 </div>
               </div>

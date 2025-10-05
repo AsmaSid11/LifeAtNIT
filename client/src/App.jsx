@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Accommodation from './pages/Accommodation';
 import Clubs from './pages/Clubs';
 import Fests from './pages/Fests';
+import Events from './pages/Events';
 import Amenities from './pages/Amenities';
 import Alumni from './pages/Alumni';
 import Contact from './pages/Contact';
@@ -31,6 +32,7 @@ function App() {
               <Route path="/accommodation" element={<Accommodation />} />
               <Route path="/clubs" element={<Clubs />} />
               <Route path="/fests" element={<Fests />} />
+              <Route path="/events" element={<Events />} />
               <Route path="/amenities" element={<Amenities />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/alumni" element={<Alumni />} />
