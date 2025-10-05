@@ -1,0 +1,216 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "clubName": "Technology Club",
+      "eventName": "Orientation for the Sync",
+      "dates": [
+        "2-4-2025"
+      ],
+      "description": "Serving as an effective, one-day event organized for first-following years. The event will feature a project showcase from various domains such as IoT, Robotics, AI/ML, and Development. The primary focus will be on presenting the vision of the DSC Chapter under the Technology Club of NIT Srinagar. Additionally, there will be an ice-break sessions, engaging activities, prize distribution, refreshments, and other necessary arrangements."
+    },
+    {
+      "id": 2,
+      "clubName": "Technology Club",
+      "eventName": "One week AIML Boot Camp",
+      "dates": [
+        "8-4-2025"
+      ],
+      "description": "A week-long AIML Boot Camp designed to introduce participants to the fundamentals of Artificial Intelligence and Machine Learning, and to help them build a strong foundation in these cutting-edge technologies. The camp will feature daily sessions of one to one and a half hours — held in the evenings on weekdays and in the mornings on weekends. A certificate of completion will be awarded to all participants on the final day."
+    },
+    {
+      "id": 3,
+      "clubName": "Technology Club",
+      "eventName": "TechFusion'25",
+      "dates": [
+        "13-4-2025"
+      ],
+      "description": "The day-long college event - Orientation for innovation sessions to help new students familiarize themselves with the campus, facilities, and clubs."
+    },
+    {
+      "id": 4,
+      "clubName": "Technology Club",
+      "eventName": "Movie Club",
+      "dates": [
+        "14-4-2025"
+      ],
+      "description": "Movie screenings every Friday and Saturday from 8:30 PM to 10:30 PM. A facilitated relaxed environment for students and faculty for movie screenings and entertainment. The movie club will conduct an information program for first-year students to introduce the club's activities, objectives, and opportunities for participation in movie and dance events throughout the academic year."
+    },
+    {
+      "id": 5,
+      "clubName": "Sargam Club",
+      "eventName": "Orientation by Sargam Club",
+      "dates": [
+        "16-4-2025"
+      ],
+      "description": "Open students with film and musical events, club and public speech competition."
+    },
+    {
+      "id": 6,
+      "clubName": "Rhetorica Club",
+      "eventName": "Orientation by the Club Rhetorica and eco club",
+      "dates": [
+        "17-4-2025"
+      ],
+      "description": "Open students with film and musical events, club and public speech competition."
+    },
+    {
+      "id": 7,
+      "clubName": "Cultural Club & Soap-box",
+      "eventName": "Two Days Saurcam Workshop",
+      "dates": [
+        "20-4-2025"
+      ],
+      "description": "A hands-on Saurcam Workshop introducing the current trends and its features, apps, and programming. Apart from the feature showcasing, we will provide basic insights on its various functionality including audio coding techniques, and entertainment, safety, cultural heritage, and advancement."
+    },
+    {
+      "id": 8,
+      "clubName": "Movie Club",
+      "eventName": "Movie show",
+      "dates": [
+        "21-4-2025"
+      ],
+      "description": "Personality development workshop, featuring."
+    },
+    {
+      "id": 9,
+      "clubName": "Rhetorica and eco club",
+      "eventName": "Personality development workshop",
+      "dates": [
+        "22-4-2025"
+      ],
+      "description": "Techniques to develop student personality. Helps in life counseling and guidance. How can one sidestep for life gaining."
+    },
+    {
+      "id": 10,
+      "clubName": "Photography Club",
+      "eventName": "Through the Lens - Photography Challenge",
+      "dates": [
+        "25-4-2025"
+      ],
+      "description": "Control your 5 best theme shots from inside the Campus and showcase the beauty sport, and dance images. Optional cover all 10 categories."
+    },
+    {
+      "id": 11,
+      "clubName": "Rhetorica and eco club",
+      "eventName": "Creation drive",
+      "dates": [
+        "30-4-2025"
+      ],
+      "description": ""
+    },
+    {
+      "id": 12,
+      "clubName": "Technology Club",
+      "eventName": "Orientation for 1st Year",
+      "dates": [
+        "4-9-2025",
+        "5-9-2025",
+        "6-9-2025"
+      ],
+      "description": "It will be an offline, one-day event organized for the incoming batch. The event will feature a project showcase from various domains such as IoT, Robotics, AI/ML, and Development. The primary focus will be on presenting the vision of the RSC Chapter under the Technology Club of NIT Srinagar. Additionally, there will be on-the-spot quizzes, engaging activities, prize distribution, refreshments, and other necessary arrangements."
+    },
+    {
+      "id": 13,
+      "clubName": "Technology Club",
+      "eventName": "One week: AI/ML Boot Camp",
+      "dates": [
+        "8-9-2025",
+        "9-9-2025",
+        "10-9-2025",
+        "11-9-2025"
+      ],
+      "description": "A week-long AI/ML Boot Camp designed to introduce participants to the fundamentals of Artificial Intelligence and Machine Learning, and to help them build a strong foundation in these cutting-edge technologies. The camp will feature daily sessions of one to one-and-a-half hours — held in the evenings on weekdays and in the mornings on weekends. A certificate of completion will be awarded to all participants on the final day."
+    },
+    {
+      "id": 14,
+      "clubName": "Technology Club",
+      "eventName": "TechFusion'25",
+      "dates": [
+        "12-9-2025",
+        "13-9-2025"
+      ],
+      "description": "Two day intra college event, Orientation (An introductory session to help new students familiarize themselves with the campus, facilities, and culture.)"
+    },
+    {
+      "id": 15,
+      "clubName": "Movie Club",
+      "eventName": "Movie show",
+      "dates": [
+        "14-9-2025",
+        "21-9-2025"
+      ],
+      "description": "5.30 PM to 8.30 PM"
+    },
+    {
+      "id": 16,
+      "clubName": "Sargam Club",
+      "eventName": "Groove & Move Hunt (Treasure Hunt) & orientation for first year",
+      "dates": [
+        "14-9-2025",
+        "15-9-2025",
+        "16-9-2025"
+      ],
+      "description": "A fun-filled treasure hunt where music and dance lead you to the prize; Also, Sargam Club will conduct an orientation program for first-year students to introduce the club’s activities, objectives, and opportunities for participation in music and dance events throughout the academic yea."
+    },
+    {
+      "id": 17,
+      "clubName": "Rhetorica Club",
+      "eventName": "Orientation by the Club Rhetorica and eco cult",
+      "dates": [
+        "17-9-2025",
+        "18-9-2025",
+        "19-9-2025"
+      ],
+      "description": "Orient students with the club and conduct on spot debate and public speech competition."
+    },
+    {
+      "id": 18,
+      "clubName": "Culture Club & SoapBox",
+      "eventName": "Two Days Silambam Workshop",
+      "dates": [
+        "20-9-2025"
+      ],
+      "description": "A hands-on Silambam Workshop introducing the ancient martial art’s footwork, spins, and staff techniques for fitness, focus, and self-discipline. These two days blends demonstrations and guided practice, emphasizing safety, cultural heritage, and foundational skills."
+    },
+    {
+      "id": 19,
+      "clubName": "Rhetorica and eco cult club",
+      "eventName": "Personality development workshop",
+      "dates": [
+        "24-9-2025"
+      ],
+      "description": "Workshop to develop student personality."
+    },
+    {
+      "id": 20,
+      "clubName": "stargazing club",
+      "eventName": "Workshop",
+      "dates": [
+        "25-9-2025",
+        "26-9-2025",
+        "27-9-2025",
+        "28-9-2025"
+      ],
+      "description": "what is the stargazing and telscope. How can use telescope for star gazing."
+    },
+    {
+      "id": 21,
+      "clubName": "Photography Club",
+      "eventName": "Through the Lens - Photography Challenge",
+      "dates": [
+        "29-9-2025"
+      ],
+      "description": "Submit your 3 best recent clicks from inside the campus and showcase the beauty, spirit, and stories of our institute through your lens."
+    },
+    {
+      "id": 22,
+      "clubName": "Rhetorica and eco cult club",
+      "eventName": "Donation drive",
+      "dates": [
+        "30-9-2025"
+      ],
+      "description": "Donation drive for an orphanage."
+    }
+  ]
+}

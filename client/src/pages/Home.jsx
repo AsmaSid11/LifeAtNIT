@@ -69,6 +69,47 @@ export default function Home() {
   const [visible, setVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [events, setEvents] = useState([]);
+
+  // Fetch events data
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('/data/events.json');
+        const data = await response.json();
+        setEvents(data.events.slice(0, 6)); // Show only first 6 events
+      } catch (error) {
+        console.error('Failed to fetch events:', error);
+      }
+    };
+    fetchEvents();
+  }, []);
+
+  // Format dates for display
+  const formatEventDate = (dates) => {
+    if (!dates || dates.length === 0) return 'Date TBD';
+    
+    if (dates.length === 1) {
+      const [day, month, year] = dates[0].split('-');
+      const date = new Date(year, month - 1, day);
+      return date.toLocaleDateString('en-US', { 
+        month: 'short', 
+        day: 'numeric' 
+      });
+    } else {
+      const [startDay, startMonth, startYear] = dates[0].split('-');
+      const [endDay, endMonth, endYear] = dates[dates.length - 1].split('-');
+      const startDate = new Date(startYear, startMonth - 1, startDay);
+      const endDate = new Date(endYear, endMonth - 1, endDay);
+      return `${startDate.toLocaleDateString('en-US', { 
+        month: 'short', 
+        day: 'numeric' 
+      })} - ${endDate.toLocaleDateString('en-US', { 
+        month: 'short', 
+        day: 'numeric'
+      })}`;
+    }
+  };
 
   // Hero text sliding animation
   useEffect(() => {
@@ -351,6 +392,82 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Events Section */}
+      <div className="bg-gray-50 py-12 sm:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#DDA853', color: '#1F2647' }}>
+              <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#1F2647' }}></span>
+              Upcoming Events
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1F2647' }}>
+              Campus Events & Activities
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
+              Stay connected with exciting events, workshops, and activities happening on campus
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {events.map((event, index) => (
+              <div
+                key={event.id}
+                className="reveal opacity-0 group h-full"
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-t-4 flex flex-col h-full" style={{ borderTopColor: '#0D9488' }}>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: '#DDA853', color: '#1F2647' }}>
+                        {event.clubName}
+                      </span>
+                      <span className="text-sm text-gray-500">
+                        {formatEventDate(event.dates)}
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-lg font-bold mb-3" style={{ color: '#1F2647' }}>
+                      {event.eventName}
+                    </h3>
+                    
+                    <p className="text-gray-600 text-sm leading-relaxed flex-grow">
+                      {event.description.length > 120 
+                        ? `${event.description.substring(0, 120)}...` 
+                        : event.description
+                      }
+                    </p>
+                    
+                    <div className="flex items-center mt-4 pt-3 border-t border-gray-100">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm" style={{ backgroundColor: '#0D9488' }}>
+                        📅
+                      </div>
+                      <span className="ml-2 text-sm font-medium" style={{ color: '#1F2647' }}>
+                        Mark your calendar
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {events.length > 0 && (
+            <div className="text-center mt-8">
+              <button 
+                className="group px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                style={{ backgroundColor: '#0D9488', color: 'white' }}
+                onClick={() => window.location.href = '/events'}
+              >
+                <span>View All Events</span>
+                <svg className="ml-2 w-4 h-4 inline group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
