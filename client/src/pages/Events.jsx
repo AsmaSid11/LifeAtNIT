@@ -207,12 +207,12 @@ const Events = () => {
                         Don't miss out!
                       </span>
                     </div>
-                    <button 
+                    {/* <button 
                       className="text-sm font-medium px-3 py-1 rounded-lg transition-colors duration-300 hover:bg-gray-100"
                       style={{ color: getClubColor(event.clubName) }}
                     >
                       Learn More
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </motion.div>
