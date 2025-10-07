@@ -1,24 +1,33 @@
 import React, { useEffect, useState } from "react";
+import eventsData from "../assets/data/events.json";
+
+import clubsImg1 from "../assets/Clubs/DSC_1248.webp";
+import clubsImg2 from "../assets/Clubs/DSC08125 (1).webp";
+import amenityLibrary2 from "../assets/Amenities/library2.webp";
+import dayimImg from "../assets/images/dayim_sajad.webp";
+import palakImg from "../assets/images/palak_sharma.webp";
+import sanjayImg from "../assets/images/sanjay.webp";
+import heroVideo from "../assets/videos/hero4.mp4";
 
 const features = [
   {
     title: "Vibrant Student Life",
     desc: "Join a diverse range of clubs, fests, and activities that make every day exciting.",
-    img: "/Clubs/DSC_1248.webp",
+  img: clubsImg1,
     link: "/clubs",
     icon: "🎭"
   },
   {
     title: "World-Class Amenities",
     desc: "Enjoy modern hostels, sports complexes, libraries, and more for a holistic experience.",
-    img: "/Amenities/library2.webp",
+  img: amenityLibrary2,
     link: "/amenities",
     icon: "🏛️"
   },
   {
     title: "Unforgettable Fests",
     desc: "Experience the thrill of our cultural and technical fests, where talent meets celebration.",
-    img: "/Clubs/DSC08125 (1).webp",
+  img: clubsImg2,
     link: "/fests",
     icon: "🎪"
   },
@@ -42,19 +51,19 @@ const testimonials = [
     name: "Dayim Sajad",
     role: "B Tech (MECH) - 2025",
     text: "I am grateful to the Department of Training and Placement for their consistent support in facilitating my placement at Aditya Birla Group. Their dedication played an important role in this achievement.",
-    image: "images/dayim_sajad.webp"
+  image: dayimImg
   },
   {
     name: "Palak Sharma",
     role: "B Tech (CSE) - 2025",
     text: "I'm happy to share that I've been placed at PwC. Many thanks to the Training and Placement Department and team for their clear communication, smooth coordination, and constant support throughout the placement process.",
-    image: "images/palak_sharma.webp"
+  image: palakImg
   },
   {
     name: "Sanjay",
     role: "B Tech (ELE) - 2025",
     text: "I'm thrilled to be placed at Tata Power DDL. Grateful to the Training and Placement Department for their support. Looking forward to contributing to urban power infrastructure and gaining valuable experience in this dynamic sector.",
-    image: "images/sanjay.webp"
+  image: sanjayImg
   }
 ];
 
@@ -73,16 +82,8 @@ export default function Home() {
 
   // Fetch events data
   useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch('/data/events.json');
-        const data = await response.json();
-        setEvents(data.events.slice(0, 6)); // Show only first 6 events
-      } catch (error) {
-        console.error('Failed to fetch events:', error);
-      }
-    };
-    fetchEvents();
+
+    setEvents(eventsData.events.slice(0, 6)); // Show only first 6 events
   }, []);
 
   // Format dates for display
@@ -165,7 +166,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       {/* Professional Hero Section - Made Responsive */}
       <div className="relative h-[85vh] sm:h-[90vh] flex items-center justify-center overflow-hidden">
-        <video
+          <video
           autoPlay
           muted
           loop
@@ -174,7 +175,7 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover"
           onEnded={e => { e.target.currentTime = 0; e.target.play(); }}
         >
-          <source src="/videos/hero4.mp4" type="video/mp4" />
+          <source src={heroVideo} type="video/mp4" />
           {/* Fallback image in case video doesn't load */}
           <img
             src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80"

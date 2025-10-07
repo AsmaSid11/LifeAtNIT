@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   FaLinkedin,
   FaGithub,
@@ -9,15 +10,20 @@ import {
   FaYoutube,
   FaFacebook,
 } from "react-icons/fa";
-import userIcon from "/images/userIcon.webp";
+import userIcon from "../assets/images/userIcon.webp";
 import heroWave from "../assets/hero-wave.svg";
-import { useState } from "react";
+
+
+import imgIzma from '../assets/images/team/izma.webp';
+import imgAsma from '../assets/images/team/asma.webp';
+import imgHarshita from '../assets/images/team/harshita.webp';
+import imgAnkita from '../assets/images/team/ankita.webp';
 
 const teamMembers = [
   {
     name: "Qazi Izma",
     role: "Web Developer",
-    image: "/images/team/izma.webp",
+    image: imgIzma,
     funFact: "Loves code and caffeine ☕",
     email: "qaziizmaa@gmail.com ",
     enrollment: "2021BITE025",
@@ -27,7 +33,7 @@ const teamMembers = [
   {
     name: "Asma Siddiqui",
     role: "Web Developer",
-    image: "/images/team/asma.webp",
+    image: imgAsma,
     funFact: "Bookmarks aren't just for browsers 🔖",
     email: "asmasiddiqui511@gmail.com",
     enrollment: "2023BCSE029",
@@ -37,7 +43,7 @@ const teamMembers = [
   {
     name: "Harshita",
     role: "Web Developer",
-    image: "/images/team/harshita.webp", 
+    image: imgHarshita, 
     funFact: "Finds peace in coding and singing 🌼",
     email: "harshita2386@gmail.com",
     enrollment: "2023BCSE022",
@@ -47,7 +53,7 @@ const teamMembers = [
   {
     name: "Ankita Kuntal",
     role: "Web Developer",
-    image: "/images/team/ankita.webp",
+    image: imgAnkita,
     funFact: "Can center divs but not her inner peace!✌",
     email: "2023nitsgr153@nitsri.ac.in",
     enrollment: "2023BITE007",

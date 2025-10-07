@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
 
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="/images/logo-blue.webp" />
+    <link id="favicon" rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <script type="module">
+      import logo from '/src/assets/images/logo-blue.webp';
+      const link = document.getElementById('favicon');
+      if (link) link.href = logo;
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Life at NIT Sgr</title>
   </head>

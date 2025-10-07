@@ -2,6 +2,15 @@ import { motion } from 'framer-motion';
 
 import heroWave from "../assets/hero-wave.svg";
 
+import clubImg0 from '../assets/Clubs/DSC07633.webp';
+import clubImg1 from '../assets/Clubs/DSC_1227.webp';
+import clubImg2 from '../assets/Clubs/pexels-tima-miroshnichenko-7991158.webp';
+import clubImg3 from '../assets/Clubs/pexels-pixabay-248547.webp';
+import clubImg4 from '../assets/Clubs/pexels-asphotograpy-212372.webp';
+import clubImg5 from '../assets/Clubs/pexels-mikhail-nilov-8847168.webp';
+import clubImg6 from '../assets/Clubs/pexels-lucaspezeta-2034892.webp';
+import clubImg7 from '../assets/Clubs/pexels-warre-van-de-wouwer-400573496-32233892.webp';
+
 import { FaBrain, FaHandsHelping, FaLaughBeam } from "react-icons/fa";
 import {
   Code,
@@ -157,7 +166,7 @@ const clubsData = [
     title: "Technology Club",
     description:
 "The Technology Club at NIT Srinagar is a dynamic community dedicated to fostering a passion for technology and innovation among students. This club offers various activities and initiatives aimed at providing students with opportunities to explore, create, and learn together.",
-    image: "/Clubs/DSC07633.webp",
+  image: clubImg0,
     reverse: false,
 
   },
@@ -165,49 +174,49 @@ const clubsData = [
     title: "Cultural Club and Soap Box",
     description:
 "The Cultural Club at NIT Srinagar serves as a platform for students to explore and celebrate cultural diversity. Within this club, SOAPBox stands as a symbol of free expression, providing students with a forum to voice their opinions, ideas, and concerns openly and confidently.",
-    image: "/Clubs/DSC_1227.webp",
+  image: clubImg1,
     reverse: true,
   },
   {
     title: "Movie Club",
     description:
 "In partnership with the Sports and Student Activities Department, the Movie Club offers students a cinematic escape on Friday and Saturday nights. Screening a variety of films in the common hall, the club provides a space for students to unwind, relax, and enjoy the magic of cinema with their peers.",
-    image: "/Clubs/pexels-tima-miroshnichenko-7991158.webp",
+  image: clubImg2,
     reverse: false,
   },
   {
     title: "Sports Club",
     description:
 "Collaborating with the Sports and Student Activities Department of NIT Srinagar, the Sports Club organises a wide range of sporting events and activities throughout the academic year. From competitive cricket and football tournaments to strength-testing weightlifting competitions, the club fosters a spirit of athleticism and camaraderie among students.",
-    image: "/Clubs/pexels-pixabay-248547.webp",
+  image: clubImg3,
     reverse: true,
   },
   {
     title: "Photography Club",
     description:
 "The Photography Club at NIT Srinagar is responsible for capturing the essence of campus life through the lens. Equipped with drones and high-resolution professional cameras, the club documents events, activities, and memorable moments, preserving the vibrant spirit of the college community.",
-    image: "/Clubs/pexels-asphotograpy-212372.webp",
+  image: clubImg4,
     reverse: false,
   },
   {
     title: "Rhetorica and Ecocult Club",
     description:
 "Rhetorica and EcoCult Club at NIT Srinagar are committed to fostering intellectual discourse and environmental stewardship on campus. Rhetorica hosts engaging debates and discussions, encouraging critical thinking and communication skills. EcoCult organizes eco-treks, workshops, and initiatives to raise awareness about environmental issues and promote sustainable practices.",
-    image: "/Clubs/pexels-mikhail-nilov-8847168.webp",
+  image: clubImg5,
     reverse: true,
   },
   {
     title: "Stargazing Club",
     description:
 "The Stargazing Club at NIT Srinagar provides opportunities for students to explore the wonders of the universe through stargazing sessions, workshops, and talks. Students can observe the night sky and contemplate the mysteries of the cosmos in a supportive and inclusive environment.",
-    image: "/Clubs/pexels-lucaspezeta-2034892.webp",
+  image: clubImg6,
     reverse: false,
   },
   {
     title: "Sargam Club",
     description:
 "Sargam Club, the Official Music and Dance Club of NIT Srinagar, is dedicated to promoting musical and dance talents among students. Through workshops, rehearsals, and performances, the club provides a platform for students to showcase their creativity and passion for the arts.",
-    image: "/Clubs/pexels-warre-van-de-wouwer-400573496-32233892.webp",
+  image: clubImg7,
     reverse: true,
   },
   

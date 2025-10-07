@@ -1,23 +1,37 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import heroWave from '../assets/hero-wave.svg'; // Adjust the path as necessary
+import heroWave from '../assets/hero-wave.svg'; 
+
+import oldGuestHouse0 from '../assets/Amenities/old-guest-house.webp';
+import oldGuestHouse1 from '../assets/Amenities/old-guest-house1.webp';
+import oldGuestHouse2 from '../assets/Amenities/old-guest-house2.webp';
+import oldGuestHouse3 from '../assets/Amenities/old-guest-house3.webp';
+import oldGuestHouse5 from '../assets/Amenities/old-guest-house5.webp';
+import oldGuestHouse6 from '../assets/Amenities/old-guest-house6.webp';
+import oldGuestHouse4 from '../assets/Amenities/old-guest-house4.webp';
+
+import newGuestHouse0 from '../assets/Amenities/new-guest-house.webp';
+import newGuestHouse1 from '../assets/Amenities/new-guest-house1.webp';
+import newGuestHouse2 from '../assets/Amenities/new-guest-house2.webp';
+import newGuestHouse3 from '../assets/Amenities/new-guest-house3.webp';
+import newGuestHouse4 from '../assets/Amenities/new-guest-house4.webp';
 
 const oldGuestHouseImages = [
-  '/Amenities/old-guest-house.webp',
-  '/Amenities/old-guest-house1.webp',
-  '/Amenities/old-guest-house2.webp',
-  '/Amenities/old-guest-house3.webp',
-  '/Amenities/old-guest-house6.webp',
-  '/Amenities/old-guest-house5.webp',
+  oldGuestHouse0,
+  oldGuestHouse1,
+  oldGuestHouse2,
+  oldGuestHouse3,
+  oldGuestHouse6,
+  oldGuestHouse5,
 ];
 
 const newGuestHouseImages = [
-  '/Amenities/new-guest-house.webp',
-  '/Amenities/new-guest-house1.webp',
-  '/Amenities/new-guest-house2.webp',
-  '/Amenities/new-guest-house3.webp',
-  '/Amenities/new-guest-house4.webp',
-  '/Amenities/old-guest-house4.webp',
+  newGuestHouse0,
+  newGuestHouse1,
+  newGuestHouse2,
+  newGuestHouse3,
+  newGuestHouse4,
+  oldGuestHouse4,
 ];
 
 const heroBg =

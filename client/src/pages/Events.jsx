@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import eventsData from "../assets/data/events.json";
+
+const asset = (p) => new URL(`../assets/${p}`, import.meta.url).href;
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -9,17 +12,8 @@ const Events = () => {
 
   // Fetch events data
   useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch('/data/events.json');
-        const data = await response.json();
-        setEvents(data.events);
-        setFilteredEvents(data.events);
-      } catch (error) {
-        console.error('Failed to fetch events:', error);
-      }
-    };
-    fetchEvents();
+    setEvents(eventsData.events);
+    setFilteredEvents(eventsData.events);
   }, []);
 
   // Get unique clubs for filter

@@ -1,37 +1,98 @@
 import React, { useState, useRef, useEffect } from "react";
-import heroWave from "../assets/hero-wave.svg"; // Make sure this SVG exists
+import heroWave from "../assets/hero-wave.svg"; 
+
+import track2 from '../assets/Amenities/track2.webp';
+import track3 from '../assets/Amenities/track3.webp';
+import playground from '../assets/Amenities/playground.webp';
+import track from '../assets/Amenities/track.webp';
+import track4 from '../assets/Amenities/track4.webp';
+import track5 from '../assets/Amenities/track5.webp';
+import tennisCourt1 from '../assets/Amenities/tennis-court1.webp';
+import tennisCourt2 from '../assets/Amenities/tennis-court2.webp';
+import tennisCourt3 from '../assets/Amenities/tennis-court3.webp';
+import tennisCourt4 from '../assets/Amenities/tennis-court4.webp';
+import tennisCourt5 from '../assets/Amenities/tennis-court5.webp';
+import cricket from '../assets/Amenities/cricket.webp';
+import cricket2 from '../assets/Amenities/cricket2.webp';
+import cricket3 from '../assets/Amenities/cricket3.webp';
+import gymkhana from '../assets/Amenities/gymkhana.webp';
+import football from '../assets/Amenities/football.webp';
+import football2 from '../assets/Amenities/football2.webp';
+import football3 from '../assets/Amenities/football3.webp';
+import football4 from '../assets/Amenities/football4.webp';
+import football5 from '../assets/Amenities/football5.webp';
+import football6 from '../assets/Amenities/football6.webp';
+import football7 from '../assets/Amenities/football7.webp';
+import basketballCourt from '../assets/Amenities/basketball-court.webp';
+import basketballCourt2 from '../assets/Amenities/basketball-court2.webp';
+import basketballCourt3 from '../assets/Amenities/basketball-court3.webp';
+import basketballCourt4 from '../assets/Amenities/basketball-court4.webp';
+
+import libraryImg from '../assets/Amenities/library.webp';
+import library2 from '../assets/Amenities/library2.webp';
+import library3 from '../assets/Amenities/library3.webp';
+import library4 from '../assets/Amenities/library4.webp';
+import library5 from '../assets/Amenities/library5.webp';
+
+import medical from '../assets/Amenities/medical.webp';
+import medical2 from '../assets/Amenities/medical2.webp';
+import medical3 from '../assets/Amenities/medical3.webp';
+
+import cafeteria from '../assets/Amenities/cafeteria.webp';
+import cafeteria2 from '../assets/Amenities/cafeteria2.webp';
+import cafeteria3 from '../assets/Amenities/cafeteria3.webp';
+import canteen from '../assets/Amenities/canteen.webp';
+import canteen2 from '../assets/Amenities/canteen2.webp';
+import canteen3 from '../assets/Amenities/canteen3.webp';
+
+import wifiIt from '../assets/Amenities/wifi&it.webp';
+import CSC from '../assets/Amenities/CSC.webp';
+import CSC2 from '../assets/Amenities/CSC2.webp';
+
+import transportation from '../assets/Amenities/transportation.webp';
+import transportation2 from '../assets/Amenities/transportation2.webp';
+import transportation1 from '../assets/Amenities/transportation1.webp';
+
+import counselling from '../assets/Amenities/counselling.webp';
+import counselling2 from '../assets/Amenities/counselling2.webp';
+import counselling3 from '../assets/Amenities/counselling3.webp';
+
+import bank from '../assets/Amenities/bank.webp';
+import bank1 from '../assets/Amenities/bank1.webp';
+import bank2 from '../assets/Amenities/bank2.webp';
+import bank3 from '../assets/Amenities/bank3.webp';
 
 const amenitiesData = [
   {
     name: "Sports Facilities",
-    image: "/Amenities/track2.webp",
+    image: track2,
     photos: [
-      "/Amenities/track3.webp",
-      "/Amenities/playground.webp",
-      "/Amenities/track.webp",
-      "/Amenities/track2.webp",
-      "/Amenities/track4.webp",
-      "/Amenities/track5.webp",
-      "/Amenities/tennis-court1.webp",
-      "/Amenities/tennis-court2.webp",
-      "/Amenities/tennis-court4.webp",
-      "/Amenities/cricket.webp",
-      "/Amenities/gymkhana.webp",
-      "/Amenities/football6.webp",
-      "/Amenities/football5.webp",
-      "/Amenities/tennis-court5.webp",
-      "/Amenities/football7.webp",
-      "/Amenities/basketball-court.webp",
-      "/Amenities/tennis-court3.webp",
-      "/Amenities/football3.webp",
-      "/Amenities/basketball-court3.webp",
-      "/Amenities/basketball-court4.webp",
-      "/Amenities/cricket2.webp",
-      "/Amenities/cricket3.webp",
-      "/Amenities/football.webp",
-      "/Amenities/basketball-court2.webp",
-      "/Amenities/football2.webp",
-      "/Amenities/football4.webp",
+      track3,
+      playground,
+      track,
+      track2,
+      track4,
+      track5,
+      tennisCourt1,
+      tennisCourt2,
+      tennisCourt4,
+      cricket,
+      gymkhana,
+      football6,
+      football5,
+      tennisCourt5,
+      football7,
+      basketballCourt,
+      tennisCourt3,
+      football3,
+      basketballCourt3,
+      basketballCourt4,
+      cricket2,
+      cricket3,
+      football,
+      basketballCourt2,
+      football2,
+      football4,
     ],
     brief:
       "Information about sports grounds, gymnasium, and other sports facilities.",
@@ -47,13 +108,13 @@ const amenitiesData = [
   },
   {
     name: "Library",
-    image: "/Amenities/library.webp",
+    image: libraryImg,
     photos: [
-      "/Amenities/library.webp",
-      "/Amenities/library2.webp",
-      "/Amenities/library3.webp",
-      "/Amenities/library4.webp",
-      "/Amenities/library5.webp",
+      libraryImg,
+      library2,
+      library3,
+      library4,
+      library5,
     ],
     brief:
       "Details about the central library, digital resources, and study spaces.",
@@ -71,11 +132,11 @@ const amenitiesData = [
   },
   {
     name: "Medical Facilities",
-    image: "/Amenities/medical.webp",
+    image: medical,
     photos: [
-      "/Amenities/medical.webp",
-      "/Amenities/medical2.webp",
-      "/Amenities/medical3.webp",
+      medical,
+      medical2,
+      medical3,
     ],
     brief:
       "Information about the health center and medical services available on campus.",
@@ -91,14 +152,14 @@ const amenitiesData = [
   },
   {
     name: "Cafeteria",
-    image: "/Amenities/cafeteria.webp",
+    image: cafeteria,
     photos: [
-      "/Amenities/cafeteria.webp",
-      "/Amenities/cafeteria2.webp",
-      "/Amenities/cafeteria3.webp",
-      "/Amenities/canteen.webp",
-      "/Amenities/canteen2.webp",
-      "/Amenities/canteen3.webp",
+      cafeteria,
+      cafeteria2,
+      cafeteria3,
+      canteen,
+      canteen2,
+      canteen3,
     ],
     brief: "Details about food courts, canteens, and dining facilities.",
     details:
@@ -109,11 +170,11 @@ const amenitiesData = [
   },
   {
     name: "WiFi & IT",
-    image: "/Amenities/wifi&it.webp",
+    image: wifiIt,
     photos: [
-      "/Amenities/wifi&it.webp",
-      "/Amenities/CSC.webp",
-      "/Amenities/CSC2.webp",
+      wifiIt,
+      CSC,
+      CSC2,
     ],
     brief:
       "Information about campus-wide WiFi, computer labs, and IT infrastructure.",
@@ -131,11 +192,11 @@ const amenitiesData = [
   },
   {
     name: "Transportation",
-    image: "/Amenities/transportation.webp",
+    image: transportation,
     photos: [
-      "/Amenities/transportation.webp",
-      "/Amenities/transportation2.webp",
-      "/Amenities/transportation1.webp",
+      transportation,
+      transportation2,
+      transportation1,
     ],
     brief: "Details about campus transportation and connectivity.",
     details:
@@ -146,11 +207,11 @@ const amenitiesData = [
   },
   {
     name: "Counselling Cell",
-    image: "/Amenities/counselling.webp",
+    image: counselling,
     photos: [
-      "/Amenities/counselling.webp",
-      "/Amenities/counselling2.webp",
-      "/Amenities/counselling3.webp",
+      counselling,
+      counselling2,
+      counselling3,
     ],
     brief: "Support for mental health, stress, and personal counseling.",
     details:
@@ -161,12 +222,12 @@ const amenitiesData = [
   },
   {
     name: "Banking",
-    image: "/Amenities/bank.webp",
+    image: bank,
     photos: [
-      "/Amenities/bank.webp",
-      "/Amenities/bank1.webp",
-      "/Amenities/bank3.webp",
-      "/Amenities/bank2.webp",
+      bank,
+      bank1,
+      bank3,
+      bank2,
     ],
     brief: "Information about banking facilities and ATMs on campus.",
     details:

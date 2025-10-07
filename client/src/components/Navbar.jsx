@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+import logoWhite from '../assets/images/logo-white.webp';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [accommodationOpen, setAccommodationOpen] = useState(false);
@@ -97,7 +99,7 @@ const Navbar = () => {
               className="flex items-center group"
             >
               <img
-                src="/images/logo-white.webp"
+                src={logoWhite}
                 alt="NIT Srinagar Logo"
                 className="h-6 w-6 sm:h-8 sm:w-8 mr-2 group-hover:scale-110 transition-all duration-300"
               />

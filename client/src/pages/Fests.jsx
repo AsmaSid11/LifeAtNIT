@@ -1,36 +1,61 @@
 import { useState, useEffect } from "react";
 import heroWave from "../assets/hero-wave.svg";
+
+// Import fest images directly so bundler resolves them
+import DSC07966 from "../assets/Clubs/DSC07966.webp";
+import DSC08125_1 from "../assets/Clubs/DSC08125 (1).webp";
+import DSC02146 from "../assets/Clubs/DSC02146.webp";
+import DSC08048 from "../assets/Clubs/DSC08048.webp";
+import DSC08217 from "../assets/Clubs/DSC08217.webp";
+import DSC_0453 from "../assets/Clubs/DSC_0453.webp";
+import DSC_0529 from "../assets/Clubs/DSC_0529.webp";
+import DSC_0599_1 from "../assets/Clubs/DSC_0599 (1).webp";
+import DSC_0569 from "../assets/Clubs/DSC_0569.webp";
+import DSC_0538 from "../assets/Clubs/DSC_0538.webp";
+import DSC_0586 from "../assets/Clubs/DSC_0586.webp";
+import DSC_0960 from "../assets/Clubs/DSC_0960.webp";
+import DSC_1265 from "../assets/Clubs/DSC_1265.webp";
+import DSC02196_1 from "../assets/Clubs/DSC02196 (1).webp";
+import DSC_1260 from "../assets/Clubs/DSC_1260.webp";
+import DSC_1227 from "../assets/Clubs/DSC_1227.webp";
+import DSC_1205 from "../assets/Clubs/DSC_1205.webp";
+import DSC_1248 from "../assets/Clubs/DSC_1248.webp";
+import DSC_1026 from "../assets/Clubs/DSC_1026.webp";
+import DSC00586 from "../assets/Clubs/DSC00586.webp";
+import DSC00598 from "../assets/Clubs/DSC00598.webp";
+import DSC00584 from "../assets/Clubs/DSC00584.webp";
+
 import { motion } from 'framer-motion';
 const events = [
   {
     title: "Techvaganza",
     
     details:"Techvaganza is a national level technical festival held anually at National Institute of Technology Srinagar. It is the first Techno Management festival in the region. With the initiation of Techvaganza in 2009, it has emerged as one of the biggest technical carnival among all. The main aim is to uplift the technical level of the region and provide a platform for technical tender buds to innovate and gain experience in the field of technology and management. Students showcase their technical prowess through robotics challenges, coding competitions, workshops, and guest lectures. It's a platform for budding engineers to network, learn, and push the boundaries of technology.",
-    images: ["/Clubs/DSC07966.webp", "/Clubs/DSC08125 (1).webp", "/Clubs/DSC02146.webp","/Clubs/DSC08048.webp","/Clubs/DSC08217.webp","/Clubs/DSC08217.webp"],
+    images: [DSC07966, DSC08125_1, DSC02146, DSC08048, DSC08217, DSC08217],
   },
   {
     title: "TedX",
     
     details:"TEDxNITSrinagar isn't your typical college event. It's a vibrant platform that ignites minds and fosters innovation within the walls of NIT Srinagar and beyond. Modeled after the globally renowned TED Talks, TEDxNITSrinagar brings together a diverse range of inspiring speakers. From pioneering scientists and innovative entrepreneurs to passionate artists and dedicated social activists, these indivisuals take the stage to share their unique ideas and experiences. In the heart of Kashmir, TEDxNITSrinagar stands as a beacon of intellectual curiousity and progress of ideas to bridge divides, inspire action, and shape a brighter future.",
-    images: ["/Clubs/DSC_0453.webp", "/Clubs/DSC_0529.webp", "/Clubs/DSC_0599 (1).webp","/Clubs/DSC_0569.webp","/Clubs/DSC_0538.webp","/Clubs/DSC_0586.webp"],
+    images: [DSC_0453, DSC_0529, DSC_0599_1, DSC_0569, DSC_0538, DSC_0586],
   },
   {
     title: "Rang-e-chinar",
 
   details:"Rang-e-Chinar is a two-day annual cultural festival organized by the National Institute of Technology Srinagar. The festival is a celebration of Indian culture that showcases student activity and talent through art exhibitions, installations and performances. It also aims to inspire culinary experiences that reflect India's diversity. This vibrant cultural festival celebrates the rich tapestry of Kashmiri heritage and Indian diversity. It features music,dance,drama,literary events, and a platform for students to express their creativity and cultural identities.",
-    images: ["/Clubs/DSC_0960.webp", "/Clubs/DSC_1265.webp", "/Clubs/DSC02196 (1).webp"],
+    images: [DSC_0960, DSC_1265, DSC02196_1],
   },
   {
     title: "Extravaganza",
 
     details: "Extravaganza is the heartbeat of cultural celebration at NIT Srinagar. Blending music, dance, drama, and art, it showcases the vibrant talents of students and creates unforgettable moments of joy and unity. From electrifying performances to creative exhibitions, Extravaganza is where passion meets performance — a true celebration of expression, diversity, and the colorful spirit of campus life.",
-    images: ["/Clubs/DSC_1260.webp", "/Clubs/DSC_1227.webp", "/Clubs/DSC_1265.webp","/Clubs/DSC_1205.webp","/Clubs/DSC_1248.webp","/Clubs/DSC_1026.webp"],
+    images: [DSC_1260, DSC_1227, DSC_1265, DSC_1205, DSC_1248, DSC_1026],
   },
   {
     title: "Techfusion",
 
     details:"Techfusion is where innovation meets imagination at NIT Srinagar. A celebration of emerging technologies and creative thinking, it brings together coders, developers, designers, and tech enthusiasts under one roof. With hands-on projects, interactive showcases, and problem-solving challenges, Techfusion serves as a dynamic platform for students to fuse their technical skills with artistic flair — driving the spirit of innovation forward on campus.",
-    images: ["/Clubs/DSC00586.webp", "/Clubs/DSC00598.webp", "/Clubs/DSC00584.webp"],
+    images: [DSC00586, DSC00598, DSC00584],
   },
 ];
 
