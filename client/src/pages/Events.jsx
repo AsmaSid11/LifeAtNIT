@@ -6,6 +6,29 @@ const Events = () => {
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [selectedClub, setSelectedClub] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
+  const [upcomingEvents, setUpcomingEvents] = useState([]);
+  const [pastEvents, setPastEvents] = useState([]);
+
+  // Helper function to parse date and get latest date for sorting
+  const getEventDate = (dates) => {
+    if (!dates || dates.length === 0) return new Date();
+    
+    // Get the latest date from the dates array for sorting
+    const latestDate = dates[dates.length - 1];
+    const [day, month, year] = latestDate.split('-');
+    return new Date(year, month - 1, day);
+  };
+
+  // Helper function to check if event is past
+  const isEventPast = (dates) => {
+    if (!dates || dates.length === 0) return false;
+    
+    const eventDate = getEventDate(dates);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Reset time for accurate date comparison
+    
+    return eventDate < today;
+  };
 
   // Fetch events data
   useEffect(() => {
@@ -13,8 +36,16 @@ const Events = () => {
       try {
         const response = await fetch('/data/events.json');
         const data = await response.json();
-        setEvents(data.events);
-        setFilteredEvents(data.events);
+        
+        // Sort events by date (earliest first)
+        const sortedEvents = data.events.sort((a, b) => {
+          const dateA = getEventDate(a.dates);
+          const dateB = getEventDate(b.dates);
+          return dateA - dateB;
+        });
+        
+        setEvents(sortedEvents);
+        setFilteredEvents(sortedEvents);
       } catch (error) {
         console.error('Failed to fetch events:', error);
       }
@@ -25,7 +56,7 @@ const Events = () => {
   // Get unique clubs for filter
   const clubs = ["All", ...new Set(events.map(event => event.clubName))];
 
-  // Filter events based on club and search term
+  // Filter events and separate into past and upcoming
   useEffect(() => {
     let filtered = events;
     
@@ -41,6 +72,12 @@ const Events = () => {
       );
     }
     
+    // Separate into past and upcoming events
+    const upcoming = filtered.filter(event => !isEventPast(event.dates));
+    const past = filtered.filter(event => isEventPast(event.dates));
+    
+    setUpcomingEvents(upcoming);
+    setPastEvents(past.reverse()); // Show most recent past events first
     setFilteredEvents(filtered);
   }, [selectedClub, searchTerm, events]);
 
@@ -145,13 +182,13 @@ const Events = () => {
 
             {/* Results Count */}
             <div className="text-sm text-gray-600 whitespace-nowrap">
-              {filteredEvents.length} event{filteredEvents.length !== 1 ? 's' : ''} found
+              {upcomingEvents.length} upcoming • {pastEvents.length} past events
             </div>
           </div>
         </div>
       </div>
 
-      {/* Events Grid */}
+      {/* Events Sections */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
         {filteredEvents.length === 0 ? (
           <div className="text-center py-16">
@@ -160,73 +197,162 @@ const Events = () => {
             <p className="text-gray-500">Try adjusting your search or filter criteria</p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredEvents.map((event, index) => (
-              <motion.div
-                key={event.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-t-4 h-full"
-                style={{ borderTopColor: getClubColor(event.clubName) }}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <div className="p-6 flex flex-col h-full">
-                  {/* Event Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <span 
-                      className="text-xs font-semibold px-3 py-1 rounded-full text-white"
-                      style={{ backgroundColor: getClubColor(event.clubName) }}
-                    >
-                      {event.clubName}
-                    </span>
-                    <div className="text-right">
-                      <div className="text-sm font-semibold" style={{ color: '#1F2647' }}>
-                        {event.date}
-                      </div>
-                      <div className="text-xs text-gray-500">
-                        {formatDate(event.dates)}
-                      </div>
-                    </div>
+          <>
+            {/* Upcoming Events Section */}
+            {upcomingEvents.length > 0 ? (
+              <div className="mb-12">
+                <div className="flex items-center mb-8">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 rounded-full mr-3" style={{ backgroundColor: '#0D9488' }}></div>
+                    <h2 className="text-2xl sm:text-3xl font-bold" style={{ color: '#1F2647' }}>
+                      Upcoming Events
+                    </h2>
                   </div>
-
-                  {/* Event Title */}
-                  <h3 className="text-xl font-bold mb-3 flex-shrink-0" style={{ color: '#1F2647' }}>
-                    {event.eventName}
-                  </h3>
-
-                  {/* Event Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed flex-grow mb-4">
-                    {event.description}
-                  </p>
-
-                  {/* Event Footer */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <div className="flex items-center">
-                      <div 
-                        className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm"
-                        style={{ backgroundColor: getClubColor(event.clubName) }}
-                      >
-                        📅
-                      </div>
-                      <span className="ml-2 text-sm font-medium" style={{ color: '#1F2647' }}>
-                        Don't miss out!
-                      </span>
-                    </div>
-                    <button 
-                      className="text-sm font-medium px-3 py-1 rounded-lg transition-colors duration-300 hover:bg-gray-100"
-                      style={{ color: getClubColor(event.clubName) }}
-                    >
-                      Learn More
-                    </button>
+                  <div className="flex-grow ml-4 h-px bg-gradient-to-r from-teal-300 to-transparent"></div>
+                  <span className="ml-4 text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                    {upcomingEvents.length} events
+                  </span>
+                </div>
+                
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {upcomingEvents.map((event, index) => (
+                    <EventCard 
+                      key={event.id} 
+                      event={event} 
+                      index={index} 
+                      getClubColor={getClubColor}
+                      formatDate={formatDate}
+                      isPast={false}
+                    />
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="mb-12">
+                <div className="flex items-center mb-8">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 rounded-full mr-3" style={{ backgroundColor: '#0D9488' }}></div>
+                    <h2 className="text-2xl sm:text-3xl font-bold" style={{ color: '#1F2647' }}>
+                      Upcoming Events
+                    </h2>
+                  </div>
+                  <div className="flex-grow ml-4 h-px bg-gradient-to-r from-teal-300 to-transparent"></div>
+                </div>
+                
+                <div className="text-center py-12 bg-white rounded-2xl shadow-lg border-t-4" style={{ borderTopColor: '#0D9488' }}>
+                  <div className="text-5xl mb-4">🎉</div>
+                  <h3 className="text-xl font-semibold mb-2" style={{ color: '#1F2647' }}>No Upcoming Events</h3>
+                  <p className="text-gray-600 mb-6">All events have concluded. Check back soon for new exciting events!</p>
+                  <div className="text-sm text-gray-500">
+                    Stay tuned to our social media for updates on future events
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            )}
+
+            {/* Past Events Section */}
+            {pastEvents.length > 0 && (
+              <div>
+                <div className="flex items-center mb-8">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 rounded-full mr-3" style={{ backgroundColor: '#6B7280' }}></div>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-600">
+                      Past Events
+                    </h2>
+                  </div>
+                  <div className="flex-grow ml-4 h-px bg-gradient-to-r from-gray-300 to-transparent"></div>
+                  <span className="ml-4 text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                    {pastEvents.length} events
+                  </span>
+                </div>
+                
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {pastEvents.map((event, index) => (
+                    <EventCard 
+                      key={event.id} 
+                      event={event} 
+                      index={index} 
+                      getClubColor={getClubColor}
+                      formatDate={formatDate}
+                      isPast={true}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>
+  );
+};
+
+// Separate EventCard component for reusability
+const EventCard = ({ event, index, getClubColor, formatDate, isPast }) => {
+  return (
+    <motion.div
+      className={`bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-t-4 h-full ${isPast ? 'opacity-75' : ''}`}
+      style={{ borderTopColor: getClubColor(event.clubName) }}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: isPast ? 0.75 : 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ scale: 1.02, opacity: 1 }}
+    >
+      <div className="p-6 flex flex-col h-full">
+        {/* Event Header */}
+        <div className="flex items-start justify-between mb-4">
+          <div className="flex items-center">
+            <span 
+              className="text-xs font-semibold px-3 py-1 rounded-full text-white"
+              style={{ backgroundColor: getClubColor(event.clubName) }}
+            >
+              {event.clubName}
+            </span>
+            {isPast && (
+              <span className="ml-2 text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded-full">
+                Past
+              </span>
+            )}
+          </div>
+          <div className="text-right">
+            <div className="text-xs text-gray-500">
+              {formatDate(event.dates)}
+            </div>
+          </div>
+        </div>
+
+        {/* Event Title */}
+        <h3 className="text-xl font-bold mb-3 flex-shrink-0" style={{ color: isPast ? '#6B7280' : '#1F2647' }}>
+          {event.eventName}
+        </h3>
+
+        {/* Event Description */}
+        <p className={`text-sm leading-relaxed flex-grow mb-4 ${isPast ? 'text-gray-500' : 'text-gray-600'}`}>
+          {event.description}
+        </p>
+
+        {/* Event Footer */}
+        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+          <div className="flex items-center">
+            <div 
+              className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm"
+              style={{ backgroundColor: isPast ? '#6B7280' : getClubColor(event.clubName) }}
+            >
+              📅
+            </div>
+            <span className={`ml-2 text-sm font-medium ${isPast ? 'text-gray-500' : ''}`} style={{ color: isPast ? '#6B7280' : '#1F2647' }}>
+              {isPast ? 'Event completed' : "Don't miss out!"}
+            </span>
+          </div>
+          <button 
+            className={`text-sm font-medium px-3 py-1 rounded-lg transition-colors duration-300 hover:bg-gray-100 ${isPast ? 'text-gray-500' : ''}`}
+            style={{ color: isPast ? '#6B7280' : getClubColor(event.clubName) }}
+          >
+            {isPast ? 'View Details' : 'Learn More'}
+          </button>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 
